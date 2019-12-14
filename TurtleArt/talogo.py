@@ -23,14 +23,15 @@
 
 import os
 import tempfile
-import urllib.request, urllib.error, urllib.parse
+import urllib.request
+import urllib.error
+import urllib.parse
 from time import time, sleep
-from operator import isNumberType
+import numbers
 from os.path import exists as os_path_exists
-from UserDict import UserDict
+from collections import UserDict
 
-from gi.repository import Gtk
-from gi.repository import GObject
+from gi.repository import GLib
 from gi.repository import GdkPixbuf
 
 from sugar3.graphics import style
@@ -41,10 +42,10 @@ USER_HOME = os.path.expanduser('~')
 import traceback
 
 from .tablock import (Block, Media, media_blocks_dictionary)
-from .taconstants import (TAB_LAYER, DEFAULT_SCALE, ICON_SIZE, Color)
+from .taconstants import (TAB_LAYER, DEFAULT_SCALE, ICON_SIZE)
 from .tajail import (myfunc, myfunc_import)
 from .tapalette import (block_names, value_blocks)
-from tatype import (TATypeError, TYPES_NUMERIC)
+from .tatype import (TATypeError, TYPES_NUMERIC)
 from .tautils import (get_pixbuf_from_journal, data_from_file, get_stack_name,
                       movie_media_type, audio_media_type, image_media_type,
                       text_media_type, round_int, debug_output, find_group,
@@ -64,7 +65,8 @@ primitive_dictionary = {}  # new block primitives get added here
 
 class noKeyError(UserDict):
 
-    __missing__ = lambda x, y: 0
+    def __missing__(x, y):
+        return 0
 
 
 class symbol:
@@ -131,7 +133,7 @@ def _change_user_path(path):
         return None
     if len(path) < 7:
         return None
-    if not '/' in path[6:]:
+    if '/' not in path[6:]:
         return None
     if path[0:5] == '/home' and '/':
         i = path[6:].index('/')
@@ -254,11 +256,11 @@ class LogoCode:
         """
         self._save_all_connections = []
         for b in blocks:
-             tmp = []
-             for c in b.connections:
-                 tmp.append(c)
-             self._save_all_connections.append(
-                 {'blk':b, 'connections':tmp})
+            tmp = []
+            for c in b.connections:
+                tmp.append(c)
+            self._save_all_connections.append(
+                {'blk': b, 'connections': tmp})
 
         for k in list(self.stacks.keys()):
             self.stacks[k] = None
@@ -402,7 +404,7 @@ class LogoCode:
                 (token, bindex) = token
             if isinstance(token, Media):
                 res.append(token)
-            elif isNumberType(token):
+            elif isinstance(token, numbers.Number):
                 res.append(token)
             elif token.isdigit():
                 res.append(float(token))
@@ -439,7 +441,8 @@ class LogoCode:
                 self.tw.activity.stop_turtle_button.set_tooltip(
                     _('Show blocks'))
             else:
-                self.tw.activity.stop_turtle_button.set_icon_name("hideshowoff")
+                self.tw.activity.stop_turtle_button.set_icon_name(
+                    "hideshowoff")
                 self.tw.activity.stop_turtle_button.set_tooltip(
                     _('Hide blocks'))
         elif self.tw.interactive_mode:
@@ -771,7 +774,7 @@ class LogoCode:
         controller -- iterator that yields True iff the loop should be run
             once more OR a callable that returns such an iterator
         blklist -- list of callables that form the loop body """
-        if not hasattr(controller, "next"):
+        if not hasattr(controller, "__next__"):
             if callable(controller):
                 controller = controller()
             else:
@@ -923,7 +926,8 @@ class LogoCode:
 
     def load_heap(self, obj):
         """ Load FILO from file """
-        user_path = _change_user_path(obj)
+        if not isinstance(obj, Media):
+            user_path = _change_user_path(obj)
 
         if self.tw.running_sugar:
             # Is the object a dsobject?
@@ -931,7 +935,7 @@ class LogoCode:
                 from sugar3.datastore import datastore
                 try:
                     dsobject = datastore.get(obj.value)
-                except:
+                except BaseException:
                     debug_output("Couldn't find dsobject %s" %
                                  (obj.value), self.tw.running_sugar)
                 if dsobject is not None:
@@ -998,12 +1002,18 @@ class LogoCode:
         while self.heap:
             self.heap.pop()
 
+    def append_heap(self, arg):
+        self.heap.append(arg)
+
+    def pop_heap(self):
+        return self.heap.pop()
+
     def prim_myblock(self, *args):
         """ Run Python code imported from Journal """
         if self.bindex is not None and self.bindex in self.tw.myblock:
             try:
                 myfunc_import(self, self.tw.myblock[self.bindex], args)
-            except:
+            except BaseException:
                 raise logoerror("#syntaxerror")
 
     def prim_myfunction(self, f, *args):
@@ -1042,20 +1052,6 @@ class LogoCode:
             return
         for name in value_blocks:
             self.update_label_value(name)
-
-    def int(self, n):
-        """ Raise an error if n doesn't convert to int. """
-        if isinstance(n, int):
-            return n
-        elif isinstance(n, float):
-            return int(n)
-        elif isinstance(n, str):
-            return int(ord(n[0]))
-        else:
-            self.tw.showblocks()
-            raise logoerror("%s %s %s %s" %
-                            (self.cfun.name, _("doesn't like"), str(n),
-                             _("as input")))
 
     def find_value_blocks(self):
         """ Find any value blocks that may need label updates """
@@ -1126,10 +1122,10 @@ class LogoCode:
         elif user_path is not None and os.path.exists(user_path):
             self.filepath = user_path
         elif self.tw.running_sugar:  # datastore object
-            from suga3.datastore import datastore
+            from sugar3.datastore import datastore
             try:
                 self.dsobject = datastore.get(obj.value)
-            except:
+            except BaseException:
                 debug_output("Couldn't find dsobject %s" %
                              (obj.value), self.tw.running_sugar)
             if self.dsobject is not None:
@@ -1143,7 +1139,7 @@ class LogoCode:
         try:
             pixbuf = GdkPixbuf.Pixbuf.new_from_file_at_size(
                 self.filepath, scale, scale)
-        except:
+        except BaseException:
             self.tw.showlabel('nojournal', self.filepath)
             debug_output("Couldn't open skin %s" % (self.filepath),
                          self.tw.running_sugar)
@@ -1167,11 +1163,14 @@ class LogoCode:
             data = image_to_base64(tmp_file, tmp_path)
             height = pixbuf.get_height()
             width = pixbuf.get_width()
-            event = 'R|%s' % (data_to_string([self.tw.nick,
-                                              [round_int(width),
-                                               round_int(height),
-                                               data]]))
-            GObject.idle_add(self.tw.send_event, event)
+            event = data_to_string(
+                [self.tw.nick, [round_int(width), round_int(height), data]])
+
+            def send_event(p):
+                self.tw.send_event('R', event)
+                return False
+
+            GLib.idle_add(send_event)
             os.remove(tmp_file)
 
     def get_from_url(self, url):
@@ -1195,7 +1194,7 @@ class LogoCode:
                              self.tw.running_sugar)
                 raise logoerror('#noconnection')
 
-        mediatype = req.info().getheader('Content-Type')
+        mediatype = req.getheader('Content-Type')
         if mediatype[0:5] in ['image', 'audio', 'video']:
             tmp = tempfile.NamedTemporaryFile(delete=False)
             tmp.write(req.read())
@@ -1259,7 +1258,7 @@ class LogoCode:
                 from sugar3.datastore import datastore
                 try:
                     self.dsobject = datastore.get(obj.value)
-                except:
+                except BaseException:
                     debug_output("Couldn't find dsobject %s" %
                                  (obj.value), self.tw.running_sugar)
 
@@ -1373,7 +1372,7 @@ class LogoCode:
         elif self.dsobject is not None:
             try:
                 self.pixbuf = get_pixbuf_from_journal(self.dsobject, w, h)
-            except:
+            except BaseException:
                 debug_output("Couldn't open dsobject %s" % (self.dsobject),
                              self.tw.running_sugar)
         if self.pixbuf is None and \
@@ -1387,7 +1386,7 @@ class LogoCode:
                 else:
                     self.pixbuf = GdkPixbuf.Pixbuf.new_from_file_at_size(
                         self.filepath, w, h)
-            except:
+            except BaseException:
                 self.tw.showlabel('nojournal', self.filepath)
                 debug_output("Couldn't open filepath %s" % (self.filepath),
                              self.tw.running_sugar)
@@ -1555,8 +1554,8 @@ class LogoCode:
         box_blk.connections.append(b.connections[0])
         if b.connections[0] is not None:
             for i in range(len(b.connections[0].connections)):
-              if b.connections[0].connections[i] == b:
-                  b.connections[0].connections[i] = box_blk
+                if b.connections[0].connections[i] == b:
+                    b.connections[0].connections[i] = box_blk
         box_blk.docks.append(['number', True, 0, 0])
         box_blk.connections.append(box_label_blk)
         box_blk.docks.append(['string', False, 0, 0])
