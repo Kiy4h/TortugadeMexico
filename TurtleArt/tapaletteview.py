@@ -31,7 +31,7 @@ from .taconstants import (PALETTE_SCALE, ICON_SIZE, PYTHON_SKIN, XO1,
                           HORIZONTAL_PALETTE, PALETTE_WIDTH, PALETTE_HEIGHT,
                           CATEGORY_LAYER, TOP_LAYER, PROTO_LAYER)
 from .tasprite_factory import SVG, svg_str_to_pixbuf
-from sprites import Sprite
+from .sprites import Sprite
 
 
 class PaletteView():
