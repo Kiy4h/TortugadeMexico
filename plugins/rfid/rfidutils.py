@@ -23,8 +23,9 @@ def find_device():
     Return a device instance or None.
     """
     device = None
-    for i in os.listdir(os.path.join('.', 'plugins/rfid')):
-        if not os.path.isdir(os.path.join('.', 'plugins/rfid', i)):
+    path = os.path.dirname(os.path.abspath(__file__))
+    for i in os.listdir(path):
+        if not os.path.isdir(os.path.join(path, i)):
             try:
                 _tempmod = __import__('rfid.%s'%i.split('.')[0], globals(),
                                       locals(), ['RFIDReader'], -1)

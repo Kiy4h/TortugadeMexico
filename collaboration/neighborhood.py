@@ -19,8 +19,7 @@
 
 from functools import partial
 
-import gobject
-import gconf
+from gi.repository import GConf
 import dbus
 from dbus import PROPERTIES_IFACE
 from telepathy.interfaces import (ACCOUNT,
@@ -47,6 +46,7 @@ from buddy import get_owner_instance
 from buddy import BuddyModel
 
 from xocolor import XoColor
+from gi.repository import GObject
 
 ACCOUNT_MANAGER_SERVICE = 'org.freedesktop.Telepathy.AccountManager'
 ACCOUNT_MANAGER_PATH = '/org/freedesktop/Telepathy/AccountManager'
@@ -66,20 +66,20 @@ will be very slow in returning these queries, so just be patient.
 """
 
 
-class ActivityModel(gobject.GObject):
+class ActivityModel(GObject.GObject):
     __gsignals__ = {
-        'current-buddy-added': (gobject.SIGNAL_RUN_FIRST, gobject.TYPE_NONE,
+        'current-buddy-added': (GObject.SIGNAL_RUN_FIRST, GObject.TYPE_NONE,
                                 ([object])),
-        'current-buddy-removed': (gobject.SIGNAL_RUN_FIRST, gobject.TYPE_NONE,
+        'current-buddy-removed': (GObject.SIGNAL_RUN_FIRST, GObject.TYPE_NONE,
                                   ([object])),
-        'buddy-added': (gobject.SIGNAL_RUN_FIRST, gobject.TYPE_NONE,
+        'buddy-added': (GObject.SIGNAL_RUN_FIRST, GObject.TYPE_NONE,
                         ([object])),
-        'buddy-removed': (gobject.SIGNAL_RUN_FIRST, gobject.TYPE_NONE,
+        'buddy-removed': (GObject.SIGNAL_RUN_FIRST, GObject.TYPE_NONE,
                           ([object])),
     }
 
     def __init__(self, activity_id, room_handle):
-        gobject.GObject.__init__(self)
+        GObject.GObject.__init__(self)
 
         self.activity_id = activity_id
         self.room_handle = room_handle
@@ -96,7 +96,7 @@ class ActivityModel(gobject.GObject):
     def set_color(self, color):
         self._color = color
 
-    color = gobject.property(type=object, getter=get_color, setter=set_color)
+    color = GObject.property(type=object, getter=get_color, setter=set_color)
 
     def get_bundle(self):
         return self._bundle
@@ -104,7 +104,7 @@ class ActivityModel(gobject.GObject):
     def set_bundle(self, bundle):
         self._bundle = bundle
 
-    bundle = gobject.property(type=object, getter=get_bundle,
+    bundle = GObject.property(type=object, getter=get_bundle,
                               setter=set_bundle)
 
     def get_name(self):
@@ -113,7 +113,7 @@ class ActivityModel(gobject.GObject):
     def set_name(self, name):
         self._name = name
 
-    name = gobject.property(type=object, getter=get_name, setter=set_name)
+    name = GObject.property(type=object, getter=get_name, setter=set_name)
 
     def is_private(self):
         return self._private
@@ -121,7 +121,7 @@ class ActivityModel(gobject.GObject):
     def set_private(self, private):
         self._private = private
 
-    private = gobject.property(type=object, getter=is_private,
+    private = GObject.property(type=object, getter=is_private,
                                setter=set_private)
 
     def get_buddies(self):
@@ -137,7 +137,7 @@ class ActivityModel(gobject.GObject):
         self.notify('buddies')
         self.emit('buddy-removed', buddy)
 
-    buddies = gobject.property(type=object, getter=get_buddies)
+    buddies = GObject.property(type=object, getter=get_buddies)
 
     def get_current_buddies(self):
         return self._current_buddies
@@ -152,35 +152,35 @@ class ActivityModel(gobject.GObject):
         self.notify('current-buddies')
         self.emit('current-buddy-removed', buddy)
 
-    current_buddies = gobject.property(type=object, getter=get_current_buddies)
+    current_buddies = GObject.property(type=object, getter=get_current_buddies)
 
 
-class _Account(gobject.GObject):
+class _Account(GObject.GObject):
     __gsignals__ = {
-        'activity-added': (gobject.SIGNAL_RUN_FIRST, gobject.TYPE_NONE,
+        'activity-added': (GObject.SIGNAL_RUN_FIRST, GObject.TYPE_NONE,
                            ([object, object])),
-        'activity-updated': (gobject.SIGNAL_RUN_FIRST, gobject.TYPE_NONE,
+        'activity-updated': (GObject.SIGNAL_RUN_FIRST, GObject.TYPE_NONE,
                              ([object, object])),
-        'activity-removed': (gobject.SIGNAL_RUN_FIRST, gobject.TYPE_NONE,
+        'activity-removed': (GObject.SIGNAL_RUN_FIRST, GObject.TYPE_NONE,
                              ([object])),
-        'buddy-added': (gobject.SIGNAL_RUN_FIRST, gobject.TYPE_NONE,
+        'buddy-added': (GObject.SIGNAL_RUN_FIRST, GObject.TYPE_NONE,
                         ([object, object, object])),
-        'buddy-updated': (gobject.SIGNAL_RUN_FIRST, gobject.TYPE_NONE,
+        'buddy-updated': (GObject.SIGNAL_RUN_FIRST, GObject.TYPE_NONE,
                           ([object, object])),
-        'buddy-removed': (gobject.SIGNAL_RUN_FIRST, gobject.TYPE_NONE,
+        'buddy-removed': (GObject.SIGNAL_RUN_FIRST, GObject.TYPE_NONE,
                           ([object])),
-        'buddy-joined-activity': (gobject.SIGNAL_RUN_FIRST, gobject.TYPE_NONE,
+        'buddy-joined-activity': (GObject.SIGNAL_RUN_FIRST, GObject.TYPE_NONE,
                                   ([object, object])),
-        'buddy-left-activity': (gobject.SIGNAL_RUN_FIRST, gobject.TYPE_NONE,
+        'buddy-left-activity': (GObject.SIGNAL_RUN_FIRST, GObject.TYPE_NONE,
                                 ([object, object])),
-        'current-activity-updated': (gobject.SIGNAL_RUN_FIRST,
-                                     gobject.TYPE_NONE, ([object, object])),
-        'connected': (gobject.SIGNAL_RUN_FIRST, gobject.TYPE_NONE, ([])),
-        'disconnected': (gobject.SIGNAL_RUN_FIRST, gobject.TYPE_NONE, ([])),
+        'current-activity-updated': (GObject.SIGNAL_RUN_FIRST,
+                                     GObject.TYPE_NONE, ([object, object])),
+        'connected': (GObject.SIGNAL_RUN_FIRST, GObject.TYPE_NONE, ([])),
+        'disconnected': (GObject.SIGNAL_RUN_FIRST, GObject.TYPE_NONE, ([])),
     }
 
     def __init__(self, account_path):
-        gobject.GObject.__init__(self)
+        GObject.GObject.__init__(self)
 
         self.object_path = account_path
 
@@ -238,7 +238,7 @@ class _Account(gobject.GObject):
                                  dbus_interface=ACCOUNT)
 
     def __account_property_changed_cb(self, properties):
-        #print('_Account.__account_property_changed_cb %r %r %r',
+        # print('_Account.__account_property_changed_cb %r %r %r',
         #self.object_path, properties.get('Connection', None),
         #          self._connection)
         if 'Connection' not in properties:
@@ -268,8 +268,8 @@ class _Account(gobject.GObject):
                                   'Connection.GetStatus'))
 
     def __get_status_cb(self, status):
-        #print('_Account.__get_status_cb %r %r',
-        #self._connection.object_path, status)
+        # print('_Account.__get_status_cb %r %r',
+        # self._connection.object_path, status)
         self._update_status(status)
 
     def __status_changed_cb(self, status, reason):
@@ -380,10 +380,10 @@ class _Account(gobject.GObject):
         pass
 
     def __aliases_changed_cb(self, aliases):
-        #print('_Account.__aliases_changed_cb')
+        # print('_Account.__aliases_changed_cb')
         for handle, alias in aliases:
             if handle in self._buddy_handles:
-                #print('Got handle %r with nick %r, going to update',
+                # print('Got handle %r with nick %r, going to update',
                 #              handle, alias)
                 properties = {CONNECTION_INTERFACE_ALIASING + '/alias': alias}
                 self.emit('buddy-updated', self._buddy_handles[handle],
@@ -405,7 +405,7 @@ class _Account(gobject.GObject):
 
     def __current_activity_changed_cb(self, contact_handle, activity_id,
                                       room_handle):
-        #print('_Account.__current_activity_changed_cb %r %r %r',
+        # print('_Account.__current_activity_changed_cb %r %r %r',
         #              contact_handle, activity_id, room_handle)
         if contact_handle in self._buddy_handles:
             contact_id = self._buddy_handles[contact_handle]
@@ -415,7 +415,7 @@ class _Account(gobject.GObject):
 
     def __get_current_activity_cb(self, contact_handle, activity_id,
                                   room_handle):
-        #print('_Account.__get_current_activity_cb %r %r %r',
+        # print('_Account.__get_current_activity_cb %r %r %r',
         #              contact_handle, activity_id, room_handle)
         contact_id = self._buddy_handles[contact_handle]
         self.emit('current-activity-updated', contact_id, activity_id)
@@ -424,7 +424,7 @@ class _Account(gobject.GObject):
         self._update_buddy_activities(buddy_handle, activities)
 
     def _update_buddy_activities(self, buddy_handle, activities):
-        #print('_Account._update_buddy_activities')
+        # print('_Account._update_buddy_activities')
         if not buddy_handle in self._buddy_handles:
             self._buddy_handles[buddy_handle] = None
 
@@ -469,11 +469,11 @@ class _Account(gobject.GObject):
         current_activity_ids = \
             [activity_id for activity_id, room_handle in activities]
         for activity_id in self._activities_per_buddy[buddy_handle].copy():
-            if not activity_id in current_activity_ids:
+            if activity_id not in current_activity_ids:
                 self._remove_buddy_from_activity(buddy_handle, activity_id)
 
     def __get_properties_cb(self, room_handle, properties):
-        #print('_Account.__get_properties_cb %r %r', room_handle,
+        # print('_Account.__get_properties_cb %r %r', room_handle,
         #              properties)
         if properties:
             self._update_activity(room_handle, properties)
@@ -501,7 +501,7 @@ class _Account(gobject.GObject):
             self.emit('activity-removed', activity_id)
 
     def __activity_properties_changed_cb(self, room_handle, properties):
-        #print('_Account.__activity_properties_changed_cb %r %r',
+        # print('_Account.__activity_properties_changed_cb %r %r',
         #              room_handle, properties)
         self._update_activity(room_handle, properties)
 
@@ -510,7 +510,7 @@ class _Account(gobject.GObject):
             self.emit('activity-updated', self._activity_handles[room_handle],
                       properties)
         else:
-            #print('_Account.__activity_properties_changed_cb unknown '
+            # print('_Account.__activity_properties_changed_cb unknown '
             #              'activity')
             # We don't get ActivitiesChanged for the owner of the connection,
             # so we query for its activities in order to find out.
@@ -548,7 +548,7 @@ class _Account(gobject.GObject):
         self.emit('buddy-updated', self._buddy_handles[handle], properties)
 
     def __get_contact_attributes_cb(self, attributes):
-        #print('_Account.__get_contact_attributes_cb %r',
+        # print('_Account.__get_contact_attributes_cb %r',
         #              attributes.keys())
 
         for handle in attributes.keys():
@@ -556,12 +556,12 @@ class _Account(gobject.GObject):
 
             if handle in self._buddy_handles and \
                     not self._buddy_handles[handle] is None:
-                #print('Got handle %r with nick %r, going to update',
+                # print('Got handle %r with nick %r, going to update',
                 #              handle, nick)
                 self.emit('buddy-updated', self._buddy_handles[handle],
                           attributes[handle])
             else:
-                #print('Got handle %r with nick %r, going to add',
+                # print('Got handle %r with nick %r, going to add',
                 #              handle, nick)
 
                 contact_id = attributes[handle][CONNECTION + '/contact-id']
@@ -599,7 +599,7 @@ class _Account(gobject.GObject):
                 self.emit('buddy-added', contact_id, nick, handle)
 
     def __got_activities_cb(self, buddy_handle, activities):
-        #print('_Account.__got_activities_cb %r %r', buddy_handle,
+        # print('_Account.__got_activities_cb %r %r', buddy_handle,
         #              activities)
         self._update_buddy_activities(buddy_handle, activities)
 
@@ -626,19 +626,19 @@ class _Account(gobject.GObject):
         pass
 
 
-class Neighborhood(gobject.GObject):
+class Neighborhood(GObject.GObject):
     __gsignals__ = {
-        'activity-added': (gobject.SIGNAL_RUN_FIRST, gobject.TYPE_NONE,
+        'activity-added': (GObject.SIGNAL_RUN_FIRST, GObject.TYPE_NONE,
                            ([object])),
-        'activity-removed': (gobject.SIGNAL_RUN_FIRST, gobject.TYPE_NONE,
+        'activity-removed': (GObject.SIGNAL_RUN_FIRST, GObject.TYPE_NONE,
                              ([object])),
-        'buddy-added': (gobject.SIGNAL_RUN_FIRST, gobject.TYPE_NONE,
+        'buddy-added': (GObject.SIGNAL_RUN_FIRST, GObject.TYPE_NONE,
                         ([object])),
-        'buddy-removed': (gobject.SIGNAL_RUN_FIRST, gobject.TYPE_NONE,
+        'buddy-removed': (GObject.SIGNAL_RUN_FIRST, GObject.TYPE_NONE,
                           ([object])), }
 
     def __init__(self, params={}):
-        gobject.GObject.__init__(self)
+        GObject.GObject.__init__(self)
 
         self._buddies = {None: get_owner_instance()}
         self._activities = {}
@@ -703,7 +703,7 @@ class Neighborhood(gobject.GObject):
     def __account_connected_cb(self, account):
         #print('__account_connected_cb %s', account.object_path)
         if account == self._server_account:
-            #self._link_local_account.disable()
+            # self._link_local_account.disable()
             pass
 
     def __account_disconnected_cb(self, account):
@@ -721,7 +721,7 @@ class Neighborhood(gobject.GObject):
 
         #print('Still dont have a Salut account, creating one')
 
-        client = gconf.client_get_default()
+        client = GConf.client.get_default()
         nick = client.get_string('/desktop/sugar/user/nick')
 
         params = {
@@ -788,7 +788,7 @@ class Neighborhood(gobject.GObject):
         return self._account_id
 
     def __jabber_server_changed_cb(self, client, timestamp, entry, *extra):
-        #print('__jabber_server_changed_cb')
+        # print('__jabber_server_changed_cb')
 
         bus = dbus.Bus()
         account = bus.get_object(ACCOUNT_MANAGER_SERVICE,
@@ -849,7 +849,7 @@ class Neighborhood(gobject.GObject):
             return
 
         if contact_id not in self._buddies:
-            #print('__buddy_updated_cb Unknown buddy with contact_id'
+            # print('__buddy_updated_cb Unknown buddy with contact_id'
             #              ' %r', contact_id)
             return
 
@@ -872,11 +872,11 @@ class Neighborhood(gobject.GObject):
     def __buddy_removed_cb(self, account, contact_id):
         #print('Neighborhood.__buddy_removed_cb %r', contact_id)
         try:
-                self._nicks.pop(contact_id)
+            self._nicks.pop(contact_id)
         except:
-                pass
+            pass
         if contact_id not in self._buddies:
-            #print('Neighborhood.__buddy_removed_cb Unknown buddy with '
+            # print('Neighborhood.__buddy_removed_cb Unknown buddy with '
             #              'contact_id %r', contact_id)
             return
 
@@ -907,7 +907,7 @@ class Neighborhood(gobject.GObject):
         #registry = bundleregistry.get_registry()
         #bundle = registry.get_bundle(properties['type'])
         #bundle = None
-        #if not bundle:
+        # if not bundle:
         # print('Ignoring shared activity we don''t have')
         #   return
 
@@ -944,14 +944,14 @@ class Neighborhood(gobject.GObject):
         self.emit('activity-removed', activity)
 
     def __current_activity_updated_cb(self, account, contact_id, activity_id):
-        #print('__current_activity_updated_cb %r %r', contact_id,
+        # print('__current_activity_updated_cb %r %r', contact_id,
         #              activity_id)
         if contact_id not in self._buddies:
-            #print('__current_activity_updated_cb Unknown buddy with '
+            # print('__current_activity_updated_cb Unknown buddy with '
             #              'contact_id %r', contact_id)
             return
         if activity_id and activity_id not in self._activities:
-            #print('__current_activity_updated_cb Unknown activity with'
+            # print('__current_activity_updated_cb Unknown activity with'
             #              ' id %s', activity_id)
             activity_id = ''
 
@@ -970,12 +970,12 @@ class Neighborhood(gobject.GObject):
 
     def __buddy_joined_activity_cb(self, account, contact_id, activity_id):
         if contact_id not in self._buddies:
-            #print('__buddy_joined_activity_cb Unknown buddy with '
+            # print('__buddy_joined_activity_cb Unknown buddy with '
             #              'contact_id %r', contact_id)
             return
 
         if activity_id not in self._activities:
-            #print('__buddy_joined_activity_cb Unknown activity with '
+            # print('__buddy_joined_activity_cb Unknown activity with '
             #              'activity_id %r', activity_id)
             return
 
@@ -983,12 +983,12 @@ class Neighborhood(gobject.GObject):
 
     def __buddy_left_activity_cb(self, account, contact_id, activity_id):
         if contact_id not in self._buddies:
-            #print('__buddy_left_activity_cb Unknown buddy with '
+            # print('__buddy_left_activity_cb Unknown buddy with '
             #              'contact_id %r', contact_id)
             return
 
         if activity_id not in self._activities:
-            #print('__buddy_left_activity_cb Unknown activity with '
+            # print('__buddy_left_activity_cb Unknown activity with '
             #              'activity_id %r', activity_id)
             return
 
@@ -1039,7 +1039,7 @@ if __name__ == "__main__":
     params["password"] = "test"
     params["register"] = True
 
-    loop = gobject.MainLoop()
+    loop = GObject.MainLoop()
     dbus.mainloop.glib.DBusGMainLoop(set_as_default=True)
     n = get_neighborhood(params)
     loop.run()

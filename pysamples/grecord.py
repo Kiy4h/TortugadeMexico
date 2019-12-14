@@ -1,5 +1,5 @@
-#Copyright (c) 2008, Media Modifications Ltd.
-#Copyright (c) 2011, Walter Bender
+# Copyright (c) 2008, Media Modifications Ltd.
+# Copyright (c) 2011, Walter Bender
 
 # This procedure is invoked when the user-definable block on the
 # "extras" palette is selected.
@@ -10,7 +10,7 @@
 # Sugar Journal.
 
 
-def myblock(tw, arg):
+def myblock(tw, args):
     ''' Record and playback a sound (Sugar only) '''
     import os
     import gst
@@ -25,6 +25,7 @@ def myblock(tw, arg):
     from gettext import gettext as _
 
     class Grecord:
+
         ''' A class for creating a gstreamer session for recording audio. '''
 
         def __init__(self, tw):
@@ -149,7 +150,7 @@ def myblock(tw, arg):
             position, duration = self._query_position(pipe)
             if position != gst.CLOCK_TIME_NONE:
                 value = position * 100.0 / duration
-                value = value/100.0
+                value = value / 100.0
             return True
 
         def _query_position(self, pipe):
@@ -204,12 +205,9 @@ def myblock(tw, arg):
 
     # Sometime we need to parse multiple arguments, e.g., save, savename
     save_name = '%s_%s' % (tw.activity.name, _('sound'))
-    if isinstance(arg, list):
-        cmd = arg[0].lower()
-        if len(arg) > 1:
-            save_name = str(arg[1])
-    else:
-        cmd = arg.lower()
+    cmd = args[0].lower()
+    if len(args) > 1:
+        save_name = str(arg[1])
 
     if cmd == 'start' or cmd == _('start').lower():
         tw.grecord.start_recording_audio()

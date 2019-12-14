@@ -16,7 +16,7 @@
 # Boston, MA 02111-1307, USA.
 
 """
-UNSTABLE. It should really be internal to the sugar.presence package.
+UNSTABLE. It should really be internal to the sugar3.presence package.
 """
 
 from functools import partial
@@ -31,6 +31,7 @@ ACCOUNT_MANAGER_PATH = '/org/freedesktop/Telepathy/AccountManager'
 
 
 class Connection(object):
+
     def __init__(self, account_path, connection):
         self.account_path = account_path
         self.connection = connection
@@ -38,6 +39,7 @@ class Connection(object):
 
 
 class ConnectionManager(object):
+
     """Track available telepathy connections"""
 
     def __init__(self):
