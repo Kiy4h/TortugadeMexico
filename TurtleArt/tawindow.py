@@ -120,8 +120,8 @@ from .tautils import (magnitude, get_load_name, get_save_name, data_from_file,
                      increment_name, get_screen_dpi, is_writeable)
 from .tasprite_factory import (svg_str_to_pixbuf, svg_from_file)
 from .tapalette import block_primitives
-from tapaletteview import PaletteView
-from taselector import (Selector, create_toolbar_background)
+from .tapaletteview import PaletteView
+from .taselector import (Selector, create_toolbar_background)
 from .sprites import (Sprites, Sprite)
 
 from .util.menubuilder import make_checkmenu_item

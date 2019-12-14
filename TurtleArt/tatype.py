@@ -23,8 +23,8 @@
 
 import ast
 
-from tablock import Media
-from taconstants import (Color, ColorObj, CONSTANTS, Vector)
+from .tablock import Media
+from .taconstants import (Color, ColorObj, CONSTANTS, Vector)
 
 
 class Type(object):
@@ -96,11 +96,11 @@ def get_type(x):
     and a boolean indicating whether x is an AST. If the type cannot be
     determined, return TYPE_OBJECT as the type. """
     # non-AST types
-    if isinstance(x, (int, long)):
+    if isinstance(x, int):
         return (TYPE_INT, False)
     elif isinstance(x, float):
         return (TYPE_FLOAT, False)
-    elif isinstance(x, basestring):
+    elif isinstance(x, str):
         if len(x) == 1:
             return (TYPE_CHAR, False)
         try:
@@ -189,6 +189,7 @@ def is_staticmethod(method):
 
 def identity(x):
     return x
+
 
 TYPE_CONVERTERS = {
     # Type hierarchy: If there is a converter A -> B, then A is a subtype of B.
