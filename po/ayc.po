@@ -6,1161 +6,397 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-05-17 00:31-0400\n"
-"PO-Revision-Date: 2012-09-25 11:26+0200\n"
-"Last-Translator: Chris <cjl@laptop.org>\n"
+"POT-Creation-Date: 2017-03-24 17:39+1100\n"
+"PO-Revision-Date: 2016-10-08 13:15+0000\n"
+"Last-Translator: EdgarQuispeChambi <equispe7@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: aym\n"
+"Language: ayc\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 2.0.5\n"
+"X-Generator: Pootle 2.5.1.1\n"
+"X-POOTLE-MTIME: 1475932512.000000\n"
 
-#. TRANS: "name" option from activity.info file
-#, fuzzy
+#: activity/activity.info:2
 msgid "TurtleBlocks"
-msgstr "TurtleBots wakichata"
+msgstr "TurtuBlocks"
 
-#. TRANS: "summary" option from activity.info file
-#. TRANS: "description" option from activity.info file
-msgid ""
-"A Logo-inspired turtle that draws colorful pictures with snap-together "
-"visual programming blocks"
+#: TurtleArtActivity.py:127
+msgid "Please wait"
+msgstr "Mira suma, suyt'ma"
+
+#: TurtleArtActivity.py:128
+msgid "Starting connection..."
+msgstr "Qhantayaña qalltaskiwa..."
+
+#: TurtleArtActivity.py:282
+msgid "Export as python"
+msgstr "Python ukaru apt'ayma."
+
+# Error: Debe utilizar un bloque de inicio al exportar a Python.
+#: TurtleArtActivity.py:283
+msgid "Error: You must use a Start Block when exporting to Python."
 msgstr ""
+"Pantjiwa: Python ukaru apt'ayañatakixa, mä qalltaña wakichawi apnaqañamaxa."
 
-#: TurtleArt/tabasics.py:119
-msgid "Palette of turtle commands"
-msgstr "Tortuga wakichata sarayirinaka limt'aña"
-
-#  "adelante"
-#: TurtleArt/tabasics.py:124
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:740
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:751
-msgid "forward"
-msgstr "qalltma"
-
-#: TurtleArt/tabasics.py:128
-msgid "moves turtle forward"
-msgstr "tortuga wakichata nayräxaru sartayma"
-
-#  "atrás"
-#: TurtleArt/tabasics.py:135
-msgid "back"
-msgstr "qhipäxa"
-
-#: TurtleArt/tabasics.py:139
-msgid "moves turtle backward"
-msgstr "tortuga wakichata qhipäxaru jitt'ayma"
-
-#  "limpiar"
-#: TurtleArt/tabasics.py:147
-msgid "clean"
-msgstr "mayampi qalltañataki wakichaña"
-
-#: TurtleArt/tabasics.py:150
-msgid "clears the screen and reset the turtle"
-msgstr "mayampi qallatañataki wakichma ukata tortuga wakichata mayampi qalltma"
-
-#  "izquierda"
-#: TurtleArt/tabasics.py:158
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:871
-msgid "left"
-msgstr "ch'iqa"
-
-#: TurtleArt/tabasics.py:162
-msgid "turns turtle counterclockwise (angle in degrees)"
-msgstr ""
-"tortuga wakichata ch'iqa tuqiru jithiyma (ángulo de grados) wakichatarjama"
-
-#  "derecha"
-#: TurtleArt/tabasics.py:170
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:895
-msgid "right"
-msgstr "kupi"
-
-#: TurtleArt/tabasics.py:174
-msgid "turns turtle clockwise (angle in degrees)"
-msgstr "tortuga wakichata kupi tuqiru sarayma (ángulo de grados) wakichatarjama"
-
-#: TurtleArt/tabasics.py:182
-msgid "arc"
-msgstr "sawana"
-
-#: TurtleArt/tabasics.py:182
-msgid "angle"
-msgstr "k'uchu"
-
-#: TurtleArt/tabasics.py:182
-msgid "radius"
-msgstr "muruq'u taypi muyuri"
-
-#: TurtleArt/tabasics.py:186
-msgid "moves turtle along an arc"
-msgstr "tortuga wakichata maya sawana saraparu sarayma"
-
-#: TurtleArt/tabasics.py:195 TurtleArt/tabasics.py:261
-msgid "set xy"
-msgstr "xy wakichata chimpuña"
-
-#  "x"
-#: TurtleArt/tabasics.py:195 TurtleArt/tabasics.py:261
-msgid "x"
-msgstr "x wakichata"
-
-#  "y"
-#: TurtleArt/tabasics.py:195 TurtleArt/tabasics.py:261
-msgid "y"
-msgstr "y wakichata"
-
-#: TurtleArt/tabasics.py:199 TurtleArt/tabasics.py:265
-msgid ""
-"moves turtle to position xcor, ycor; (0, 0) is in the center of the screen."
-msgstr ""
-"tortuga wakichata xcor, ycor wakichatanakawjaru unxtayma; (0,0) wakichata "
-"chimpuwa muruq'u wakichata taypinki."
-
-#: TurtleArt/tabasics.py:209
-msgid "set heading"
-msgstr "sarayaña chimpuña"
-
-#: TurtleArt/tabasics.py:213
-msgid "sets the heading of the turtle (0 is towards the top of the screen.)"
-msgstr ""
-"tortuga wakichata sarañapa chimpuña (0 wakichata chimpuxa wakichata "
-"patäxankiwa)"
-
-#  "coorx"
-#: TurtleArt/tabasics.py:221 TurtleArt/tawindow.py:4105
-msgid "xcor"
-msgstr "xcor wakichata"
-
-#: TurtleArt/tabasics.py:222
-msgid ""
-"holds current x-coordinate value of the turtle (can be used in place of a "
-"number block)"
-msgstr ""
-"jichha tortuga x wakichata taypi saririniwa (ukasti maya tama jakhunaka "
-"lanti apnaqasirakispa)"
-
-#  "coory"
-#: TurtleArt/tabasics.py:232 TurtleArt/tawindow.py:4106
-msgid "ycor"
-msgstr "ycor wakichata"
-
-#: TurtleArt/tabasics.py:233
-msgid ""
-"holds current y-coordinate value of the turtle (can be used in place of a "
-"number block)"
-msgstr ""
-"jichha tortuga y wakichata taypi saririniwa (ukasti maya tama jakhunaka "
-"lanti apnaqasirakispa)"
-
-#  "rumbo"
-#: TurtleArt/tabasics.py:243 TurtleArt/tawindow.py:4106
-msgid "heading"
-msgstr "saraña chimpu"
-
-#: TurtleArt/tabasics.py:244
-msgid ""
-"holds current heading value of the turtle (can be used in place of a number "
-"block)"
-msgstr ""
-"jichha tortuga wakichata saririniwa (ukasti maya tama jakhunaka lanti "
-"apnaqasirakispa)"
-
-#: TurtleArt/tabasics.py:278
-msgid "Palette of pen commands"
-msgstr "Samichaña phuyu apnaqaña limt'aña"
-
-# "pantalla completa"
-#: TurtleArt/tabasics.py:283 TurtleArt/tabasics.py:294
-msgid "fill screen"
-msgstr "maypacha uñtaña phuqachma"
-
-#  "color"
-#: TurtleArt/tabasics.py:283 TurtleArt/tabasics.py:294
-#: TurtleArt/tabasics.py:344
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:1197
-msgid "color"
-msgstr "sami"
-
-#: TurtleArt/tabasics.py:283 TurtleArt/tabasics.py:295
-#: TurtleArt/tabasics.py:354
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:1193
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:1198
-msgid "shade"
-msgstr "ist'añataki wakichata"
-
-#: TurtleArt/tabasics.py:287 TurtleArt/tabasics.py:299
-msgid "fills the background with (color, shade)"
-msgstr "manqhäxa wakichatanakampi phuqachma (samimpi, ch'iwumpi)"
-
-#: TurtleArt/tabasics.py:295 TurtleArt/tabasics.py:363
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:1194
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:1199
-msgid "gray"
-msgstr "uqiru samiri"
-
-#: TurtleArt/tabasics.py:309
-msgid "set color"
-msgstr "sami wakichaña"
-
-#: TurtleArt/tabasics.py:313
-msgid "sets color of the line drawn by the turtle"
-msgstr "tortuga wakichatampi rixita rixi sami wakichma"
-
-#: TurtleArt/tabasics.py:321
-msgid "set shade"
-msgstr "ist'añataki wakichata wakichaña"
-
-#: TurtleArt/tabasics.py:325
-msgid "sets shade of the line drawn by the turtle"
-msgstr "tortuga wakichatana rixitapa rixi samiru uñamt'aya wakichaña"
-
-#: TurtleArt/tabasics.py:333
-msgid "set gray"
-msgstr "uqiru samiri wakichaña"
-
-#: TurtleArt/tabasics.py:336
-msgid "sets gray level of the line drawn by the turtle"
-msgstr "tortuga wakichatana rixitapa rixi uqi saminiñapa wakichma"
-
-#: TurtleArt/tabasics.py:345
-msgid "holds current pen color (can be used in place of a number block)"
-msgstr ""
-"jichha samichaña phuyu samipaniwa (maya tama jakhunaka lanti apanaqasispa)"
-
-#: TurtleArt/tabasics.py:355
-msgid "holds current pen shade"
-msgstr "jichha samichaña phuyuna samichañapaniwa"
-
-#: TurtleArt/tabasics.py:364
-msgid "holds current gray level (can be used in place of a number block)"
-msgstr ""
-"jichha uqiru samiri samichañapaniwa (maya tama jakhunaka lanti apanaqasispa)"
-
-#: TurtleArt/tabasics.py:372
-msgid "pen up"
-msgstr "samichaña phuyu jithsuyaña"
-
-#: TurtleArt/tabasics.py:375
-msgid "Turtle will not draw when moved."
-msgstr "Tortuga wakichataxa unxtayata janiwa rixichkaniti."
-
-#: TurtleArt/tabasics.py:381
-msgid "pen down"
-msgstr "samichaña phuyu jithiqayaña"
-
-#: TurtleArt/tabasics.py:384
-msgid "Turtle will draw when moved."
-msgstr "Tortuga wakichataxa unxtasina rixichaniwa."
-
-#: TurtleArt/tabasics.py:390
-msgid "set pen size"
-msgstr "taña chanichaña"
-
-#: TurtleArt/tabasics.py:394
-msgid "sets size of the line drawn by the turtle"
-msgstr "tortuga wakichatampi rixiñataki rixi chanipa wakichma"
-
-#: TurtleArt/tabasics.py:404
-msgid "start fill"
-msgstr "phuqachaña wakichaña qalltaña"
-
-#: TurtleArt/tabasics.py:406
-msgid "starts filled polygon (used with end fill block)"
-msgstr ""
-"k'uchunakani wakichata samichasa phuqachaña qalltaña (ukasti maya siqi "
-"wakichata samichasa phuqachaña tukuyañana apnaqasi)"
-
-#: TurtleArt/tabasics.py:413
-msgid "end fill"
-msgstr "samichasa phuqachaña tukuyaña"
-
-#: TurtleArt/tabasics.py:415
-msgid "completes filled polygon (used with start fill block)"
-msgstr ""
-"k'uchunakani wakichata samichasa phuqachaña tukuyma (ukasti maya siqi "
-"wakichata samichasa phuqachaña qalltañana apnaqasi)"
-
-#: TurtleArt/tabasics.py:422
-msgid "pen size"
-msgstr "taña wakichata"
-
-#: TurtleArt/tabasics.py:423
-msgid "holds current pen size (can be used in place of a number block)"
-msgstr ""
-"jichha samichaña phuyu wakichata tañapaniwa (maya tama jakhunaka lanti "
-"apnaqasispa)"
-
-#: TurtleArt/tabasics.py:437
-msgid "Palette of pen colors"
-msgstr "Samichaña phuyu saminakapa limt'aña"
-
-#: TurtleArt/tabasics.py:439
-msgid "red"
-msgstr "chupika"
-
-#: TurtleArt/tabasics.py:440
-msgid "orange"
-msgstr "laranja q'illu"
-
-#: TurtleArt/tabasics.py:442
-msgid "yellow"
-msgstr "q'illu"
-
-#: TurtleArt/tabasics.py:444
-msgid "green"
-msgstr "ch'uxña"
-
-#: TurtleArt/tabasics.py:445
-msgid "cyan"
-msgstr "cian wakichata"
-
-#: TurtleArt/tabasics.py:446
-msgid "blue"
-msgstr "larama"
-
-#: TurtleArt/tabasics.py:447
-msgid "purple"
-msgstr "khuchi wila sami"
-
-#: TurtleArt/tabasics.py:449
-msgid "white"
-msgstr "janq'u"
-
-# "atrás"
-#: TurtleArt/tabasics.py:450
-msgid "black"
-msgstr "ch'iyära"
-
-#: TurtleArt/tabasics.py:456
-msgid "set text color"
-msgstr "qillqata samipa wakichaña"
-
-#: TurtleArt/tabasics.py:459
-msgid "sets color of text drawn by the turtle"
-msgstr "tortuga wakichatana rixitapana qillqata samipa wakichma"
-
-#: TurtleArt/tabasics.py:467
-msgid "set text size"
-msgstr "qillqata tañapa wakichma"
-
-#: TurtleArt/tabasics.py:470
-msgid "sets size of text drawn by the turtle"
-msgstr "tortuga wakichatana rixitapana qillqata tañapa wakichma"
-
-#: TurtleArt/tabasics.py:553
-msgid "Palette of numeric operators"
-msgstr "Jakhunaka chanichiri limt'aña"
-
-#: TurtleArt/tabasics.py:559
-msgid "plus"
-msgstr "jakhuxataña"
-
-#: TurtleArt/tabasics.py:563
-msgid "adds two alphanumeric inputs"
-msgstr "alfa chimpuni jakhunaka paya jakhu siqi jakhuxatma"
-
-#: TurtleArt/tabasics.py:571
-msgid "minus"
-msgstr "jakhuqa"
-
-#: TurtleArt/tabasics.py:574
-msgid "subtracts bottom numeric input from top numeric input"
-msgstr "aynacha siqinkiri jakhunaka alaya siqinkiri jakhunakata jakhuqma"
-
-#: TurtleArt/tabasics.py:585
-msgid "multiply"
-msgstr "jakhunuqaña"
-
-#: TurtleArt/tabasics.py:588
-msgid "multiplies two numeric inputs"
-msgstr "paya siqinkiri jakhunaka jakhunuqaña"
-
-#: TurtleArt/tabasics.py:597
-msgid "divide"
-msgstr "jakhjaña"
-
-#: TurtleArt/tabasics.py:600
-msgid ""
-"divides top numeric input (numerator) by bottom numeric input (denominator)"
-msgstr ""
-"alaya siqinkiri jakhunaka jakhjama (jakhjiri) aynacha siqinkiri jakhunakaru "
-"(jakhjata)"
-
-#  "identidad"
-#: TurtleArt/tabasics.py:610
-msgid "identity"
-msgstr "kankaña"
-
-#: TurtleArt/tabasics.py:612
-msgid "identity operator used for extending blocks"
-msgstr "siqinaka jach'anchaña kankañani chaninchiri"
-
-#: TurtleArt/tabasics.py:620 TurtleArt/tabasics.py:621
-msgid "mod"
-msgstr "uñanaqa"
-
-#: TurtleArt/tabasics.py:624
-msgid "modular (remainder) operator"
-msgstr "uñanaqa wakichata chaninchiri (jilt'a)"
-
-#  "√"
-#: TurtleArt/tabasics.py:631
-msgid "√"
-msgstr "√ chimpu"
-
-#: TurtleArt/tabasics.py:632
-msgid "square root"
-msgstr "raíz cuadrada wakichata"
-
-#: TurtleArt/tabasics.py:635
-msgid "calculates square root"
-msgstr "raíz cuadrada wakichata chanichma"
-
-#  "aleatorio"
-#: TurtleArt/tabasics.py:642
-msgid "random"
-msgstr "maski kawkïrsa"
-
-#: TurtleArt/tabasics.py:642
-msgid "min"
-msgstr "juk'ata sipana"
-
-#: TurtleArt/tabasics.py:642
-msgid "max"
-msgstr "jilata sipana"
-
-#: TurtleArt/tabasics.py:646
-msgid "returns random number between minimum (top) and maximum (bottom) values"
-msgstr ""
-"maski kawkïri maya jakhu juk'ata sipansa (alaya) ukata jilata sipansa "
-"kutiyma"
-
-#  "número"
-#: TurtleArt/tabasics.py:658
-msgid "number"
-msgstr "jakhu"
-
-#: TurtleArt/tabasics.py:659
-msgid "used as numeric input in mathematic operators"
-msgstr "jakhuñanakana chaninchirinakapana jakhu siqinaka wakichatana apnaqata"
-
-#: TurtleArt/tabasics.py:667
-msgid "greater than"
-msgstr "ukata sipana jila"
-
-#: TurtleArt/tabasics.py:670
-msgid "logical greater-than operator"
-msgstr "ukata sipana jila tantiyu chaninchiri"
-
-#: TurtleArt/tabasics.py:679
-msgid "less than"
-msgstr "ukata sipana pisi"
-
-#: TurtleArt/tabasics.py:683
-msgid "logical less-than operator"
-msgstr "ukata sipana pisi tantiyu chaninchiri"
-
-#  "equivalente"
-#: TurtleArt/tabasics.py:691
-msgid "equal"
-msgstr "jukhapura"
-
-#: TurtleArt/tabasics.py:695
-msgid "logical equal-to operator"
-msgstr "jukhapura tantiyu chaninchiri"
-
-#  "no"
-#: TurtleArt/tabasics.py:701
-msgid "not"
-msgstr "janiwa"
-
-#: TurtleArt/tabasics.py:704
-msgid "logical NOT operator"
-msgstr "janiwa tantiyiri chaninchiri"
-
-#  "y"
-#: TurtleArt/tabasics.py:710 TurtleArt/tabasics.py:713
-msgid "and"
-msgstr "ukata"
-
-#: TurtleArt/tabasics.py:714
-msgid "logical AND operator"
-msgstr "Y wakichata tantiyiri chaninchiri"
-
-#: TurtleArt/tabasics.py:721 TurtleArt/tabasics.py:724
-msgid "or"
-msgstr "o wakichata"
-
-#: TurtleArt/tabasics.py:725
-msgid "logical OR operator"
-msgstr "O tantiyu chaninchiri"
-
-#: TurtleArt/tabasics.py:734
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:104
-msgid "Palette of flow operators"
-msgstr "Saphanchiri chaninchirinaka limt'aña"
-
-#: TurtleArt/tabasics.py:739
-msgid "wait"
-msgstr "suyt'aña"
-
-#: TurtleArt/tabasics.py:743
-msgid "pauses program execution a specified number of seconds"
-msgstr "maya juk'a pacha t'aqa t'ijtäwinaka wakichata sarayaña sayt'ayma"
-
-#: TurtleArt/tabasics.py:750
-msgid "forever"
-msgstr "wiñayataki"
-
-#: TurtleArt/tabasics.py:754
-msgid "loops forever"
-msgstr "wiñayataki kutxataña"
-
-#: TurtleArt/tabasics.py:761 TurtleArt/tabasics.py:765
-msgid "repeat"
-msgstr "kutxataña"
-
-#: TurtleArt/tabasics.py:766
-msgid "loops specified number of times"
-msgstr "maya qhawqha kuti kutxatañataki jakhu kutxati"
-
-#: TurtleArt/tabasics.py:772 TurtleArt/tabasics.py:785
-msgid "if"
-msgstr "jïsa"
-
-#: TurtleArt/tabasics.py:772 TurtleArt/tabasics.py:785
-msgid "then"
-msgstr "ukhamaxa"
-
-#: TurtleArt/tabasics.py:775
-msgid "if then"
-msgstr "jïsa ukhamaxa"
-
-#: TurtleArt/tabasics.py:777
-msgid "if-then operator that uses boolean operators from Numbers palette"
-msgstr ""
-"jïsa ukhama chaninchiri ukasti jakhunaka limt'aña tantiyu chaninchirinaka "
-"apnaqi"
-
-#: TurtleArt/tabasics.py:785
-msgid "else"
-msgstr "jani ukaxa"
-
-#: TurtleArt/tabasics.py:789 TurtleArt/tabasics.py:797
-msgid "if then else"
-msgstr "jïsa ukhamaxa jani ukaxa"
-
-#: TurtleArt/tabasics.py:790 TurtleArt/tabasics.py:798
-msgid "if-then-else operator that uses boolean operators from Numbers palette"
-msgstr ""
-"jïsa ukhama chaninchiri ukasti jakhunaka limt'aña tantiyu chaninchirinaka "
-"apnaqi"
-
-#: TurtleArt/tabasics.py:807
-msgid "horizontal space"
-msgstr "pampa wakichata"
-
-#: TurtleArt/tabasics.py:808
-msgid "jogs stack right"
-msgstr "ku´pïxaru siqita jithjtayma"
-
-#: TurtleArt/tabasics.py:815
-msgid "vertical space"
-msgstr "wira wakichata"
-
-#: TurtleArt/tabasics.py:816
-msgid "jogs stack down"
-msgstr "aynachäxaru siqita jithjtayma"
-
-#: TurtleArt/tabasics.py:822
-msgid "stop action"
-msgstr "luräwi sayt'ayaña"
-
-#: TurtleArt/tabasics.py:825
-msgid "stops current action"
-msgstr "jichha luräwi sayt'ayi"
-
-#: TurtleArt/tabasics.py:834
-msgid "Palette of variable blocks"
-msgstr "Kunaymana mayjt'ayirinaka tama limt'aña"
-
-#  "empezar"
-#: TurtleArt/tabasics.py:839 pysamples/grecord.py:213
-msgid "start"
-msgstr "qalltaña"
-
-#: TurtleArt/tabasics.py:842
-msgid "connects action to toolbar run buttons"
-msgstr "luräwi wakt'ayma kunaymana wakichäwinaka sarayirinaka limt'añanakaru"
-
-#  "texto"
-#: TurtleArt/tabasics.py:849 TurtleArt/tabasics.py:850
-#: TurtleArt/tabasics.py:851
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:192
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:193
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:194
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:201
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:214
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:229
-msgid "text"
-msgstr "qillqata"
-
-#: TurtleArt/tabasics.py:852
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:195
-msgid "string value"
-msgstr "wiskhalla wakichata chanipa"
-
-#: TurtleArt/tabasics.py:856 TurtleArt/tabasics.py:859
-#: TurtleArt/tabasics.py:867 TurtleArt/tabasics.py:871
-#: TurtleArt/tawindow.py:1351 TurtleArt/tawindow.py:1448
-#: TurtleArt/tawindow.py:1461 TurtleArt/tawindow.py:2077
-#: TurtleArt/tawindow.py:4363
-msgid "action"
-msgstr "luräwi"
-
-#: TurtleArt/tabasics.py:861
-msgid "top of nameable action stack"
-msgstr "qhanstayaña luräwi siqita patxa"
-
-#: TurtleArt/tabasics.py:872 TurtleArt/tawindow.py:4377
-msgid "invokes named action stack"
-msgstr "qhanstaya luräwi siqita jawsayaña"
-
-#: TurtleArt/tabasics.py:879
-msgid "store in box 1"
-msgstr "1 kajuna wakichataru imaña"
-
-#: TurtleArt/tabasics.py:884
-msgid "stores numeric value in Variable 1"
-msgstr "1 mayjt'ayiri wakichataru jakhuna chanipa imma"
-
-#: TurtleArt/tabasics.py:892
-msgid "store in box 2"
-msgstr "2 kajuna wakichataru imaña"
-
-#: TurtleArt/tabasics.py:897
-msgid "stores numeric value in Variable 2"
-msgstr "2 mayjt'ayiri wakichataru jakhuna chanipa imma"
-
-#: TurtleArt/tabasics.py:905
-msgid "box 1"
-msgstr "1 kajuna wakichata"
-
-#: TurtleArt/tabasics.py:908
-msgid "Variable 1 (numeric value)"
-msgstr "1 mayjt'ayiri (jakhu chanipa)"
-
-#: TurtleArt/tabasics.py:915
-msgid "box 2"
-msgstr "2 kajuna wakichata"
-
-#: TurtleArt/tabasics.py:918
-msgid "Variable 2 (numeric value)"
-msgstr "2 mayjt'ayiri (jakhu chanipa)"
-
-#: TurtleArt/tabasics.py:924 TurtleArt/tawindow.py:4427
-msgid "store in"
-msgstr "wakichataru imaña"
-
-#: TurtleArt/tabasics.py:924 TurtleArt/tabasics.py:939
-msgid "box"
-msgstr "kajuna wakichata"
-
-#: TurtleArt/tabasics.py:924 TurtleArt/tawindow.py:4427
-msgid "value"
-msgstr "chani"
-
-#: TurtleArt/tabasics.py:928 TurtleArt/tabasics.py:942
-#: TurtleArt/tawindow.py:1355 TurtleArt/tawindow.py:1486
-#: TurtleArt/tawindow.py:2081 TurtleArt/tawindow.py:4390
-#: TurtleArt/tawindow.py:4418
-msgid "my box"
-msgstr "wakichata kajunaja"
-
-#: TurtleArt/tabasics.py:929 TurtleArt/tawindow.py:4432
-msgid "stores numeric value in named variable"
-msgstr "qhanstayata mayjt'ayiriru jakhu chani imma"
-
-#: TurtleArt/tabasics.py:945 TurtleArt/tawindow.py:4404
-msgid "named variable (numeric value)"
-msgstr "qhanstayata mayjt'ayiri (jakhu chani)"
-
-#: TurtleArt/tabasics.py:952 TurtleArt/tabasics.py:971
-msgid "action 1"
-msgstr "1 luräwi"
-
-#: TurtleArt/tabasics.py:955
-msgid "top of Action 1 stack"
-msgstr "1 luräwina wakichata siqita nayrïri"
-
-#: TurtleArt/tabasics.py:961 TurtleArt/tabasics.py:981
-msgid "action 2"
-msgstr "2 luräwi"
-
-#: TurtleArt/tabasics.py:964
-msgid "top of Action 2 stack"
-msgstr "2 luräwina wakichata siqita nayrïri"
-
-#: TurtleArt/tabasics.py:974
-msgid "invokes Action 1 stack"
-msgstr "1 luräwina wakichata siqi jawsuña"
-
-#: TurtleArt/tabasics.py:984
-msgid "invokes Action 2 stack"
-msgstr "2 luräwina wakichata siqi jawsuña"
-
-#: TurtleArt/tabasics.py:992
-msgid "trash"
-msgstr "jani wakisiri"
-
-#: TurtleArt/tabasics.py:996
-msgid "empty trash"
-msgstr "jani wakisiri imata ch'ussuña"
-
-#: TurtleArt/tabasics.py:997
-msgid "permanently deletes items in trash"
-msgstr "jani wakisiri wakichata imata yänakapa jani aliqata pichssuña"
-
-#: TurtleArt/tabasics.py:1001
-msgid "restore all"
-msgstr "taqi jani wakisiri wakichata imatanaka wasitata jaktayaña"
-
-#: TurtleArt/tabasics.py:1002
-msgid "restore all blocks from trash"
-msgstr "qawayata jani wakisiri wakichata imata siqinaka wasitata jaktayma"
-
-#: TurtleArt/tabasics.py:1006
-msgid "clear all"
-msgstr "qawata ch'ussuña"
-
-#: TurtleArt/tabasics.py:1007
-msgid "move all blocks to trash"
-msgstr "jani wakisiri wakichata imañaru qawayata siqinakaru uchantma"
-
-#: TurtleArt/tacollaboration.py:152 TurtleArt/tawindow.py:2055
-#: TurtleArtActivity.py:751
-msgid "Share selected blocks"
-msgstr "Chhijllata siqitanakampi khuyapayaña"
-
-# "Título:"
-#: TurtleArt/taconstants.py:209 TurtleArt/taconstants.py:231
-#: TurtleArt/taconstants.py:252 TurtleArt/taconstants.py:294
-#: TurtleArt/taconstants.py:336 TurtleArt/taconstants.py:378
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:980
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:995
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:1010
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:1025
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:1040
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:1055
-msgid "Title"
-msgstr "P'iqinchiri Suti"
-
-#  "Parar tortuga"
-#: TurtleArt/talogo.py:370 TurtleArtActivity.py:731
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:1538
-msgid "Stop turtle"
-msgstr "Tortuga wakichata sayt'ayaña"
-
-#  "Mostrar bloques"
-#: TurtleArt/talogo.py:380 TurtleArtActivity.py:360 TurtleArtActivity.py:732
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:1529
-msgid "Show blocks"
-msgstr "Siqichata wakichatana uñachayaña"
-
-#  "Ocultar bloques"
-#: TurtleArt/talogo.py:384 TurtleArtActivity.py:364 TurtleArtActivity.py:996
-msgid "Hide blocks"
-msgstr "Siqichata wakichatanaka imantaña"
-
-#: TurtleArt/talogo.py:508
-msgid "did not output to"
-msgstr "wakichataru qillqaña janiwa wakt'ayiti"
-
-#: TurtleArt/talogo.py:567
-msgid "I don't know how to"
-msgstr "Kunjama luraña jani yatkthi"
-
-#: TurtleArt/talogo.py:623
-msgid "doesn't like"
-msgstr "janiwa sumarapiti"
-
-#: TurtleArt/talogo.py:623
-msgid "as input"
-msgstr "qallta wakichatjama"
-
-#: TurtleArt/tapalette.py:97
-msgid "displays next palette"
-msgstr "arkiri limt'aña uñachayma"
-
-#: TurtleArt/tapalette.py:98
-msgid "changes the orientation of the palette of blocks"
-msgstr "siqichatanaka limt'aña uñanaqapa jaqukipma"
-
-#  "Cargar..."
-#: TurtleArt/tautils.py:295
-msgid "Load..."
-msgstr "Ch'amanchaña..."
-
-#  "Guardar..."
-#: TurtleArt/tautils.py:305
-msgid "Save..."
-msgstr "Imaña..."
-
-#: TurtleArt/tautils.py:586
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:730
-msgid "click to open"
-msgstr "wakichata jist'arañataki limt'aña"
-
-# "presentación"
-#: TurtleArt/tawindow.py:1033 TurtleArt/tawindow.py:1034
-msgid "orientation"
-msgstr "uñanaqa"
-
-#  "siguiente"
-#: TurtleArt/tawindow.py:1044 TurtleArt/tawindow.py:1644
-msgid "next"
-msgstr "arkiri"
-
-#: TurtleArt/tawindow.py:1063 TurtleArt/tawindow.py:1664
-msgid "shift"
-msgstr "jaqsuña"
-
-#: TurtleArt/tawindow.py:1316
-msgid ""
-"Please hit the Stop Button before making changes to your Turtle Blocks "
-"program"
-msgstr ""
-
-#: TurtleArt/tawindow.py:1369
-msgid "Select blocks to share"
-msgstr "Siqichata wakichatanakampi khuyapayañataki chhijllma"
-
-#: TurtleArt/tawindow.py:1530 TurtleArtActivity.py:632
-#: TurtleArtActivity.py:781 turtleblocks.py:397
-msgid "Save stack"
-msgstr ""
-
-#: TurtleArt/tawindow.py:1531 TurtleArt/tawindow.py:1546
-msgid "Really overwrite stack?"
-msgstr ""
-
-#  "Cancelar"
-#: TurtleArt/tawindow.py:1534 TurtleArt/tawindow.py:1574
-#: gnome_plugins/uploader_plugin.py:144
-msgid "Cancel"
-msgstr "Tukuyaña"
-
-#: TurtleArt/tawindow.py:1538 TurtleArt/tawindow.py:1549
-msgid "Overwrite stack"
-msgstr ""
-
-#: TurtleArt/tawindow.py:1570 TurtleArt/tawindow.py:1578
-#: TurtleArt/tawindow.py:1588 TurtleArtActivity.py:634 turtleblocks.py:399
-msgid "Delete stack"
-msgstr ""
-
-#: TurtleArt/tawindow.py:1571 TurtleArt/tawindow.py:1585
-msgid "Really delete stack?"
-msgstr ""
-
-#  "imagen"
-#: TurtleArt/tawindow.py:4215
-msgid "image"
-msgstr "rixita"
-
-#  "Guardar como Logo"
-#: TurtleArtActivity.py:188 TurtleArtActivity.py:757 TurtleArtActivity.py:925
-#: TurtleArtActivity.py:955 turtleblocks.py:371
-msgid "Save as Logo"
-msgstr "Wakichata Chimpjama imaña"
-
-#  "Guardar como imagen"
-#: TurtleArtActivity.py:235 TurtleArtActivity.py:756 TurtleArtActivity.py:922
-#: TurtleArtActivity.py:952 turtleblocks.py:369
-msgid "Save as image"
-msgstr "Rixita wakichatjma imaña"
-
-#  "instantánea"
-#: TurtleArtActivity.py:243
+# jukhawraspacha = muy idiolectal... Habría que buscar una forma más conservada.
+#: TurtleArtActivity.py:414
 msgid "snapshot"
-msgstr "jukhawraspacha"
+msgstr "ukjawraspacha"
 
-#  "Guardar instantánea"
-#: TurtleArtActivity.py:251 TurtleArtActivity.py:691 TurtleArtActivity.py:733
-#: TurtleArtActivity.py:931 TurtleArtActivity.py:958
-msgid "Save snapshot"
-msgstr "Jukhawraspacha imaña"
-
-#: TurtleArtActivity.py:296 TurtleArtActivity.py:657 TurtleArtActivity.py:808
+#: TurtleArtActivity.py:459 TurtleArtActivity.py:816 TurtleArtActivity.py:966
 msgid "Turn off hover help"
-msgstr "Khaya aka yanapt'a sayt'ayaña"
+msgstr "Tuytiri yanapt'a qulluyaña"
 
-#: TurtleArtActivity.py:303 turtleblocks.py:390
+#: TurtleArtActivity.py:468 TurtleArt/turtleblocks.py:482
 msgid "Turn on hover help"
-msgstr "Khaya aka yanapt'a sartayaña"
+msgstr "Tuytiri yanapt'a qhantayaña"
 
-#  "Mostrar paleta"
-#: TurtleArtActivity.py:312 turtleblocks.py:404
+# PALETA 1. f. Tabla pequeña con un agujero en uno de sus extremos por donde el pintor mete el dedo pulgar y sobre la que tiene ordenados los colores.
+#: TurtleArtActivity.py:478 TurtleArt/turtleblocks.py:496
 msgid "Show palette"
-msgstr "limt'aña uñachayaña"
+msgstr "Saminaka uchaña uñachayaña"
 
 #  "Ocultar paleta"
-#: TurtleArtActivity.py:318 TurtleArtActivity.py:984 turtleblocks.py:406
+#: TurtleArtActivity.py:484 TurtleArtActivity.py:1180
+#: TurtleArt/turtleblocks.py:498
 msgid "Hide palette"
-msgstr "limt'aña imt'aña"
+msgstr "Samik'ullu imantaña"
+
+#  "Mostrar bloques"
+#: TurtleArtActivity.py:526 TurtleArtActivity.py:880
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:1347
+#: TurtleArt/talogo.py:442
+msgid "Show blocks"
+msgstr "Bloque satanaka uñachayaña"
+
+#  "Ocultar bloques"
+#: TurtleArtActivity.py:530 TurtleArtActivity.py:1192 TurtleArt/talogo.py:446
+msgid "Hide blocks"
+msgstr "Bloque satanaka imantaña"
 
 #  "Escalar coordenadas hacia abajo"
-#: TurtleArtActivity.py:485
+#: TurtleArtActivity.py:652
 msgid "Rescale coordinates down"
-msgstr "Coordenadas wakichata aynacharu jithirayaña"
+msgstr "Coordenadanaka aynacharu jithintayaña"
 
 #  "Escalar coordenadas hacia arriba"
-#: TurtleArtActivity.py:489 TurtleArtActivity.py:648 TurtleArtActivity.py:804
+#: TurtleArtActivity.py:661 TurtleArtActivity.py:807 TurtleArtActivity.py:962
 msgid "Rescale coordinates up"
-msgstr "Coordenadas wakichata alayaru jithsuyaña"
+msgstr "Coordenadanaka alaxaru jithsuyaña"
 
 #  "Editar"
-#: TurtleArtActivity.py:579 TurtleArtActivity.py:615 TurtleArtActivity.py:725
-#: TurtleArtActivity.py:778 turtleblocks.py:401
+#: TurtleArtActivity.py:757 TurtleArtActivity.py:873 TurtleArtActivity.py:936
+#: TurtleArt/turtleblocks.py:493
 msgid "Edit"
-msgstr "Chiqachaña"
+msgstr "Askichaña"
 
 #  "Ver"
-#: TurtleArtActivity.py:584 TurtleArtActivity.py:613 TurtleArtActivity.py:726
-#: TurtleArtActivity.py:796 turtleblocks.py:392
+#: TurtleArtActivity.py:762 TurtleArtActivity.py:874 TurtleArtActivity.py:954
+#: TurtleArt/turtleblocks.py:484
 msgid "View"
 msgstr "Unjaña"
 
-#  "Proyecto"
-#: TurtleArtActivity.py:611 TurtleArtActivity.py:727
-msgid "Project"
-msgstr "Luräwinaka"
-
-#: TurtleArtActivity.py:617 TurtleArtActivity.py:724 TurtleArtActivity.py:753
-#: TurtleArtActivity.py:755 TurtleArtActivity.py:917
-msgid "Save/Load"
-msgstr "Imaña/Ch'amanchaña"
-
 #  "Copiar"
-#: TurtleArtActivity.py:625 TurtleArtActivity.py:779 turtleblocks.py:395
+#: TurtleArtActivity.py:784 TurtleArtActivity.py:937
+#: TurtleArt/turtleblocks.py:487
 msgid "Copy"
 msgstr "Apaqaña"
 
 #  "Pegar"
-#: TurtleArtActivity.py:627 TurtleArtActivity.py:780 turtleblocks.py:396
+#: TurtleArtActivity.py:786 TurtleArtActivity.py:938
+#: TurtleArt/turtleblocks.py:488
 msgid "Paste"
 msgstr "Lip'katayaña"
 
-#: TurtleArtActivity.py:629
+# Restaura los bloques DESDE la papelera
+#: TurtleArtActivity.py:788
 msgid "Restore blocks from trash"
-msgstr "Jani wakisiri imata siqinaka wasitata sartayma"
+msgstr "Jani wakisiri imata t'aqanaka wasitatha sartayma."
+
+#: TurtleArtActivity.py:791 TurtleArtActivity.py:939
+#: TurtleArt/turtleblocks.py:489 TurtleArt/tawindow.py:1514
+msgid "Save stack"
+msgstr "Pila sata arku imaña"
+
+#: TurtleArtActivity.py:793 TurtleArt/turtleblocks.py:491
+#: TurtleArt/tawindow.py:1553 TurtleArt/tawindow.py:1561
+#: TurtleArt/tawindow.py:1570
+msgid "Delete stack"
+msgstr "Pila sata arku chhaqtayaña"
 
 #  "Pantalla completa"
-#: TurtleArtActivity.py:637 TurtleArtActivity.py:797
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:806
+#: TurtleArtActivity.py:796 TurtleArtActivity.py:955
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:961
 msgid "Fullscreen"
-msgstr "Maypacha wakichata uñjaña"
+msgstr "Pantalla ukch'pacha"
 
 #  "Coordenadas cartesianas"
-#: TurtleArtActivity.py:640 TurtleArtActivity.py:798 turtleblocks.py:377
+#: TurtleArtActivity.py:799 TurtleArtActivity.py:956
+#: TurtleArt/turtleblocks.py:468
 msgid "Cartesian coordinates"
-msgstr "Coordenadas cartesianas wakichatanaka"
+msgstr "Coordenadas cartesianas sata"
 
 #  "Coordenadas polares"
-#: TurtleArtActivity.py:642 TurtleArtActivity.py:800 turtleblocks.py:379
+#: TurtleArtActivity.py:801 TurtleArtActivity.py:958
+#: TurtleArt/turtleblocks.py:470
 msgid "Polar coordinates"
-msgstr "Coordenadas polares wakichatanaka"
+msgstr "Coordenadas polares sata"
 
 #  "Coordenadas centímetros"
-#: TurtleArtActivity.py:645 TurtleArtActivity.py:802
+#: TurtleArtActivity.py:804 TurtleArtActivity.py:960
 msgid "Metric coordinates"
-msgstr "Coordenadas centímetros wakichatanaka"
+msgstr "Coordenadas centímetros sata"
 
 #  "Agrandar bloques"
-#: TurtleArtActivity.py:651 TurtleArtActivity.py:806 turtleblocks.py:383
+#: TurtleArtActivity.py:810 TurtleArtActivity.py:964
+#: TurtleArt/turtleblocks.py:475
 msgid "Grow blocks"
-msgstr "Siqichatanaka jach'aptayaña"
+msgstr "T'aqanaka jach'aptayaña"
 
 #  "Empequeñecer bloques"
-#: TurtleArtActivity.py:654 TurtleArtActivity.py:807 turtleblocks.py:385
+#: TurtleArtActivity.py:813 TurtleArtActivity.py:965
+#: TurtleArt/turtleblocks.py:477
 msgid "Shrink blocks"
-msgstr "Siqichatanaka jisk'aptayaña"
+msgstr "T'aqanaka isk'aptayaña"
 
 #  "Cargar ejemplos"
-#: TurtleArtActivity.py:678 TurtleArtActivity.py:695 TurtleArtActivity.py:734
-#: TurtleArtActivity.py:934
+#: TurtleArtActivity.py:843 TurtleArtActivity.py:881 TurtleArtActivity.py:1146
 msgid "Load example"
-msgstr "Yant'añanaka wakichata uñachayaña"
+msgstr "Yant'añanaka wakichata uñstayaña"
+
+#: TurtleArtActivity.py:872 TurtleArtActivity.py:899
+msgid "Save/Load"
+msgstr "Imaña/Ch'amanchaña"
+
+#  "Proyecto"
+#: TurtleArtActivity.py:875
+msgid "Project"
+msgstr "Amtawi"
 
 #  "Limpiar"
-#: TurtleArtActivity.py:728 TurtleArtActivity.py:990 turtleblocks.py:413
+#: TurtleArtActivity.py:876 TurtleArtActivity.py:1186
+#: TurtleArt/turtleblocks.py:505
 msgid "Clean"
 msgstr "Pichsuña"
 
 #  "Ejecutar"
-#: TurtleArtActivity.py:729 TurtleArtActivity.py:992 turtleblocks.py:414
+#: TurtleArtActivity.py:877 TurtleArtActivity.py:1188
+#: TurtleArt/turtleblocks.py:506
 msgid "Run"
-msgstr "Sarayaña"
+msgstr "Sarantayaña"
 
 #  "Dar un paso"
-#: TurtleArtActivity.py:730 TurtleArtActivity.py:994 turtleblocks.py:415
+#: TurtleArtActivity.py:878 TurtleArtActivity.py:1190
+#: TurtleArt/turtleblocks.py:507
 msgid "Step"
-msgstr "Maya chillqi sartaña"
+msgstr "Maya chillqtaña"
+
+#  "Parar tortuga"
+#: TurtleArtActivity.py:879
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:1356
+#: TurtleArt/talogo.py:432 TurtleArt/tawindow.py:1269
+msgid "Stop turtle"
+msgstr "Turtuwa acht'ayaña"
 
 #  "Ayuda"
-#: TurtleArtActivity.py:735 turtleblocks.py:422 util/helpbutton.py:45
+#: TurtleArtActivity.py:882 TurtleArt/turtleblocks.py:517
+#: TurtleArt/util/helpbutton.py:44
 msgid "Help"
 msgstr "Yanapt'a"
 
 #  "Parar"
-#: TurtleArtActivity.py:736 turtleblocks.py:417
+#: TurtleArtActivity.py:883 TurtleArt/turtleblocks.py:509
 msgid "Stop"
-msgstr "Sayt'ayaña"
+msgstr "Acht'ayaña"
 
-#: TurtleArtActivity.py:758 TurtleArtActivity.py:938 TurtleArtActivity.py:960
-msgid "Load project"
-msgstr "Luräwi wakichata sartayaña"
+#: TurtleArtActivity.py:898 TurtleArt/tawindow.py:2048
+#: TurtleArt/tacollaboration.py:154
+msgid "Share selected blocks"
+msgstr "Ajllita t'aqanaka t'uqiyaña"
 
-#: TurtleArtActivity.py:761 TurtleArtActivity.py:943 TurtleArtActivity.py:965
+#  "Guardar como imagen"
+#: TurtleArtActivity.py:900 TurtleArtActivity.py:1103
+msgid "Save as image"
+msgstr "Jamuqjama imaña"
+
+#: TurtleArtActivity.py:903 TurtleArtActivity.py:1106
+msgid "Save as icon"
+msgstr "Jamuqa chimpjama imaña"
+
+#. TRANS: ODP is Open Office presentation
+#: TurtleArtActivity.py:908 TurtleArtActivity.py:1110
+msgid "Save as ODP"
+msgstr "ODP wakichatjama imaña"
+
+#  "Guardar como Logo"
+#: TurtleArtActivity.py:913 TurtleArtActivity.py:1121
+msgid "Save as Logo"
+msgstr "Logo wakichatjama imaña"
+
+#: TurtleArtActivity.py:914 TurtleArtActivity.py:1124
+msgid "Save as Python"
+msgstr "Python wakichatjama imaña"
+
+#  "Guardar instantánea"
+#: TurtleArtActivity.py:915 TurtleArtActivity.py:1128
+msgid "Save snapshot"
+msgstr "Ukjawrasa apsuta imaña"
+
+#: TurtleArtActivity.py:916 TurtleArtActivity.py:1155
+#: TurtleArt/turtleblocks.py:438
+msgid "Add project"
+msgstr "Amtawi wakichatampi yapxataña"
+
+#: TurtleArtActivity.py:919 TurtleArtActivity.py:1160
+#: TurtleArt/turtleblocks.py:439
 msgid "Load plugin"
 msgstr "Plugin wakichata sartayaña"
 
 #  "Cargar bloque Python"
-#: TurtleArtActivity.py:762 TurtleArtActivity.py:946 TurtleArtActivity.py:968
+#: TurtleArtActivity.py:920 TurtleArtActivity.py:1163
 msgid "Load Python block"
-msgstr "Python siqi wakichata sartayaña"
+msgstr "Python sata t'aqa sartayaña"
 
-#: TurtleArtActivity.py:895
-#, fuzzy
+#: TurtleArtActivity.py:1075
 msgid "Palettes"
-msgstr "limiña"
+msgstr "Samik'ullunaka"
 
-#: TurtleArtActivity.py:912
+#: TurtleArtActivity.py:1093
 msgid "Sharing blocks disabled"
-msgstr "Sayt'ayata siqinaka wakichatampi khuyapayaña"
+msgstr "Acht'ayata t'aqanaka t'uqiyaña"
+
+#  "Guardar"
+#: TurtleArtActivity.py:1098 TurtleArt/turtleblocks.py:441
+msgid "Save"
+msgstr "Imaña"
+
+#: TurtleArtActivity.py:1131
+msgid "Save blocks as image"
+msgstr ""
+
+# En todas partes el anterior traductor está usando SARTAYAÑA como CARGAR.
+#: TurtleArtActivity.py:1135
+msgid "Load"
+msgstr "Sartayaña"
+
+#  "Abrir"
+#: TurtleArtActivity.py:1152 TurtleArt/turtleblocks.py:437
+msgid "Open"
+msgstr "Llawiraña"
 
 #  "<Ctrl>p"
-#: TurtleArtActivity.py:985
+#: TurtleArtActivity.py:1181
 msgid "<Ctrl>p"
-msgstr "<Ctrl>p wakichata"
+msgstr "<Ctrl>p"
 
 #  "<Ctrl>e"
-#: TurtleArtActivity.py:990
+#: TurtleArtActivity.py:1186
 msgid "<Ctrl>e"
-msgstr "<Ctrl>e wakichata"
+msgstr "<Ctrl>e"
 
 #  "<Ctrl>r"
-#: TurtleArtActivity.py:992
+#: TurtleArtActivity.py:1188
 msgid "<Ctrl>r"
-msgstr "<Ctrl>r wakichata"
+msgstr "<Ctrl>r"
 
 #  "<Ctrl>w"
-#: TurtleArtActivity.py:994
+#: TurtleArtActivity.py:1190
 msgid "<Ctrl>w"
-msgstr "<Ctrl>w wakichata"
+msgstr "<Ctrl>w"
 
 #  "<Ctrl>s"
-#: TurtleArtActivity.py:997
+#: TurtleArtActivity.py:1193
 msgid "<Ctrl>s"
-msgstr "<Ctrl>s wakichata"
+msgstr "<Ctrl>s"
 
-#: TurtleArtActivity.py:1152 TurtleArtActivity.py:1157
-#: TurtleArtActivity.py:1238
-msgid "Plugin could not be installed."
-msgstr "Plugin wakichataxa janiwa qhantayañjamäkiti."
-
-#: TurtleArtActivity.py:1234
-msgid "Please restart Turtle Art in order to use the plugin."
-msgstr "Plugin wakichata apnaqañataki TortugArte wakichata mayampi qhantayma."
-
-#: TurtleArtActivity.py:1252
+#: TurtleArtActivity.py:1379
 #, python-format
 msgid "Plugin %s already installed."
-msgstr "Plugin %s wakichatxa qhantayañataki wakichatäxiwa."
+msgstr "Plugin %s sataxa uskuntatäxiwa."
 
-#: TurtleArtActivity.py:1253
+# Error de tipo gramatical acá: ¿Mayampi qhantayañataki wakichaña muntati %s?
+#: TurtleArtActivity.py:1380 TurtleArt/turtleblocks.py:591
 #, python-format
 msgid "Do you want to reinstall %s?"
-msgstr "¿Mayampi qhantayañataki wakichaña muntati %s?"
+msgstr "¿Mayampi %s ukhama sata uskuntaña muntati?"
 
 #  "Mi TortugArte sesión"
-#: gnome_plugins/collaboration_plugin.py:67
+#: gnome_plugins/collaboration_plugin.py:64
 msgid "My Turtle Art session"
-msgstr "TortugArte wakichata luräwinakaja"
+msgstr "TortugArte wakichata lurawija"
 
 #  "Permitir la colaboración"
-#: gnome_plugins/collaboration_plugin.py:115
+#: gnome_plugins/collaboration_plugin.py:111
 msgid "Enable collaboration"
-msgstr "Yanapt'asiña wakiyaña"
+msgstr "Yanapt'asiña iyaw sasa katuqaña"
 
 #  "Actividades"
-#: gnome_plugins/collaboration_plugin.py:120
+#: gnome_plugins/collaboration_plugin.py:116
 msgid "Activities"
-msgstr "Luräwinaka"
+msgstr "Lurawinaka"
 
 #  "Amigos"
-#: gnome_plugins/collaboration_plugin.py:125
+#: gnome_plugins/collaboration_plugin.py:121
 msgid "Buddies"
 msgstr "Masinaka"
 
 #  "Compartir"
-#: gnome_plugins/collaboration_plugin.py:128
+#: gnome_plugins/collaboration_plugin.py:124
 msgid "Share"
-msgstr "Khuyapayaña"
+msgstr "T'uqiyaña"
 
-#: gnome_plugins/collaboration_plugin.py:129
+#: gnome_plugins/collaboration_plugin.py:125
 msgid "Configuration"
-msgstr "Wakichaña"
+msgstr "Askichaña"
 
 #  "Vecindario"
-#: gnome_plugins/collaboration_plugin.py:132
+#: gnome_plugins/collaboration_plugin.py:128
 msgid "Neighborhood"
-msgstr "Wakisirinaka"
+msgstr "Jak'ankiri masinaka"
 
-#: gnome_plugins/collaboration_plugin.py:292
+# Apodo... Ñanqha suti = así es como dicen en Camata, Plateria, Puno.
+#: gnome_plugins/collaboration_plugin.py:289
 msgid "Nickname"
 msgstr "K'ari suti"
 
-#: gnome_plugins/collaboration_plugin.py:294
+#: gnome_plugins/collaboration_plugin.py:291
 msgid "Account ID"
-msgstr "Mantañataki wakichata"
+msgstr "Mantañataki suti"
 
 #  "Servidor"
-#: gnome_plugins/collaboration_plugin.py:296
+#: gnome_plugins/collaboration_plugin.py:293
 msgid "Server"
-msgstr "Katuqiri"
+msgstr "Luqtaniri"
 
-#: gnome_plugins/collaboration_plugin.py:298
+#: gnome_plugins/collaboration_plugin.py:295
 msgid "Port"
-msgstr "Tatuqañataki wakichata"
+msgstr "Punku"
 
 # "Contraseña:"
-#: gnome_plugins/collaboration_plugin.py:300
+#: gnome_plugins/collaboration_plugin.py:297
 msgid "Password"
-msgstr "Jist'araña"
+msgstr "Jamäsa chimpu:"
 
-#: gnome_plugins/collaboration_plugin.py:302
+#: gnome_plugins/collaboration_plugin.py:299
 msgid "Register"
-msgstr "Qillqantata wakichata"
+msgstr "Qillqantawi chinu"
 
 #  "Colores"
-#: gnome_plugins/collaboration_plugin.py:304
+#: gnome_plugins/collaboration_plugin.py:301
 msgid "Colors"
-msgstr "Sumi"
+msgstr "Saminaka"
 
 #: gnome_plugins/fb_plugin.py:82 gnome_plugins/fb_plugin.py:83
-#: gnome_plugins/fb_plugin.py:92 gnome_plugins/uploader_plugin.py:63
+#: gnome_plugins/fb_plugin.py:91 gnome_plugins/uploader_plugin.py:63
 #: gnome_plugins/uploader_plugin.py:64 gnome_plugins/uploader_plugin.py:73
 msgid "Upload"
 msgstr "Ch'amanchaña"
 
 #: gnome_plugins/fb_plugin.py:87
 msgid "Facebook wall post"
-msgstr ""
+msgstr "Facebook sata qillqaña pirqapa"
 
 #: gnome_plugins/uploader_plugin.py:68
 msgid "Upload to Web"
@@ -1171,18 +407,18 @@ msgid ""
 "You must have an account at http://turtleartsite.sugarlabs.org to upload "
 "your project."
 msgstr ""
-"Mantañataki wakichatama utjañapawa uka http://turtleartsite.sugarlabs.org "
-"mantañataki ukhamata luräwi apaqañamataki."
+"Mantañataki wakichatama utjañapawa akana: http://"
+"turtleartsite.sugarlabs.org. Ukasti luraña amtawima apaqañatakiwa."
 
 #  "Usuario:"
 #: gnome_plugins/uploader_plugin.py:99
 msgid "Username:"
-msgstr "Apnaqirini sutipa:"
+msgstr "Apnaqirina sutipa:"
 
 #  "Contraseña:"
 #: gnome_plugins/uploader_plugin.py:109
 msgid "Password:"
-msgstr "Jist'araña:"
+msgstr "Jamäsa chimpu:"
 
 #  "Título:"
 #: gnome_plugins/uploader_plugin.py:120
@@ -1192,912 +428,2047 @@ msgstr "Suti:"
 #  "Descripción:"
 #: gnome_plugins/uploader_plugin.py:130
 msgid "Description:"
-msgstr "Yatiyaña:"
+msgstr "Jamuqawi:"
 
 #: gnome_plugins/uploader_plugin.py:140
 msgid "Submit to Web"
 msgstr "Web wakichataru apayaña"
 
-#: gnome_plugins/uploader_plugin.py:166
+#  "Cancelar"
+#: gnome_plugins/uploader_plugin.py:144 TurtleArt/tawindow.py:1518
+#: TurtleArt/tawindow.py:1557
+msgid "Cancel"
+msgstr "Acht'ayaña"
+
+#: gnome_plugins/uploader_plugin.py:172
 msgid "Login failed"
-msgstr "Jiwaspachpa kankañchasiñana pantjata"
+msgstr "Janicha jumäkta, pantjtiwa."
 
-#: gnome_plugins/uploader_plugin.py:203
+#: gnome_plugins/uploader_plugin.py:209
 msgid "Failed to upload!"
-msgstr "¡apaqkasina pantjata!"
+msgstr "¡Apaqkasina, pantjti!"
 
-#: plugins/accelerometer/accelerometer.py:49
-#: plugins/audio_sensors/audio_sensors.py:75
-#: plugins/camera_sensor/camera_sensor.py:63
-#: plugins/light_sensor/light_sensor.py:49 plugins/rfid/rfid.py:86
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:336
-msgid "Palette of sensor blocks"
-msgstr "Katjiri siqinaka limt'aña"
-
-#: plugins/accelerometer/accelerometer.py:56
-#: plugins/accelerometer/accelerometer.py:63
-msgid "acceleration"
-msgstr "acelerómetro k'ata sarayiri wakichata"
-
-#: plugins/accelerometer/accelerometer.py:58
-#: plugins/accelerometer/accelerometer.py:65
-msgid "push acceleration in x, y, z to heap"
-msgstr "siqiru wakisiri x, y z sarayirinakaru k'ata sarayirinaka uchi"
-
-#  "sonido"
-#: plugins/audio_sensors/audio_sensors.py:83
-#: plugins/audio_sensors/audio_sensors.py:98 pysamples/grecord.py:205
-msgid "sound"
-msgstr "sijiqi"
-
-#: plugins/audio_sensors/audio_sensors.py:84
-#: plugins/audio_sensors/audio_sensors.py:99
-msgid "raw microphone input signal"
-msgstr "micrófono arsusiña uchantaña qhana chimpu"
-
-#: plugins/audio_sensors/audio_sensors.py:90
-#: plugins/audio_sensors/audio_sensors.py:105
-msgid "loudness"
-msgstr "ist'asiñapa jithxatayaña"
-
-#: plugins/audio_sensors/audio_sensors.py:91
-#: plugins/audio_sensors/audio_sensors.py:106
-msgid "microphone input volume"
-msgstr "micrófono arsusiña mantañapa ist'aña millk'uña"
-
-#  "tono"
-#: plugins/audio_sensors/audio_sensors.py:119
-#: plugins/audio_sensors/audio_sensors.py:127
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:322
-msgid "pitch"
-msgstr "wakichatanaka thaqaña"
-
-#: plugins/audio_sensors/audio_sensors.py:120
-#: plugins/audio_sensors/audio_sensors.py:128
-msgid "microphone input pitch"
-msgstr "micrófono uchañana wakichatanaka thaqaña wali suma ist'asiri wakichata"
-
-#: plugins/audio_sensors/audio_sensors.py:151
-#: plugins/audio_sensors/audio_sensors.py:165
-#: plugins/audio_sensors/audio_sensors.py:179
-#: plugins/audio_sensors/audio_sensors.py:193
-msgid "resistance"
-msgstr "ch'amanchiritaki wakichata"
-
-#: plugins/audio_sensors/audio_sensors.py:152
-#: plugins/audio_sensors/audio_sensors.py:166
-#: plugins/audio_sensors/audio_sensors.py:180
-#: plugins/audio_sensors/audio_sensors.py:194
-msgid "microphone input resistance"
+#: pyexported/window_setup.py:39
+msgid ""
+"The path to the TurtleArt installation must be listed in the environment "
+"variable PYTHONPATH."
 msgstr ""
-"micrófono uchañaru ch'amanchiri wakichatana uchata chanipa (tupañataki "
-"wakichata: 700 a 14000 ohms)"
+"TurtleArt wakichata utanuqayañataki thakixa PYTHONPATH sata taypinkañapawa."
 
-#: plugins/audio_sensors/audio_sensors.py:157
-#: plugins/audio_sensors/audio_sensors.py:171
-#: plugins/audio_sensors/audio_sensors.py:185
-#: plugins/audio_sensors/audio_sensors.py:199
-msgid "voltage"
-msgstr "ch'amani qhantayiri"
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:72
+#: TurtleArt/tabasics.py:926
+msgid "Palette of flow operators"
+msgstr "Thakipnama sarantayiri samik'ullu"
 
-#: plugins/audio_sensors/audio_sensors.py:158
-#: plugins/audio_sensors/audio_sensors.py:172
-#: plugins/audio_sensors/audio_sensors.py:186
-#: plugins/audio_sensors/audio_sensors.py:200
-msgid "microphone input voltage"
-msgstr ""
-"micrófono uchañaru uchata DC ch'amani nakhtayiri chanipa (tupaña: 0.40 a "
-"1.90 V)"
-
-#: plugins/camera_sensor/camera_sensor.py:67
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:139
-msgid "Palette of media objects"
-msgstr "Taypinkiri siqitanaka limt'aña"
-
-#: plugins/camera_sensor/camera_sensor.py:80
-#: plugins/camera_sensor/camera_sensor.py:93
-#: plugins/camera_sensor/camera_sensor.py:128
-#: plugins/camera_sensor/camera_sensor.py:141
-#: plugins/light_sensor/light_sensor.py:56
-#: plugins/light_sensor/light_sensor.py:63
-msgid "brightness"
-msgstr "lliphi"
-
-#: plugins/camera_sensor/camera_sensor.py:82
-#: plugins/camera_sensor/camera_sensor.py:130
-msgid "light level detected by camera"
-msgstr "cámara wakichatana qhana katuqatapa chimpu"
-
-#: plugins/camera_sensor/camera_sensor.py:95
-#: plugins/camera_sensor/camera_sensor.py:143
-msgid "Average RGB color from camera is pushed to the stack"
-msgstr "Cámara wakichatana RGB samipa tantiyu wakichata siqiru jithiqi"
-
-#: plugins/camera_sensor/camera_sensor.py:106
-#: plugins/camera_sensor/camera_sensor.py:113
-#: plugins/camera_sensor/camera_sensor.py:121
-#: plugins/camera_sensor/camera_sensor.py:155
-#: plugins/camera_sensor/camera_sensor.py:163
-msgid "camera output"
-msgstr "cámara wakichatana rixi chimpupa"
-
-#: plugins/light_sensor/light_sensor.py:58
-#: plugins/light_sensor/light_sensor.py:65
-msgid "light level detected by light sensor"
-msgstr "qhana katjiri wakichatana qhana katuqata chani chimpu"
-
-#: plugins/rfid/rfid.py:92 plugins/rfid/rfid.py:100
-msgid "RFID"
-msgstr "RFID wakichata"
-
-#: plugins/rfid/rfid.py:93 plugins/rfid/rfid.py:101
-msgid "read value from RFID device"
-msgstr "radiofrecuencia (RFID) wakichatanaka thaqaña chanipa ullaña"
-
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:109
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:112
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:76
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:79
 msgid "while"
-msgstr "ukchiñkama"
+msgstr "ukch'añkama"
 
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:113
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:80
 msgid "do-while-True operator that uses boolean operators from Numbers palette"
 msgstr ""
-"akïri luräwinakawa siqiru wakisiritjama qallti uka qalltañataki wakichata "
-"chimpuna phuqasiñapkama"
+"jakhunakataki samik'ulluna booleano sutini sarantayiripa apnaqiri do-while-"
+"True sata wakichata"
 
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:119
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:122
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:97
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:100
 msgid "until"
-msgstr "akakama"
+msgstr "ukakama"
 
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:123
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:101
 msgid "do-until-True operator that uses boolean operators from Numbers palette"
 msgstr ""
-"akïri siqinaka wakichatawa wakisirirjama sarayasiraki amtata wakichata "
-"phuaqasiñapkama"
+"jakhunakataki samik'ulluna booleano sutini sarantayiripa apnaqiri do-until-"
+"True sata wakichata"
 
 #  "encima"
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:130
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:732
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:903
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:121
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:854
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:1071
 msgid "top"
-msgstr "p'atja"
+msgstr "p'iqi patxa"
 
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:132
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:123
 msgid "top of a collapsible stack"
-msgstr "lip'isiri siqi wakichata patxa"
+msgstr "lip'isiri pilana p'iqi patxapa"
+
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:133
+#: plugins/camera_sensor/camera_sensor.py:71
+msgid "Palette of media objects"
+msgstr "Taypinkiri t'aqana samik'ullupa"
+
+# ¿Se refiere a medios de comunicación? Yatiyawinaka apayiri
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:135
+msgid "media"
+msgstr "wakisiri thaki"
 
 #  "diario"
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:146
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:141
 msgid "journal"
-msgstr "sapüru luräwi"
+msgstr "sapüru lurawi"
 
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:147
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:142
 msgid "Sugar Journal media object"
-msgstr "Sugar wakichata sapüru luräwipa wakisirinakapa apnaqaña"
+msgstr "Sugar satana Sapüru Lurawipana apnaqaña yäpa"
 
 #  "audio"
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:157
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:153
 msgid "audio"
-msgstr "ist'awi"
+msgstr "ist'asiwi"
 
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:159
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:155
 msgid "Sugar Journal audio object"
-msgstr "Sugar wakichata sapüru luräwipa wakisirinakapa ist'aña apnaqaña"
+msgstr "Sugar satana Sapüru Lurawipana ist'asiwi yäpa"
 
 #  "video"
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:169
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:166
 msgid "video"
 msgstr "uñtaña"
 
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:171
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:168
 msgid "Sugar Journal video object"
-msgstr "Sugar wakichata sapüru luräwipa wakisirinakapa uñjaña apnaqaña"
+msgstr "Sugar satana Sapüru Lurawipana uñtaña yäpa"
 
 # "Descripción:"
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:181
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:179
 msgid "description"
-msgstr "yatiyaña"
+msgstr "jamuqawi"
 
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:183
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:181
 msgid "Sugar Journal description field"
-msgstr "Sugar wakichata sapüru luräwipa yatiyaña wakichata"
+msgstr "Sugar satana Sapüru Lurawipana jamuqawi yäpa"
+
+#  "texto"
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:190
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:191
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:192
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:198
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:213
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:921
+#: TurtleArt/taconstants.py:452
+msgid "text"
+msgstr "qillqata"
+
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:193
+msgid "string value"
+msgstr "cadena sata yawriwiskana chanipa"
 
 #  "mostrar"
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:200
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:228
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:197
 msgid "show"
 msgstr "uñachayaña"
 
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:204
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:217
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:232
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:201
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:216
 msgid "draws text or show media from the Journal"
-msgstr "qillqata rixiña jani ukaxa sapüru luräwina wakisirinaka uñachayaña"
+msgstr ""
+"Sapüru Lurawi taypitha jamuqa sich'suña, janukaxa uka taypitha wakisirinaka "
+"uñachayaña"
 
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:213
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:212
 msgid "show aligned"
-msgstr "chiqaru uñtayatanaka uñachayaña"
+msgstr "siqichatanaka uñachayaña"
 
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:240
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:225
 msgid "set scale"
-msgstr "jithirayana chimpuña"
+msgstr "tupu jithiraya chimpuña"
 
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:244
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:229
 msgid "sets the scale of media"
-msgstr "taypinkiri wakichatanaka jithiriyaña chimpuña"
+msgstr "medios sata wakichatanakana tupu jithiriyapa wakiyaña"
+
+# font = fuente = tipo de letra?
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:239
+msgid "set font"
+msgstr "qillqana kastapa wakiyaña"
+
+# establece la fuente utilizada por el bloque mostrado
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:242
+msgid "sets the font used by the show block"
+msgstr "uñstata t'aqana apnaqata qillqa wakiyaña"
+
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:249
+msgid "save picture"
+msgstr "jamuqa imaña"
 
 #: plugins/turtle_blocks_extras/turtle_blocks_extras.py:251
-msgid "save picture"
-msgstr "rixita wakichata imaña"
-
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:253
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:264
-msgid "picture name"
-msgstr "rixita wakichatana sutipa"
-
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:254
-msgid "saves a picture to the Sugar Journal"
-msgstr "Azúcar wakichatana sapüru luräwiparu rixita wakichata imma"
-
 #: plugins/turtle_blocks_extras/turtle_blocks_extras.py:262
+msgid "picture name"
+msgstr "jamuqana sutipa"
+
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:252
+msgid "saves a picture to the Sugar Journal"
+msgstr "Sugarana Sapüru Lurawi Qillqaru aka jamuqa imma"
+
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:260
 msgid "save SVG"
 msgstr "SVG wakichata imaña"
 
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:265
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:263
 msgid "saves turtle graphics as an SVG file in the Sugar Journal"
 msgstr ""
-"Azúcar wakichatana sapüru luräwiparu SVG wakichata imaña tortuga wakichatana "
-"rixita chimpunakapa imma"
+"Sugarana Sapüru Lurawi Qillqaparu SVG q'ipichjama, turtuwana sich'sutanakapa "
+"imma"
 
 #  "escala"
 #: plugins/turtle_blocks_extras/turtle_blocks_extras.py:272
 msgid "scale"
-msgstr "jach'a"
+msgstr "patapatacha"
 
 #: plugins/turtle_blocks_extras/turtle_blocks_extras.py:276
 msgid "holds current scale value"
-msgstr "jichha wakichata jithirata chanipa ch'amanchi"
-
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:281
-msgid "media wait"
-msgstr "wakisirinaka suyaña"
+msgstr "patapatachana jichhachata chanipa katxäsiriwa"
 
 #: plugins/turtle_blocks_extras/turtle_blocks_extras.py:283
-msgid "wait for current video or audio to complete"
-msgstr "ist'aña wakichata jani ukaxa uñjaña tukuyañapkama suyaña"
+msgid "media wait"
+msgstr "medios sata wakisirinaka suyaña"
 
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:289
-msgid "media stop"
-msgstr "wakisirinaka sayt'ayaña"
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:285
+msgid "wait for current video or audio to complete"
+msgstr "ist'aña, jani ukaxa, uñjaña wakichata tukuyañapkama suyaña"
 
 #: plugins/turtle_blocks_extras/turtle_blocks_extras.py:291
-msgid "stop video or audio"
-msgstr "uñjaña wakichata jani ukaxa ist'aña sayt'ayma"
+msgid "media stop"
+msgstr "medios sata wakisirinaka acht'ayaña"
 
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:296
-msgid "media pause"
-msgstr "wakisirinaka sayt'ayaña"
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:293
+msgid "stop video or audio"
+msgstr "uñjaña, jani ukaxa, ist'aña wakichata acht'ayiriwa"
 
 #: plugins/turtle_blocks_extras/turtle_blocks_extras.py:298
-msgid "pause video or audio"
-msgstr "uñjaña wakichata jani ukaxa ist'aña sayt'ayma"
+msgid "media pause"
+msgstr "medios sata akisirinaka suyt'ayaña"
 
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:303
-msgid "media resume"
-msgstr "wakisirinaka sarayaskakiña"
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:300
+msgid "pause video or audio"
+msgstr "uñjaña, jani ukaxa, ist'aña wakichata suyt'ayiriwa"
 
 #: plugins/turtle_blocks_extras/turtle_blocks_extras.py:305
-msgid "resume playing video or audio"
-msgstr "uñjaña wakichata jani ukaxa ist'aña qhanayaña mayampi qalltayaña"
+msgid "media resume"
+msgstr "medios sata wakisirinaka sarayaskakiña"
 
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:311
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:307
+msgid "resume playing video or audio"
+msgstr "uñjaña, jani ukaxa, ist'aña wakichata wasitatha qalltayaña"
+
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:312
 msgid "speak"
 msgstr "arsuña"
 
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:313
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:314
 msgid "hello"
 msgstr "kamisaraki"
 
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:314
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:315
 msgid "speaks text"
 msgstr "qillqataxa siwa"
 
+# Sinusoide: 1. f. Mat. Curva que representa gráficamente la función trigonométrica seno.
 #. TRANS: pitch, duration, amplitude
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:322
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:323
 msgid "sinewave"
 msgstr "sinusoide wakichata"
 
+#  "tono"
 #: plugins/turtle_blocks_extras/turtle_blocks_extras.py:323
+#: plugins/audio_sensors/audio_sensors.py:126
+msgid "pitch"
+msgstr "frecuencia sata wakichatanaka thaqaña"
+
+# 4. f. Fís. Valor máximo que adquiere una variable en un fenómeno oscilatorio.
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:324
 msgid "amplitude"
-msgstr "qawayata"
+msgstr "amplitud sata"
 
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:323
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:324
 msgid "duration"
-msgstr "qhanäwi"
+msgstr "qhanawi"
 
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:326
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:327
 msgid "plays a sinewave at frequency, amplitude, and duration (in seconds)"
 msgstr ""
-"sinusoide wakichata wakichäwi taypita qhantayma, saräwi ukata qhanäwi (pacha "
-"t'aqa t'ijtäwitjama)"
+"frecuencia satatha, amplitud satatha, duración sata qhanäwitha, sinusoide "
+"sarantayi (ch'ipxtathkama jakt'ata)"
 
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:343
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:354
-msgid "button down"
-msgstr "limt'aña limxatata"
+# Katjiri 'sensor' = me parece bien' = Katjiri también me suena a "detector".
+# Paleta= samik'ullu < samiña+k'ullu
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:339
+#: plugins/camera_sensor/camera_sensor.py:67 plugins/rfid/rfid.py:87
+#: plugins/accelerometer/accelerometer.py:50
+#: plugins/light_sensor/light_sensor.py:52
+#: plugins/audio_sensors/audio_sensors.py:84
+msgid "Palette of sensor blocks"
+msgstr "Katjiri t'aqana samik'ullupa"
+
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:341
+msgid "sensor"
+msgstr "katjiri"
 
 #: plugins/turtle_blocks_extras/turtle_blocks_extras.py:346
-msgid "returns 1 if mouse button is pressed"
-msgstr "achaku limiña limxatatipana 1 wakichatawa mistuni"
-
 #: plugins/turtle_blocks_extras/turtle_blocks_extras.py:357
+msgid "button down"
+msgstr "limxatata limt'aña"
+
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:349
+msgid "returns 1 if mouse button is pressed"
+msgstr "achakuna limiñapa limxatatïpanxa, 1 jakhuruwa kutt'ayi"
+
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:360
 msgid "returns True if mouse button is pressed"
-msgstr "achaku limiña limxatatipana Chiqapa wakichatawa mistsuni"
+msgstr "achakuna limiñapa limxatatïpanxa, Chiqapawa sasawa kutt'ayi"
 
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:364
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:368
 msgid "mouse x"
-msgstr "x chimpuni thaqnaqiri lliphi qhana"
+msgstr "achakuna x luqt'iripa"
 
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:367
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:371
 msgid "returns mouse x coordinate"
-msgstr "thaqnaqirina x coordenada wakichata kutsuyi"
+msgstr "achakuna x coordinada wakichatapa kutt'ayiriwa"
 
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:374
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:379
 msgid "mouse y"
-msgstr "y chimpuni thaqnaqiri lliphi qhana"
+msgstr "achakuna y luqt'iripa"
 
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:377
+# Cursor de ratón.- Representación gráfica de un cursor de ratón común. En interfaces dirigidas por un ratón u otro dispositivo apuntador, se añade un cursor gráfico llamado a veces "Flecha" o "puntero".
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:382
 msgid "returns mouse y coordinate"
-msgstr "thaqnaqirina y coordenada wakichata kutsuni"
+msgstr "achakuna y coordinada wakichatapa kutt'ayiriwa"
 
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:385
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:390
 msgid "query keyboard"
-msgstr "qillqañana thaqaña"
+msgstr "t'iqiqiyañatha yatxataña"
 
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:387
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:392
 msgid "query for keyboard input (results stored in keyboard block)"
 msgstr ""
-"qillqaña wakichata katuyañataki thaqäwi (ukasti qillqaña wakichata siqina "
-"imataskiwa)"
+"t'iqiqiyañana mantañapatha yatxataña (luraña tukuyatanakaxa t'iqiqiyañana "
+"t'aqaparu imatawa)"
 
 #  "teclado"
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:394
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:400
 msgid "keyboard"
-msgstr "qillqaña wakichata"
+msgstr "t'iqiqiyaña"
 
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:398
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:404
 msgid "holds results of query-keyboard block as ASCII"
-msgstr "ASCII wakichatjama qillqaña wakichata thaqata siqi katjatanaka katu"
+msgstr "ASCII wakichatjama t'iqiqiyaña uñakipawina t'aqapana tukuyatanakapaniwa"
 
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:430
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:412
 msgid "read pixel"
 msgstr "pixel wakichata ullaña"
 
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:433
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:415
 msgid "RGB color under the turtle is pushed to the stack"
-msgstr "tortuga wakichata aynacharu RGB samini wakichata siqiru apayasi"
+msgstr "turtuwa aynacharu, RGB samiwa pilaru apayasi"
 
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:441
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:422
 msgid "turtle sees"
-msgstr "tortuga wakichataxa uñjiwa"
+msgstr "turtuwaxa uñjiwa"
 
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:443
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:425
 msgid "returns the color that the turtle \"sees\""
-msgstr "tortuga wakichatana \"uñjatapa\" sami uñachayma"
+msgstr "turtuwana \"uñjatapa\" sami uñachayi"
 
 #  "tiempo"
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:451
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:434
 msgid "time"
 msgstr "pacha"
 
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:454
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:437
 msgid "elapsed time (in seconds) since program started"
-msgstr "pacha saräwi (pacha t'aqa t'ijtäwinaka) wakichata qalltatpacha"
+msgstr "pacha sarawi (ch'ipxtanaka jakt'asa), wakicht'awi qalltathpacha"
 
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:463
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:462
 msgid "Palette of extra options"
-msgstr "Phuqachaña wakichatanaka limt'aña"
+msgstr "Juk'ampi wakichawini samik'ullu"
+
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:464
+msgid "extras"
+msgstr "yaqhanakampi"
 
 #. TRANS: push adds a new item to the program stack
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:470
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:469
 msgid "push"
-msgstr "nukht'aña"
+msgstr "limt'aña"
 
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:473
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:472
 msgid "pushes value onto FILO (first-in last-out heap)"
 msgstr ""
-"FILO siqi wakichata patxaru chanipa siqichma (nayraqata mantañana, qhipraki "
-"mistuñana)"
+"FILO sata arkuru aka chani arkt'ma (mantañanxa, nayraqata; mistuñanxa, qhipa)"
 
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:483
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:484
 msgid "show heap"
-msgstr "siqi wakichata uñachayma"
+msgstr "pila sata arkuchawi uñachayma"
 
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:486
+# Aunque PILA puede ser ARKU. APILAR Arkt'aña, arkuchaña
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:487
 msgid "shows values in FILO (first-in last-out heap)"
 msgstr ""
-"FILO siqi wakichataru chaninaka uñachayma (nayraqata mantañana, qhipraki "
-"mistuñana)"
+"FILO sata arkuru chanichatanaka uñachayma (mantañanxa, nayraqata; "
+"mistuñanxa, qhiparaki)"
 
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:496
-msgid "empty heap"
-msgstr "siqi wakichata ch'ussuña"
-
+# 1. f. Montón, rimero o cúmulo que se hace poniendo una sobre otra las piezas o porciones de que consta algo.
 #: plugins/turtle_blocks_extras/turtle_blocks_extras.py:499
+msgid "empty heap"
+msgstr "pila sata arku ch'usaptayaña"
+
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:502
 msgid "emptys FILO (first-in-last-out heap)"
-msgstr "FILO siqi wakichata ch'ussma (nayraqata mantañana, qhipraki mistuñana)"
+msgstr ""
+"FILO sata arku ch'usaptayma (mantañanxa, nayraqata; mistuñanxa, qhiparaki)."
 
 #. TRANS: pop removes a new item from the program stack
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:510
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:513
 msgid "pop"
 msgstr "apsuña"
 
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:514
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:517
 msgid "pops value off FILO (first-in last-out heap)"
 msgstr ""
-"FILO siqi wakichatana chanipa apsma (nayraqata mantañana, qhipraki "
-"mistuñana)"
+"FILO sata arkuna chanipa apsma (mantañanxa, nayraqata; mistuñanxa, qhiparaki)"
 
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:525
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:535
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:529
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:585
 msgid "empty heap?"
-msgstr "ch'usa siqi?"
+msgstr "¿pila sata arkuxa ch'usati?"
 
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:528
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:538
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:532
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:588
 msgid "returns True if heap is empty"
-msgstr "siqi ch'usipana Chiqapa wakichata kutsuyi"
+msgstr "arkutixa ch'usächixa, Chiqapawa sasawa kutt'ayi."
+
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:544
+msgid "save heap to file"
+msgstr "qillqa q'ipicharu arkuchata imaña"
 
 #: plugins/turtle_blocks_extras/turtle_blocks_extras.py:545
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:547
-msgid "comment"
-msgstr "amuyt'aña"
-
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:549
-msgid "places a comment in your code"
-msgstr "wakisiri chimpumaru maya amuyt'a uchantma"
-
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:555
-msgid "print"
-msgstr "wakichata laphiru apsuña"
-
 #: plugins/turtle_blocks_extras/turtle_blocks_extras.py:559
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:573
+msgid "filename"
+msgstr "q'ipichana sutipa"
+
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:547
+msgid "saves FILO (first-in last-out heap) to a file"
+msgstr "FILO sata ARKU imaña (mantañanxa, nayraqata; mistuñanxa, qhiparaki)"
+
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:558
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:566
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:572
+msgid "load heap from file"
+msgstr "q'ipichana arkupa phuqt'ayma"
+
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:561
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:567
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:575
+msgid "loads FILO (first-in last-out heap) from a file"
+msgstr ""
+"FILO sata ARKU phuqt'ayma (mantañanxa, nayraqata; mistuñanxa, qhiparaki), "
+"maya q'ipichatha apsusa"
+
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:600
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:602
+msgid "comment"
+msgstr "amuyt'asa arst'aña"
+
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:604
+msgid "places a comment in your code"
+msgstr "wakisiri chimpumaru maya amuyt'awima qillqantma"
+
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:611
+msgid "print"
+msgstr "laphiru liq'suña"
+
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:615
 msgid "prints value in status block at bottom of the screen"
-msgstr "wakichata uñjaña aynachankiri jikxatasiri tamapa chani laphiru apsma"
+msgstr "pantallana aynachaparu, bloque de estado sataru, chani, laphiru liq'sma"
 
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:569
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:626
 msgid "Python chr operator"
-msgstr "Python wakichatana chr chaninchiri"
+msgstr "Python satana chr sarantayiripa"
 
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:578
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:636
 msgid "Python int operator"
-msgstr "Python wakichatana int chaninchiri"
+msgstr "Python int satana sarantayiripa"
 
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:585
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:598
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:612
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:646
+msgid "polar"
+msgstr "polar sata"
+
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:648
+msgid "displays polar coordinates"
+msgstr "coordenadas polares wakichatanaka uñachayma"
+
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:654
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:669
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:685
+#: TurtleArt/turtleblocks.py:462
 msgid "Python"
-msgstr "Python wakichata"
+msgstr "Python"
 
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:589
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:658
 msgid ""
 "a programmable block: used to add advanced single-variable math equations, e."
 "g., sin(x)"
 msgstr ""
-"maya tama wakichäwi: maya mayjt'ayirini sinti ch'ama ecuaciones matemáticas "
-"wakichatanaka apxatañataki apnaqata, akhama, seno(x)"
+"maya wakichawichaña t'aqa: akasti ch'amjama ecuaciones matemáticas satampi "
+"yapxatañatakiwa; sañäni, seno(x), sasa"
 
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:602
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:673
 msgid ""
 "a programmable block: used to add advanced multi-variable math equations, e."
 "g., sqrt(x*x+y*y)"
 msgstr ""
-"maya tama wakichäwi: walja mayjt'ayirinakani sinti ch'ama ecuaciones "
-"matemáticas wakichatanaka apxatañataki apnaqata, akhama, sqrt(x*x+y*y)"
+"maya wakichawichaña t'aqa: akasti walja mayjt'ayirini ch'ama ecuaciones "
+"matemáticas satampi yapxatañatakiwa; sañäni, sqrt(x*x+y*y), sasa"
 
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:616
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:689
 msgid ""
 "a programmable block: used to add advanced multi-variable math equations, e."
 "g., sin(x+y+z)"
 msgstr ""
-"maya tama wakichäwi: walja mayjt'ayirinakani sinti ch'ama ecuaciones "
-"matemáticas wakichatanaka apxatañataki apnaqata, akhama, seno(x+y+z)"
+"maya wakichañachaña t'aqa: akasti walja mayjt'ayirini sinti ch'ama "
+"ecuaciones matemáticas satampi yapxatañatakiwa; sañäni, seno(x+y+z), sasa"
 
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:628
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:644
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:659
-msgid "Python block"
-msgstr "Python wakichata tama"
-
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:630
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:646
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:662
-msgid "runs code found in the tamyblock.py module found in the Journal"
-msgstr ""
-"módulo tamyblock.py wakichatana chimpupa qhantayma ukasti Sapüru "
-"luräwinakana jikxatasiraki"
-
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:675
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:699
 msgid "Cartesian"
 msgstr "Cartesiana wakichata"
 
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:677
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:701
 msgid "displays Cartesian coordinates"
-msgstr "coordenadas cartesianas wakichatanaka uñachayma"
+msgstr "coordenadas cartesianas satanaka uñachayixa"
 
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:683
-msgid "polar"
-msgstr "polar wakichata"
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:710
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:727
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:744
+msgid "Python block"
+msgstr "Python sata t'aqa"
 
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:685
-msgid "displays polar coordinates"
-msgstr "coordenadas polares wakichatanaka uñachayma"
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:712
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:729
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:747
+msgid "runs code found in the tamyblock.py module found in the Journal"
+msgstr ""
+"Sapüru Lurawi qillqatankiri módulo tamyblock.py satana kuriwu chimpupa "
+"sarantayi"
+
+#. TRANS: URL is universal resource locator
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:763
+msgid "URL"
+msgstr "URL"
+
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:768
+msgid "gets a text string or an image from a URL"
+msgstr "URL sata taypitha, qillqata, januka jamuqa chint'atanaka kamañataki"
+
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:778
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:788
+msgid "turtle shell"
+msgstr "turtuwana ch'aka lip'ichipa"
+
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:780
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:789
+msgid "put a custom 'shell' on the turtle"
+msgstr "turtuwaru, mä ch'aka lip'ichipa alljt'asina, isintayaña"
 
 #  "tortuga"
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:691
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:773
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:793
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:862
+#: TurtleArt/tabasics.py:159
 msgid "turtle"
-msgstr "tortuga wakichata"
+msgstr "turtuwa"
 
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:695
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:797
 msgid "chooses which turtle to command"
-msgstr "tortuga wakichata apnaqaña chhijllma"
+msgstr "apnaqañataki turtuwa ajllt'ma"
 
-#. TRANS: pop removes a new item from the program stack
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:703
+# "tortuga"
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:804
+msgid "turtle x"
+msgstr "turtuwa x"
+
+# "de" origen.
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:807
+msgid "Returns x coordinate of turtle"
+msgstr "Turtuwatha, coordenada x sata kutsuyi"
+
+# "tortuga"
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:816
+msgid "turtle y"
+msgstr "turtuwa y"
+
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:819
+msgid "Returns y coordinate of turtle"
+msgstr "Turtuwatha, coordenada y sata kutsuyi"
+
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:828
 msgid "active turtle"
-msgstr ""
+msgstr "turtuwa uñanaqaskiwa"
 
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:706
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:831
 msgid "the name of the active turtle"
-msgstr ""
+msgstr "uñanaqkiri turtuwana sutipa"
 
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:715
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:724
-msgid "turtle shell"
-msgstr "tortuga uywana lip'ichipa"
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:839
+msgid "turtle heading"
+msgstr "turtuwana thakipa"
 
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:717
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:725
-msgid "put a custom 'shell' on the turtle"
-msgstr "tortuga uywaru qallapa lip'ichimpi isintayaña"
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:842
+msgid "Returns heading of turtle"
+msgstr "Turtuwana thakipa kutt'ayi"
 
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:733
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:852
+#: TurtleArt/tautils.py:638
+msgid "click to open"
+msgstr "wakichata llawirañataki kliktaya limt'aña"
+
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:855
 msgid "top of a collapsed stack"
-msgstr "lip'isiri siqi wakichata patxa"
+msgstr "allimuktirjama arkuna p'iqi patxapa"
 
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:738
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:748
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:759
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:860
+msgid "select palette"
+msgstr "samik'ullu ajlliña"
+
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:863
+msgid "selects a palette"
+msgstr "maya samik'ullu ajllt'ma"
+
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:871
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:883
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:897
 msgid "load"
 msgstr "ch'amanchaña"
 
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:741
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:752
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:763
-msgid "loads a block"
-msgstr "maya tama wakichata ch'amanchaña"
+#  "adelante"
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:873
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:886
+#: TurtleArt/tabasics.py:163
+msgid "forward"
+msgstr "nayräxa tuqiru"
 
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:762
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:874
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:887
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:901
+msgid "loads a block"
+msgstr "maya t'aqa ch'amanchma"
+
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:900
 msgid "setxy"
 msgstr "xy chimpu wakichaña"
 
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:771
-msgid "palette"
-msgstr "limiña"
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:912
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:918
+msgid "index"
+msgstr "utjirinaka"
 
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:774
-msgid "selects a palette"
-msgstr "limiña chhijllaña"
+# devolver el texto de las posiciones
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:913
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:923
+msgid "return the text of the positions"
+msgstr "uka kikipatha qillqata kutsuyaña"
 
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:782
+# Cf. Bertonio 1612
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:918
+msgid "string"
+msgstr "yawriwiska"
+
+#  "empezar"
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:919
+#: pysamples/grecord.py:212 TurtleArt/tabasics.py:1055
+msgid "start"
+msgstr "qalltaña"
+
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:919
+msgid "end"
+msgstr "tukuya"
+
+# La palabra "wakichata" por el anterior traductor es usado para más de 10 cosas. ya no hay que abusar de su uso.
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:936
 msgid "Palette of presentation templates"
-msgstr "Uñachayañanaka wakichatanaka limiña"
+msgstr "Uñstayawi palantillana samik'ullupa"
+
+# Otra vez "WAKICHATA" con otra traducción. La palabra WAKICHATA es usada por el anterior traductor para muchas palabras. ¿Por qué?
+# 1. m. Conjunto de fotografías o grabados de diferentes clases que forman un tomo o volumen encuadernable.
+# 1. m. Cartera de mano para llevar libros, papeles, etc.
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:939
+msgid "portfolio"
+msgstr "qillqach'uspa"
 
 # "Ocultar bloques"
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:789
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:943
 msgid "hide blocks"
-msgstr "wakichata tamanaka imantaña"
+msgstr "t'aqanaka imantaña"
 
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:791
+# LIENZO: 2. m. Tela preparada para pintar sobre ella. 3. m. Pintura que está sobre lienzo.
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:945
 msgid "declutters canvas by hiding blocks"
-msgstr "wakichata tamanaka imantasa rixiña pañu pichsma"
+msgstr "t'aqanaka imantasina, samipañu q'umachma"
 
 # "Mostrar bloques"
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:798
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:952
 msgid "show blocks"
-msgstr "wakichata tamanaka uñachayaña"
+msgstr "t'aqanaka uñachayaña"
 
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:800
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:954
 msgid "restores hidden blocks"
-msgstr "wakichata tamanaka imantata mayampi qhantayma"
+msgstr "imantata t'aqanaka askicht'ma"
 
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:808
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:963
 msgid "hides the Sugar toolbars"
-msgstr "Azúcar sutini wakichata apnaqañanaka imantma"
+msgstr "Sugarana Lurañataki yänakapa imantma"
 
 #  "lista"
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:817
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:973
 msgid "list"
-msgstr "sutinaka siqi"
+msgstr "lista sata aytawi"
 
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:821
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:1056
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:977
 msgid "presentation bulleted list"
-msgstr "chimpunakani suti siqinaka uñachayaña"
+msgstr "jamuqalla aytawimpi uñt'ayaña"
 
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:829
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:1058
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:985
 msgid "presentation template: list of bullets"
-msgstr "uñachayañataki wakichata: chimpunakani suti siqi"
+msgstr "uñt'ayawi palantilla: jamuqalla aytawi"
 
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:836
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:998
+# Ahora WAKICHATA significa 'plantilla'. ¿por qué significa tantas cosas?
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:992
 msgid "presentation template: select Journal object (no description)"
-msgstr ""
-"uñachayañataki wakichata: sapüru luräwina wakichata thaqaña chhijllaña (jani "
-"yatiyasa)"
+msgstr "uñt'ayawi palantilla: Sapüru lurawina yäpa ajlliña (jani jamuqawini)"
 
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:843
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:983
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:999
 msgid "presentation template: select Journal object (with description)"
-msgstr ""
-"uñachayañataki wakichata: sapüru luräwina wakichata thaqaña chhijllaña "
-"(yatiyäwini)"
+msgstr "uñt'ayawi palantilla: Sapüru lurawina yäpa ajlliña (jamuqawini)"
 
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:850
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:1043
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:1006
 msgid "presentation template: select four Journal objects"
-msgstr ""
-"uñachayañataki wakichata: sapüru luräwina wakichata pusi thaqaña chhijllaña"
+msgstr "uñt'ayawi palantilla: Sapüru lurawina pusi yäpa ajlliña"
 
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:857
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:864
 #: plugins/turtle_blocks_extras/turtle_blocks_extras.py:1013
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:1028
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:1020
 msgid "presentation template: select two Journal objects"
-msgstr ""
-"uñachayañataki wakichata: sapüru luräwina wakichata paya thaqaña chhijllaña"
+msgstr "uñt'ayawi palantilla: Sapüru lurawina paya yäpa ajlliña"
 
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:874
+#  "izquierda"
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:1027
+#: TurtleArt/taconstants.py:149 TurtleArt/tabasics.py:210
+msgid "left"
+msgstr "ch'iqa"
+
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:1030
 msgid "xcor of left of screen"
-msgstr "coorx wakichata uñjaña ch'iqäxankiri"
+msgstr "pantallana ch'iqa tuqipankiri xcor sata"
 
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:879
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:1038
 msgid "bottom"
 msgstr "manqha"
 
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:882
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:1041
 msgid "ycor of bottom of screen"
-msgstr "coory wakichata uñjaña aynacha lakäxankiri"
+msgstr "pantallana aynacha tuqipankiri ycor sata"
 
 #  "anchura"
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:887
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:1049
 msgid "width"
 msgstr "lankhu"
 
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:890
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:1052
 msgid "the canvas width"
-msgstr "rixi wakichaña pañu lankhu"
+msgstr "samipañuna lankhupa"
 
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:898
+#  "derecha"
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:1060
+#: TurtleArt/taconstants.py:151 TurtleArt/tabasics.py:224
+msgid "right"
+msgstr "kupi"
+
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:1063
 msgid "xcor of right of screen"
-msgstr "coorx wakichata uñjaña kupïxankiri"
+msgstr "pantallana kupïxapankiri xcor sata"
 
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:906
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:1074
 msgid "ycor of top of screen"
-msgstr "coory wakichata uñjaña alaya paräxankiri"
+msgstr "pantallana patxäxapankiri ycor sata"
 
 #  "altura"
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:911
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:1082
 msgid "height"
 msgstr "sayt'a"
 
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:914
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:1085
 msgid "the canvas height"
-msgstr "rixi wakichaña pañu sayt'upa"
+msgstr "samipañuna sayt'apa"
 
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:921
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:1095
 msgid "title x"
 msgstr "x p'iqinchiri suti"
 
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:930
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:1107
 msgid "title y"
 msgstr "y p'iqinchiri suti"
 
 #  "izquierda x"
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:939
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:1119
 msgid "left x"
 msgstr "x ch'iqa"
 
 #  "arriba y"
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:948
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:1131
 msgid "top y"
 msgstr "y alaya"
 
 #  "derecha x"
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:957
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:1143
 msgid "right x"
 msgstr "x kupi"
 
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:966
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:1155
 msgid "bottom y"
 msgstr "y aynacha"
 
-# "presentación"
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:981
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:996
-msgid "presentation 1x1"
-msgstr "1x1 uñachayäwi"
-
-# "presentación"
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:1011
-msgid "presentation 2x1"
-msgstr "2x1 uñachayäwi"
-
-# "presentación"
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:1026
-msgid "presentation 1x2"
-msgstr "1x2 uñachayäwi"
-
-# "presentación"
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:1041
-msgid "presentation 2x2"
-msgstr "2x2 uñachayäwi"
-
-#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:1073
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:1174
 msgid "Palette of user-defined operators"
+msgstr "Apnaqirina wakichata luraña samik'ullupa"
+
+#: plugins/turtle_blocks_extras/turtle_blocks_extras.py:1175
+msgid "my blocks"
+msgstr "t'aqanakaja"
+
+#: plugins/camera_sensor/camera_sensor.py:90
+#: plugins/camera_sensor/camera_sensor.py:122
+#: plugins/light_sensor/light_sensor.py:58
+#: plugins/light_sensor/light_sensor.py:66
+msgid "brightness"
+msgstr "lliphi"
+
+#: plugins/camera_sensor/camera_sensor.py:92
+msgid "light level detected by camera"
+msgstr "kamarana katjata qhanana tupupa"
+
+# Salida de la cámara... Parece que la traducción al castellano no es la correcta. En este caso me guio del ingles.
+#: plugins/camera_sensor/camera_sensor.py:107
+#: plugins/camera_sensor/camera_sensor.py:115
+msgid "camera output"
+msgstr "kamarana mistuña punkupa"
+
+# 2. m. término medio (‖ cantidad igual o más próxima a la media aritmética). Chikpurachaña = promediar (creación mía)
+#: plugins/camera_sensor/camera_sensor.py:124
+msgid "Average RGB color from camera is pushed to the stack"
+msgstr "Pila arku tuqiru sartiri kamarana RGB samipana chikpurachapa"
+
+#: plugins/rfid/rfid.py:93 plugins/rfid/rfid.py:101
+msgid "RFID"
+msgstr "RFID"
+
+#: plugins/rfid/rfid.py:94 plugins/rfid/rfid.py:102
+msgid "read value from RFID device"
+msgstr "radiofrecuencia (RFID) wakichatanaka thaqaña chanipa ullaña"
+
+# 1. m. Mec. Aparato que mide la aceleración.
+#: plugins/accelerometer/accelerometer.py:56
+#: plugins/accelerometer/accelerometer.py:63
+msgid "acceleration"
+msgstr "jank'achata tupuña"
+
+# En castellano falta una coma entres x,y,z.
+#: plugins/accelerometer/accelerometer.py:58
+#: plugins/accelerometer/accelerometer.py:65
+msgid "push acceleration in x, y, z to heap"
+msgstr "pila sata arkuna, x, y, z uka chiqanakaruwa jank'achawi uchixa"
+
+# Katjiri... Muy buena propuesta para 'sensor'
+#: plugins/light_sensor/light_sensor.py:61
+#: plugins/light_sensor/light_sensor.py:69
+msgid "light level detected by light sensor"
+msgstr "katjirina katjata qhanana tupupa"
+
+#  "sonido"
+#: plugins/audio_sensors/audio_sensors.py:93 pysamples/grecord.py:207
+msgid "sound"
+msgstr "salla"
+
+#: plugins/audio_sensors/audio_sensors.py:94
+msgid "raw microphone input signal"
+msgstr "mijruphununa mantañapana chimpupa"
+
+# 4. m. Intensidad del sonido.
+#: plugins/audio_sensors/audio_sensors.py:100
+msgid "loudness"
+msgstr "sallanchiri"
+
+#: plugins/audio_sensors/audio_sensors.py:101
+msgid "microphone input volume"
+msgstr "mijruphununa mantañapana sallanchiripa"
+
+#: plugins/audio_sensors/audio_sensors.py:127
+msgid "microphone input pitch"
+msgstr "mijruphununa mantañapana frecuencia satapa"
+
+#: plugins/audio_sensors/audio_sensors.py:160
+#: plugins/audio_sensors/audio_sensors.py:178
+msgid "resistance"
+msgstr "ch'amanchawi"
+
+#: plugins/audio_sensors/audio_sensors.py:161
+#: plugins/audio_sensors/audio_sensors.py:179
+msgid "microphone input resistance"
 msgstr ""
+"mijruphununa mantañapana ch'amanchawipa (rango de medición: 700 a 14000 ohms)"
+
+# 1. m. Cantidad de voltios que actúan en un aparato o sistema eléctrico.
+#: plugins/audio_sensors/audio_sensors.py:166
+#: plugins/audio_sensors/audio_sensors.py:184
+msgid "voltage"
+msgstr "wultaji"
+
+#: plugins/audio_sensors/audio_sensors.py:167
+#: plugins/audio_sensors/audio_sensors.py:185
+msgid "microphone input voltage"
+msgstr ""
+"mijruphununa mantañapana DC wultajina chanipa (rango de medición: 700 a "
+"14000 ohms)"
+
+#: pysamples/uturn.py:35
+msgid "uturn"
+msgstr "U uñanaqaru muytaña"
+
+#: pysamples/uturn.py:37
+msgid "turns the turtle 180 degrees"
+msgstr "180 grados ukakama, turtuwa muytayaña"
 
 #: pysamples/brain.py:43
 msgid "Please install the Speak Activity and try again."
-msgstr ""
+msgstr "Mira suma, Arsuña Lurawi utanuqayma, ukatha mayampisa yant'askakma."
 
-#: pysamples/brain.py:54
+#: pysamples/brain.py:52
 msgid "Spanish"
-msgstr ""
+msgstr "Kastillanu aru"
 
-#: pysamples/brain.py:58 pysamples/brain.py:72 pysamples/brain.py:74
-#: pysamples/brain.py:80
+#: pysamples/brain.py:56 pysamples/brain.py:69 pysamples/brain.py:71
+#: pysamples/brain.py:77
 msgid "English"
-msgstr ""
+msgstr "Inglés aru"
 
-#: pysamples/brain.py:91
+#: pysamples/brain.py:88
 msgid "Sorry, I can't understand what you are asking about."
-msgstr ""
+msgstr "Jichhaxa kamacharakiñänisti, jiskht'atama janiwa suma katuqsmati."
 
-#: pysamples/brain.py:100
+#: pysamples/brain.py:97
 msgid ""
 "Sorry, there is no free memory to load my brain. Close other activities and "
 "try once more."
 msgstr ""
+"Jichhaxa kamacharakiñäni, laxwijaxa phuqantatäxiwa. Yaqha lurawinaka "
+"ist'antma, ukatha mayampi yant'ma."
 
-#: pysamples/forward_push.py:45
+#: pysamples/journal-stats.py:90
+msgid "other"
+msgstr "yaqhanaka"
+
+#: pysamples/forward_push.py:48
 msgid "push destination rgb value to heap"
-msgstr "wakichata siqiru wakisiri rgb chanipa nukhuña"
+msgstr "pila sata arkuru rgb chanipa arkuchma."
 
 #  "parar"
-#: pysamples/grecord.py:215
+#: pysamples/grecord.py:214
 msgid "stop"
-msgstr "sayt'ayaña"
+msgstr "acht'ayaña"
 
 #  "reproducir"
-#: pysamples/grecord.py:217
+#: pysamples/grecord.py:216
 msgid "play"
 msgstr "qhantayaña"
 
 #  "guardar"
-#: pysamples/grecord.py:219
+#: pysamples/grecord.py:218
 msgid "save"
 msgstr "imaña"
 
-#: pysamples/journal-stats.py:78
-msgid "other"
-msgstr "jaqha"
+#: TurtleArt/talogo.py:604
+msgid "did not output to"
+msgstr "janiwa akaru qillqañjamäkiti"
 
-#: pysamples/uturn.py:24
-msgid "uturn"
-msgstr "U uñanaqaru muyta"
+#: TurtleArt/talogo.py:645 TurtleArt/talogo.py:1059
+msgid "doesn't like"
+msgstr "janiwa khusäkiti chuymapatakixa"
 
-#: pysamples/uturn.py:26
-msgid "make a uturn"
-msgstr "U uñanaqaru muytaña"
+#: TurtleArt/talogo.py:646 TurtleArt/talogo.py:1060
+msgid "as input"
+msgstr "mantañatakjama"
+
+#: TurtleArt/talogo.py:709
+msgid "I don't know how to"
+msgstr "Janiwa kunjama lurañsa yatkthti"
 
 #  "el uso es"
-#: turtleblocks.py:89
+#: TurtleArt/turtleblocks.py:106
 msgid "usage is"
-msgstr "luraña akhamawa"
+msgstr "lurañaxa akhamawa"
 
 #  "Sin acción alternativa:"
-#: turtleblocks.py:250
+#: TurtleArt/turtleblocks.py:307
 msgid "No option action:"
-msgstr "Mayjata lurañaxa janiwa utjiti:"
+msgstr "Kunaymanatha lurañaxa janiwa utjiti:"
 
-#  "Fichero no encontrado"
-#: turtleblocks.py:265
+# Fichero = archivo
+#: TurtleArt/turtleblocks.py:322
 msgid "File not found"
-msgstr "Wakichatanaka imaña chhaqata"
+msgstr "Laphi q'ipixa chhaqatawa."
 
 #  "Directorio de configuración no modificable: %s"
-#: turtleblocks.py:289
+#: TurtleArt/turtleblocks.py:346
 #, python-format
 msgid "Configuration directory not writable: %s"
-msgstr "Jani unuqiyaña wakichäwi qillqata: %s"
+msgstr "Jani unuqiyaña askichawi qillqa chinu: %s"
 
 #  "Nuevo"
-#: turtleblocks.py:365
+#: TurtleArt/turtleblocks.py:434
 msgid "New"
 msgstr "Machaqa"
 
-#  "Abrir"
-#: turtleblocks.py:366
-msgid "Open"
-msgstr "Uñantaña"
-
-#  "Guardar"
-#: turtleblocks.py:367
-msgid "Save"
-msgstr "Imaña"
+#: TurtleArt/turtleblocks.py:435
+msgid "Show sample projects"
+msgstr "Yatikipañataki yaqha luraña amtawinaka uñachayaña"
 
 #  "Guardar como"
-#: turtleblocks.py:368
+#: TurtleArt/turtleblocks.py:442
 msgid "Save as"
-msgstr "Sutini imaña"
+msgstr "¿Kuna sutinsa imantaxa?"
 
-#  "Salir"
-#: turtleblocks.py:373
-msgid "Quit"
-msgstr "Mistuña"
+#: TurtleArt/turtleblocks.py:446
+msgid "Export as"
+msgstr "¿Kuna wakichatjamsa apt'ayantaxa?"
 
-#  "Archivo"
-#: turtleblocks.py:374
-msgid "File"
-msgstr "Q'ipi"
+#  "imagen"
+#: TurtleArt/turtleblocks.py:449 TurtleArt/tawindow.py:4788
+msgid "image"
+msgstr "jamuqa"
 
-#  "Escalar coordenadas"
-#: turtleblocks.py:381
-msgid "Rescale coordinates"
-msgstr "Coordenadas wakichatanaka jithirayaña"
-
-#  "Restaurar el tamaño del bloque"
-#: turtleblocks.py:387
-msgid "Reset block size"
-msgstr "Wakichata tamanaka mayampi qhantayaña"
-
-#  "Mostar/ocultar bloques"
-#: turtleblocks.py:408
-msgid "Show/hide blocks"
-msgstr "Wakichata tamanaka uñachayaña/imantaña"
-
-#  "Herramientas"
-#: turtleblocks.py:410
-msgid "Tools"
-msgstr "Lurañataki"
-
-#  "Depurar"
-#: turtleblocks.py:416
-msgid "Debug"
-msgstr "Thaqsraña"
-
-#  "Tortuga"
-#: turtleblocks.py:418
-msgid "Turtle"
-msgstr "Tortuga wakichata"
-
-#: turtleblocks.py:421
-msgid "About..."
+#: TurtleArt/turtleblocks.py:451
+msgid "image (blocks)"
 msgstr ""
 
+#: TurtleArt/turtleblocks.py:453
+msgid "SVG"
+msgstr "SVG"
+
+#: TurtleArt/turtleblocks.py:455 TurtleArt/tawindow.py:4641
+msgid "icon"
+msgstr "Jamuqa chimpu"
+
+#. TRANS: ODP is Open Office presentation
+#: TurtleArt/turtleblocks.py:458
+msgid "ODP"
+msgstr "ODP"
+
+#: TurtleArt/turtleblocks.py:460
+msgid "Logo"
+msgstr "Logo"
+
+#  "Salir"
+#: TurtleArt/turtleblocks.py:464
+msgid "Quit"
+msgstr "Mistsuña"
+
+#  "Archivo"
+#: TurtleArt/turtleblocks.py:465
+msgid "File"
+msgstr "Laphi q'ipi"
+
+# ESCALAR  2. tr. Subir, trepar por una gran pendiente o a una gran altura.
+#: TurtleArt/turtleblocks.py:473
+msgid "Rescale coordinates"
+msgstr "Coordenadas wakichatanaka jithsrayaña"
+
+#  "Restaurar el tamaño del bloque"
+#: TurtleArt/turtleblocks.py:479
+msgid "Reset block size"
+msgstr "T'aqana tañapa wasitatha luraña"
+
+#  "Mostar/ocultar bloques"
+#: TurtleArt/turtleblocks.py:500
+msgid "Show/hide blocks"
+msgstr "T'aqanaka uñachayaña/imantaña"
+
+#  "Herramientas"
+#: TurtleArt/turtleblocks.py:502
+msgid "Tools"
+msgstr "Lurañataki yänaka"
+
+# 4. tr. Eliminar
+#: TurtleArt/turtleblocks.py:508
+msgid "Debug"
+msgstr "Jaqsraña"
+
+#  "Tortuga"
+#: TurtleArt/turtleblocks.py:510
+msgid "Turtle"
+msgstr "Turtuwa"
+
+#: TurtleArt/turtleblocks.py:513
+msgid "Plugins"
+msgstr "Plugins Phuqanchañanaka"
+
+#: TurtleArt/turtleblocks.py:516
+msgid "About..."
+msgstr "...uka tuqitha"
+
 #  "Hay trabajo sin guardar. ¿Le gustaría guardar antes de salir?"
-#: turtleblocks.py:461
+#: TurtleArt/turtleblocks.py:575
 msgid "You have unsaved work. Would you like to save before quitting?"
-msgstr "Jani imata wakichatanakawa utji. ¿janirara mistkasina imaña muntacha?"
+msgstr ""
+"Jumana jani imata irnaqawimawa utji. ¿Jichhaxa, janirja mistkasina, imasiña "
+"muntati?"
 
 #  "¿Guardar el proyecto?"
-#: turtleblocks.py:462
+#: TurtleArt/turtleblocks.py:580
 msgid "Save project?"
-msgstr "¿Wakichäwinaka imaña?"
+msgstr "¿Aka luraña amtawixa imañati?"
+
+#: TurtleArt/turtleblocks.py:590
+#, python-format
+#, python-format,
+msgid "Plugin %s already installed"
+msgstr "Plugin %s ukaxa utanuqatäxiwa."
+
+#: TurtleArt/turtleblocks.py:736
+msgid "myproject"
+msgstr "luraña amtawija"
+
+#: TurtleArt/turtleblocks.py:814 TurtleArt/taplugin.py:89
+#, python-format
+msgid "Please restart %s in order to use the plugin."
+msgstr "Plugin wakichatampi sarañataki mayampi qhantayma."
+
+#: TurtleArt/turtleblocks.py:819
+#, python-format
+msgid "Please restart %s in order to unload the plugin."
+msgstr "Plugin wakichatata mistuñataki mayampi qhantayma %s."
+
+#: TurtleArt/tapalette.py:103
+msgid "displays next palette"
+msgstr "arkiri samik'ullu uñachayma"
+
+#: TurtleArt/tapalette.py:104
+msgid "changes the orientation of the palette of blocks"
+msgstr "t'aqanakana samik'ullupa sarañapa jaqukipma"
+
+#: TurtleArt/tapalette.py:144 TurtleArt/tapalette.py:145
+#: TurtleArt/tabasics.py:1262 TurtleArt/tabasics.py:1263
+msgid "trash"
+msgstr "jani wakisiri imaña"
+
+#: TurtleArt/taexportpython.py:226
+msgid "block is not exportable"
+msgstr "t'aqaxa janiwa yaqhawjaru apsuñjamäkiti"
+
+#: TurtleArt/taexportpython.py:245
+msgid "error while exporting block"
+msgstr "t'aqa yaqhawjaru apaykasa pantjata"
+
+#: TurtleArt/taprimitive.py:62
+msgid "error in highlighted block"
+msgstr "wali qhananchata t'aqanxa pantjatawa utji"
+
+#: TurtleArt/taprimitive.py:64
+msgid "error"
+msgstr "pantjata"
+
+# Orientación como 'dirección' o 'consejo'???
+#: TurtleArt/tawindow.py:1151 TurtleArt/tawindow.py:1152
+msgid "orientation"
+msgstr "kawksa tuqi"
+
+#  "siguiente"
+#: TurtleArt/tawindow.py:1166 TurtleArt/tawindow.py:1626
+msgid "next"
+msgstr "arkiri"
+
+#: TurtleArt/tawindow.py:1205 TurtleArt/tawindow.py:1635
+msgid "shift"
+msgstr "jaqsuña"
+
+#: TurtleArt/tawindow.py:1273
+msgid "Please hit the Stop Button before making changes to your program"
+msgstr ""
+"Mira suma, janirja wakicht'ataru mayjt'ayawinaka lurkasina, Acht'ayaña sata "
+"limiña limt'ma"
+
+#: TurtleArt/tawindow.py:1316 TurtleArt/tawindow.py:1430
+#: TurtleArt/tawindow.py:1443 TurtleArt/tawindow.py:2078
+#: TurtleArt/tawindow.py:4934 TurtleArt/tabasics.py:1070
+#: TurtleArt/tabasics.py:1073 TurtleArt/tabasics.py:1086
+#: TurtleArt/tabasics.py:1090 TurtleArt/tabasics.py:1236
+#: TurtleArt/tabasics.py:1240
+msgid "action"
+msgstr "lurawi"
+
+#: TurtleArt/tawindow.py:1322 TurtleArt/tawindow.py:1469
+#: TurtleArt/tawindow.py:2084 TurtleArt/tawindow.py:4961
+#: TurtleArt/tawindow.py:4988 TurtleArt/tabasics.py:1158
+#: TurtleArt/tabasics.py:1173
+msgid "my box"
+msgstr "kajunaja"
+
+#: TurtleArt/tawindow.py:1337
+msgid "Select blocks to share"
+msgstr "Khitinakaru t'uqiyañataki t'aqanaka ajllt'ma"
+
+#: TurtleArt/tawindow.py:1515 TurtleArt/tawindow.py:1529
+msgid "Really overwrite stack?"
+msgstr "¿Pila sata arku wakichataru qillqxataña muntati?"
+
+#: TurtleArt/tawindow.py:1522 TurtleArt/tawindow.py:1532
+msgid "Overwrite stack"
+msgstr "Pila sarta arku wakichataru qillqxataña"
+
+#: TurtleArt/tawindow.py:1554 TurtleArt/tawindow.py:1567
+msgid "Really delete stack?"
+msgstr "¿Pila sata arkuwakichata chhaqtayaña muntati?"
+
+#: TurtleArt/tawindow.py:1947 TurtleArt/tabasics.py:1267
+msgid "empty trash"
+msgstr "jani wakisiri imatanaka q'ala chhaqtayaña"
+
+#: TurtleArt/tawindow.py:1948
+msgid "Do you really want to empty the trash?"
+msgstr "¿Chiqapuniti jani wakisiri imañankiri yänaka chhaqtayaña munta?"
+
+# No se puede escribir datos en % s .
+#: TurtleArt/tawindow.py:4285 TurtleArt/tawindow.py:4306
+#, python-format
+msgid "Cannot write data to %s."
+msgstr "Janiwa kunasa qillqaskasphasti akaruxa: %s."
+
+#: TurtleArt/tawindow.py:4286
+msgid "Please choose a different save directory."
+msgstr "Mirá, kunaymanatha qillqa chinu imaña ajllma."
+
+# Por favor elija un nombre de archivo diferente.
+#: TurtleArt/tawindow.py:4307
+msgid "Please choose a different file name."
+msgstr "Mirá, yaqha qillqa q'ipichana sutipa ajllt'ma."
+
+#  "coorx"
+#: TurtleArt/tawindow.py:4415 TurtleArt/tabasics.py:284
+msgid "xcor"
+msgstr "xcor"
+
+#  "coory"
+#: TurtleArt/tawindow.py:4416 TurtleArt/tabasics.py:299
+msgid "ycor"
+msgstr "ycor"
+
+#  "rumbo"
+#: TurtleArt/tawindow.py:4416 TurtleArt/tabasics.py:314
+msgid "heading"
+msgstr "kawksarusa"
+
+# Pero como se habla de COLOR, se refiere a MATIZ.
+# TONO de color? o TONO de sonido?  1.- 1. m. Cualidad de los sonidos, dependiente de su frecuencia, que permite ordenarlos de graves a agudos.   10. m. Grado de coloración.
+#
+#: TurtleArt/tawindow.py:4442 TurtleArt/tawindow.py:4447
+#: TurtleArt/tabasics.py:359 TurtleArt/tabasics.py:373
+#: TurtleArt/tabasics.py:447
+msgid "shade"
+msgstr "ch'iwucha"
+
+#: TurtleArt/tawindow.py:4443 TurtleArt/tawindow.py:4448
+#: TurtleArt/tabasics.py:373 TurtleArt/tabasics.py:461
+msgid "gray"
+msgstr "uqi"
+
+#  "color"
+#: TurtleArt/tawindow.py:4446 TurtleArt/tabasics.py:359
+#: TurtleArt/tabasics.py:372 TurtleArt/tabasics.py:435
+msgid "color"
+msgstr "sami"
+
+#: TurtleArt/tawindow.py:4516
+msgid "True"
+msgstr "Chiqapa"
+
+#: TurtleArt/tawindow.py:4516
+msgid "False"
+msgstr "K'ari"
+
+#: TurtleArt/tawindow.py:4714
+#, python-format
+msgid "%s blocks image"
+msgstr ""
+
+#: TurtleArt/tawindow.py:4947 TurtleArt/tabasics.py:1091
+msgid "invokes named action stack"
+msgstr "sutinchata luraña arkuru jawsaña"
+
+#: TurtleArt/tawindow.py:4974 TurtleArt/tabasics.py:1176
+msgid "named variable (numeric value)"
+msgstr "qhanstayata mayjt'ayiri (jakhu chani)"
+
+#: TurtleArt/tawindow.py:4996 TurtleArt/tabasics.py:1154
+msgid "store in"
+msgstr "kawkjarusa imaña"
+
+#: TurtleArt/tawindow.py:4996 TurtleArt/tabasics.py:1154
+msgid "value"
+msgstr "chani"
+
+#: TurtleArt/tawindow.py:5001 TurtleArt/tabasics.py:1159
+msgid "stores numeric value in named variable"
+msgstr "qhanstayata mayjt'iriru jakhu chani imma"
+
+#: TurtleArt/taplugin.py:93 TurtleArt/taplugin.py:103 TurtleArt/taplugin.py:105
+msgid "Plugin could not be installed."
+msgstr "Plugin wakichataxa janiwa utantayañjamäkiti."
+
+#: TurtleArt/taconstants.py:150
+msgid "up"
+msgstr "alaxa"
+
+#: TurtleArt/taconstants.py:152
+msgid "down"
+msgstr "aynacha"
+
+#: TurtleArt/taconstants.py:153
+msgid "backspace"
+msgstr "qhipäxaru jitht'aña"
+
+#: TurtleArt/taconstants.py:154
+msgid "tab"
+msgstr "jitt'ayiri"
+
+#. TRANS: enter is the name of the enter (or return) key
+#: TurtleArt/taconstants.py:156
+msgid "enter"
+msgstr "aynacharu"
+
+#. TRANS: space is the name of the space key
+#: TurtleArt/taconstants.py:159
+msgid "space"
+msgstr "ch'usawja"
+
+#: TurtleArt/taconstants.py:160
+msgid "delete"
+msgstr "chhaqtayaña"
+
+# "Título:"
+#: TurtleArt/taconstants.py:473 TurtleArt/taconstants.py:494
+#: TurtleArt/taconstants.py:514 TurtleArt/taconstants.py:555
+#: TurtleArt/taconstants.py:596 TurtleArt/taconstants.py:637
+msgid "Title"
+msgstr "P'iqinchiri"
+
+#: TurtleArt/taconstants.py:659
+msgid "banana"
+msgstr "puquta"
+
+#  "Cargar..."
+#: TurtleArt/tautils.py:313
+msgid "Load..."
+msgstr "Ch'amanchaña..."
+
+#  "Guardar..."
+#: TurtleArt/tautils.py:323
+msgid "Save..."
+msgstr "Imaña..."
+
+#: TurtleArt/tabasics.py:158
+msgid "Palette of turtle commands"
+msgstr "Turtuwana chiqachiri samik'ullupa"
+
+#: TurtleArt/tabasics.py:167
+msgid "moves turtle forward"
+msgstr "naräxaru turtuwa jithtayma"
+
+#  "atrás"
+#: TurtleArt/tabasics.py:176
+msgid "back"
+msgstr "qhipäxa"
+
+#: TurtleArt/tabasics.py:180
+msgid "moves turtle backward"
+msgstr "qhipäxaru turtuwa jitt'ayma"
+
+#  "limpiar"
+#: TurtleArt/tabasics.py:189
+msgid "clean"
+msgstr "pichsuña"
+
+#: TurtleArt/tabasics.py:192
+msgid "clears the screen and reset the turtle"
+msgstr "pantalla phichsma, ukatha turtuwa mayampi wakicht'asiyma"
+
+# ch'iqa tuqiru jithiyma  = No es antihorario
+#: TurtleArt/tabasics.py:214
+msgid "turns turtle counterclockwise (angle in degrees)"
+msgstr "turtuwa kut'tayma ch'iqa amparama tuqiru (ángulo de grados)."
+
+# kupi tuqiru sarayma = anti-horario
+#: TurtleArt/tabasics.py:228
+msgid "turns turtle clockwise (angle in degrees)"
+msgstr "turtuwa jitt'ayma kupi amparama tuqiru (ángulo de grados)"
+
+# sawana < saguán
+#: TurtleArt/tabasics.py:238
+msgid "arc"
+msgstr "kürmicha"
+
+# K'uchu = rincón. Pero no siempre es así, por que hay ángulos planos, rectos, o el de 360 grados. Mejor es PALLQA o TARA. Esto juega mejor con la definición de ÁNGULO: 1. m. Geom. Figura geométrica formada en una superficie por dos líneas que parten de un mismo punto; o también la formada en el espacio por dos superficies que parten de una misma línea.
+#: TurtleArt/tabasics.py:238
+msgid "angle"
+msgstr "pallqa"
+
+# La mitad de diámetro.
+#: TurtleArt/tabasics.py:238
+msgid "radius"
+msgstr "raryu"
+
+# ARCO = k'umu, chika muyu, o mejor comparar con la forma de arco iris?
+#: TurtleArt/tabasics.py:242
+msgid "moves turtle along an arc"
+msgstr "turtuwa kürminama jithikipayma"
+
+#: TurtleArt/tabasics.py:254 TurtleArt/tabasics.py:333
+msgid "set xy"
+msgstr "xy wakt'ayaña"
+
+#  "x"
+#: TurtleArt/tabasics.py:254 TurtleArt/tabasics.py:333
+msgid "x"
+msgstr "x"
+
+#  "y"
+#: TurtleArt/tabasics.py:254 TurtleArt/tabasics.py:333
+msgid "y"
+msgstr "y"
+
+#: TurtleArt/tabasics.py:258 TurtleArt/tabasics.py:337
+msgid ""
+"moves turtle to position xcor, ycor; (0, 0) is in the center of the screen."
+msgstr ""
+"xcor, ycor ukjaru turtuwa unxtayma; (0, 0) uka panipa jakhuxa pantalla chika "
+"taypinkiwa."
+
+#: TurtleArt/tabasics.py:269
+msgid "set heading"
+msgstr "thakipa wakt'ayaña"
+
+#: TurtleArt/tabasics.py:273
+msgid "sets the heading of the turtle (0 is towards the top of the screen.)"
+msgstr ""
+"turtuwana kawki tuqiru sarañapa wakiyma (0 sata ch'usa jakhuxa pantallanxa "
+"patawxankiwa.)"
+
+# siqicha 'coordenada'?
+#: TurtleArt/tabasics.py:285
+msgid ""
+"holds current x-coordinate value of the turtle (can be used in place of a "
+"number block)"
+msgstr ""
+"turtuwana jichha x sata siqichapaniwa (mä jakhu t'aqa lantisa apnaqasisphawa)"
+
+#: TurtleArt/tabasics.py:300
+msgid ""
+"holds current y-coordinate value of the turtle (can be used in place of a "
+"number block)"
+msgstr ""
+"turtuwana jichha y sata siqichapaniwa (mä jakhu t'aqa lantisa apnaqasisphawa)"
+
+#: TurtleArt/tabasics.py:315
+msgid ""
+"holds current heading value of the turtle (can be used in place of a number "
+"block)"
+msgstr ""
+"turtuwana kawki tuqiru jichha sarañapaniwa (mä jakhu t'aqa lantisa "
+"apnaqasisphawa)"
+
+#: TurtleArt/tabasics.py:353
+msgid "Palette of pen commands"
+msgstr "Sich'iñana kamachipana samik'ullupa"
+
+# "Abrir"
+#: TurtleArt/tabasics.py:354
+msgid "pen"
+msgstr "phuyu"
+
+# "pantalla completa"
+#: TurtleArt/tabasics.py:359 TurtleArt/tabasics.py:372
+msgid "fill screen"
+msgstr "pantalla phuqantaña"
+
+#: TurtleArt/tabasics.py:363 TurtleArt/tabasics.py:377
+msgid "fills the background with (color, shade)"
+msgstr "manqhäxapa samimpisa ch'iwumpisa phuqantaña"
+
+#: TurtleArt/tabasics.py:390
+msgid "set color"
+msgstr "sami wakt'ayaña"
+
+#: TurtleArt/tabasics.py:394
+msgid "sets color of the line drawn by the turtle"
+msgstr "turtuwa jamuqaski uka sich'ina samipa wakt'ayma"
+
+# TONO, de color.
+#: TurtleArt/tabasics.py:406
+msgid "set shade"
+msgstr "ch'iwucha wakt'ayaña"
+
+#: TurtleArt/tabasics.py:410
+msgid "sets shade of the line drawn by the turtle"
+msgstr "turtuwa jamuqki uka sich'ina ch'iwuchiri samipa wakt'ayma"
+
+#: TurtleArt/tabasics.py:421
+msgid "set gray"
+msgstr "uqi sami wakt'ayaña"
+
+#: TurtleArt/tabasics.py:424
+msgid "sets gray level of the line drawn by the turtle"
+msgstr "turtuwaxa jamuqki uka sich'ina uqi samini kankañapa wakiyma"
+
+#: TurtleArt/tabasics.py:436
+msgid "holds current pen color (can be used in place of a number block)"
+msgstr "phuyuna anchha samipaniwa (maya jakhu t'aqa lantisa apnaqasisphawa)"
+
+# ch'iwuchiri sami =tonalidad
+#: TurtleArt/tabasics.py:448
+msgid "holds current pen shade"
+msgstr "phuyuna anchha ch'iwuchiri samipaniwa"
+
+#: TurtleArt/tabasics.py:462
+msgid "holds current gray level (can be used in place of a number block)"
+msgstr ""
+"uqiru samiri jichhachata tupuniwa (maya jakhu t'aqa lantisa apnaqasisphawa)"
+
+#: TurtleArt/tabasics.py:472
+msgid "pen up"
+msgstr "phuyu alaxaru jithsuyaña"
+
+#: TurtleArt/tabasics.py:475
+msgid "Turtle will not draw when moved."
+msgstr "Turtuwaxa, unxtani ukjaxa, janiwa sich'kaniti."
+
+#: TurtleArt/tabasics.py:482
+msgid "pen down"
+msgstr "sich'iña phuyu manqharu jithiqaña"
+
+#: TurtleArt/tabasics.py:485
+msgid "Turtle will draw when moved."
+msgstr "Turtuwaxa, unxtasaxa, sich'iniwa."
+
+#: TurtleArt/tabasics.py:492
+msgid "pen down?"
+msgstr "¿jayphu phuyu?"
+
+#: TurtleArt/tabasics.py:494
+msgid "returns True if pen is down"
+msgstr "sich'iri phuyuxa jayphüchixa, Chiqapa kutsuyma"
+
+#: TurtleArt/tabasics.py:501
+msgid "set pen size"
+msgstr "tañapa wakt'ayaña"
+
+# LANKHU = Ancho
+#: TurtleArt/tabasics.py:505
+msgid "sets size of the line drawn by the turtle"
+msgstr "turtuwaxa sich'ki uka sich'ina lankhupa wakiyma"
+
+#: TurtleArt/tabasics.py:518
+msgid "start fill"
+msgstr "phuqt'ayaña qalltaña"
+
+# Polígono - walja qawayani
+#: TurtleArt/tabasics.py:520
+msgid "starts filled polygon (used with end fill block)"
+msgstr ""
+"puliwunu phuqantaña qallantaña (t'aqana phuqasitapa tukuyañampi apnaqatawa)"
+
+#: TurtleArt/tabasics.py:526
+msgid "end fill"
+msgstr "samichasa phuqachaña tukuyaña"
+
+#: TurtleArt/tabasics.py:528
+msgid "completes filled polygon (used with start fill block)"
+msgstr ""
+"phuqachasiri puliwunu phuqachaña tukxatayma  (t'aqana phuqasitapa "
+"tukuyañampi apnaqatawa)"
+
+# Me he guiado del ingles: "pen size" 'tamaño de lapíz'
+#: TurtleArt/tabasics.py:534
+msgid "pen size"
+msgstr "sich'iri phuyuna tañapa"
+
+#: TurtleArt/tabasics.py:535
+msgid "holds current pen size (can be used in place of a number block)"
+msgstr "phuyuna jichhachata tañapaniwa (mä jakhu t'aqa lantisa apnaqasisphawa)"
+
+#: TurtleArt/tabasics.py:554
+msgid "Palette of pen colors"
+msgstr "Samichiri phuyunakana samik'ullupa"
+
+# "color"
+#: TurtleArt/tabasics.py:555
+msgid "colors"
+msgstr "saminaka"
+
+#: TurtleArt/tabasics.py:560 TurtleArt/tabasics.py:568
+msgid "red"
+msgstr "chupika"
+
+#: TurtleArt/tabasics.py:560
+msgid "orange"
+msgstr "laranja q'illu"
+
+#: TurtleArt/tabasics.py:560
+msgid "yellow"
+msgstr "q'illu"
+
+#: TurtleArt/tabasics.py:560 TurtleArt/tabasics.py:568
+msgid "green"
+msgstr "ch'uxña"
+
+# CIAN.- 1. adj. De un color azul verdoso, complementario del rojo.
+#: TurtleArt/tabasics.py:561
+msgid "cyan"
+msgstr "larama ch'uxña"
+
+#: TurtleArt/tabasics.py:561 TurtleArt/tabasics.py:568
+msgid "blue"
+msgstr "larama"
+
+#: TurtleArt/tabasics.py:561
+msgid "purple"
+msgstr "kulli, ch'imaxa"
+
+#: TurtleArt/tabasics.py:561
+msgid "white"
+msgstr "janq'u"
+
+# "atrás"
+#: TurtleArt/tabasics.py:562
+msgid "black"
+msgstr "ch'iyara"
+
+#: TurtleArt/tabasics.py:568
+msgid ""
+"RGB to\n"
+"\n"
+"color"
+msgstr ""
+
+#: TurtleArt/tabasics.py:570
+msgid "converter"
+msgstr ""
+
+#: TurtleArt/tabasics.py:655
+msgid "Palette of numeric operators"
+msgstr "Jakhunaka sarantayiri samik'ullu"
+
+# "número"
+#: TurtleArt/tabasics.py:656
+msgid "numbers"
+msgstr "jakhunaka"
+
+#: TurtleArt/tabasics.py:661
+msgid "plus"
+msgstr "jakhuxataña"
+
+#: TurtleArt/tabasics.py:665
+msgid "adds two alphanumeric inputs"
+msgstr "qillqajakhuna paya mantapa jakhuthapma."
+
+#: TurtleArt/tabasics.py:684
+msgid "minus"
+msgstr "jakhuqa"
+
+#: TurtleArt/tabasics.py:687
+msgid "subtracts bottom numeric input from top numeric input"
+msgstr "alaxa jakhuna mantapatha aynacha jakhuna mantapa jakhuqma"
+
+#: TurtleArt/tabasics.py:705
+msgid "multiply"
+msgstr "mirayaña"
+
+#: TurtleArt/tabasics.py:708
+msgid "multiplies two numeric inputs"
+msgstr "panini jakhunakana mantapa mirayma"
+
+#: TurtleArt/tabasics.py:724
+msgid "divide"
+msgstr "jakhjaña"
+
+#: TurtleArt/tabasics.py:727
+msgid ""
+"divides top numeric input (numerator) by bottom numeric input (denominator)"
+msgstr ""
+"alaya jakhunakana mantapa (jakhjata) aynacha jakhunakana mantaparu (jakhjiri)"
+" uñtasa jakhjma"
+
+#  "identidad"
+#: TurtleArt/tabasics.py:744
+msgid "identity"
+msgstr "sutini kankaña"
+
+#: TurtleArt/tabasics.py:746
+msgid "identity operator used for extending blocks"
+msgstr "t'aqanaka jithitatayañataki, apnaqata sutini kankañana sarantayiripa"
+
+# LA FUNCION MOD ES UNA Q DEVUELVE EL RESIDUO DE UNA DIVISION..
+# POR EJEMPLO 16 MOD 3 = 1  (residuo)
+#
+#: TurtleArt/tabasics.py:772 TurtleArt/tabasics.py:773
+msgid "mod"
+msgstr "mod"
+
+# De dónde saca el anterior traductor "uñanaqa" para MOD o RESIDUO de una sustracción??
+#: TurtleArt/tabasics.py:776
+msgid "modular (remainder) operator"
+msgstr "mod apnaqiri (jilt'a)"
+
+#  "√"
+#: TurtleArt/tabasics.py:784
+#, fuzzy
+msgid "√"
+msgstr "√ chimpu"
+
+#: TurtleArt/tabasics.py:785
+msgid "square root"
+msgstr "raíz cuadrada"
+
+#: TurtleArt/tabasics.py:788
+msgid "calculates square root"
+msgstr "raíz cuadrada apsma"
+
+#  "aleatorio"
+#: TurtleArt/tabasics.py:796
+msgid "random"
+msgstr "kawkïrïphasa"
+
+# min es un  operador. Mejor no traducir
+#: TurtleArt/tabasics.py:796
+msgid "min"
+msgstr "min"
+
+# max es un operador, mejor no traducir
+#: TurtleArt/tabasics.py:796
+msgid "max"
+msgstr "max"
+
+#: TurtleArt/tabasics.py:800
+msgid "returns random number between minimum (top) and maximum (bottom) values"
+msgstr ""
+"alaxankiri juk'achata chanimpitha aynacha jilachata chanimpitha kawkïri "
+"jakhsa kutiyaskakma"
+
+#  "número"
+#: TurtleArt/tabasics.py:822
+msgid "number"
+msgstr "jakhu"
+
+#: TurtleArt/tabasics.py:823
+msgid "used as numeric input in mathematic operators"
+msgstr "matimatika sarantayirina, jakhu mantjama apnaqata"
+
+#: TurtleArt/tabasics.py:830
+msgid "greater than"
+msgstr "...ukatha sipana jilawa"
+
+#: TurtleArt/tabasics.py:833
+msgid "logical greater-than operator"
+msgstr "ukatha sipana jilawa sasa chaninchiri"
+
+#: TurtleArt/tabasics.py:849
+msgid "less than"
+msgstr "...ukatha sipana pisiwa"
+
+#: TurtleArt/tabasics.py:853
+msgid "logical less-than operator"
+msgstr "ukatha sipana pisiwa sasa chaninchiri"
+
+#  "equivalente"
+#: TurtleArt/tabasics.py:869
+msgid "equal"
+msgstr "ukjapura"
+
+#: TurtleArt/tabasics.py:873
+msgid "logical equal-to operator"
+msgstr "ukjapurawa sasa chaninchiri"
+
+#  "no"
+#: TurtleArt/tabasics.py:888
+msgid "not"
+msgstr "janiwa"
+
+#: TurtleArt/tabasics.py:891
+msgid "logical NOT operator"
+msgstr "JANI sasa chaninchiri"
+
+# O no hay que traducir?
+#: TurtleArt/tabasics.py:899 TurtleArt/tabasics.py:902
+msgid "and"
+msgstr "ukampi"
+
+#: TurtleArt/tabasics.py:903
+msgid "logical AND operator"
+msgstr "UKAMPI sasa chaninchiri"
+
+#: TurtleArt/tabasics.py:911 TurtleArt/tabasics.py:914
+msgid "or"
+msgstr "januka"
+
+#: TurtleArt/tabasics.py:915
+msgid "logical OR operator"
+msgstr "JANUKA sasa chaninchiri"
+
+# flujo... larqa --- acequia por donde fluye el agua
+#: TurtleArt/tabasics.py:927
+msgid "flow"
+msgstr "laya"
+
+#: TurtleArt/tabasics.py:931
+msgid "wait"
+msgstr "suyt'aña"
+
+#: TurtleArt/tabasics.py:935
+msgid "pauses program execution a specified number of seconds"
+msgstr "ch'ipxtanaka jakht'asina wakicht'awina sarañapa acht'ayiriwa"
+
+#: TurtleArt/tabasics.py:944
+msgid "forever"
+msgstr "wiñayataki"
+
+#: TurtleArt/tabasics.py:948
+msgid "loops forever"
+msgstr "wiñayataki kutxataña"
+
+#: TurtleArt/tabasics.py:958 TurtleArt/tabasics.py:962
+msgid "repeat"
+msgstr "kutxataña"
+
+#: TurtleArt/tabasics.py:963
+msgid "loops specified number of times"
+msgstr "qhawqha kuti kutxatama sisa uka kutxatma"
+
+# if  =  Si  = No es afirmación JÏSA. Hay que cambiar por un condicional que en el aymara es postpuesto o va al final de la condicional subordinada.
+#: TurtleArt/tabasics.py:976 TurtleArt/tabasics.py:992
+msgid "if"
+msgstr "ukatixa..."
+
+#: TurtleArt/tabasics.py:976 TurtleArt/tabasics.py:992
+msgid "then"
+msgstr "ukhamaxa"
+
+# En "si entonces",  la palabra SI no es AFIRMACIÓN como se ha traducido antes, sino es una condicional.
+#: TurtleArt/tabasics.py:979
+msgid "if then"
+msgstr "ukatixa ukhamaxa"
+
+#: TurtleArt/tabasics.py:981
+msgid "if-then operator that uses boolean operators from Numbers palette"
+msgstr ""
+"ukatixa-ukhamaxa sata chaninchirixa Jakhunakana pallallk'ullupana "
+"chaninchirinakapawa"
+
+#: TurtleArt/tabasics.py:992
+msgid "else"
+msgstr "jani ukaxa"
+
+#: TurtleArt/tabasics.py:996 TurtleArt/tabasics.py:1009
+msgid "if then else"
+msgstr "ukatixa-ukhamaxa-jani ukaxa"
+
+#: TurtleArt/tabasics.py:997 TurtleArt/tabasics.py:1010
+msgid "if-then-else operator that uses boolean operators from Numbers palette"
+msgstr ""
+"ukatixa-ukhamaxa-jani ukaxa sata chaninchirixa Jakhunakana pallallk'ullupana "
+"chaninchirinakapawa."
+
+#: TurtleArt/tabasics.py:1019
+msgid "horizontal space"
+msgstr "irama pampa"
+
+#: TurtleArt/tabasics.py:1020
+msgid "jogs stack right"
+msgstr "kupiwxaru pila sata arku jithjtayma"
+
+#: TurtleArt/tabasics.py:1029
+msgid "vertical space"
+msgstr "wira pampa"
+
+#: TurtleArt/tabasics.py:1030
+msgid "jogs stack down"
+msgstr "aynachawxaru pila sata arku jithjtayaña"
+
+#: TurtleArt/tabasics.py:1037
+msgid "stop action"
+msgstr "lurawi acht'ayaña"
+
+#: TurtleArt/tabasics.py:1040
+msgid "stops current action"
+msgstr "jichha lurawi acht'ayi"
+
+#: TurtleArt/tabasics.py:1050
+msgid "Palette of variable blocks"
+msgstr "Kunaymana mayjt'ayirinakana t'aqapana samik'ullupa"
+
+#: TurtleArt/tabasics.py:1051
+msgid "blocks"
+msgstr "t'aqanaka"
+
+#: TurtleArt/tabasics.py:1058
+msgid "connects action to toolbar run buttons"
+msgstr "luraña yänaka sarantayaña limt'añanakampiwa lurawinaka qhantayma"
+
+#: TurtleArt/tabasics.py:1075
+msgid "top of nameable action stack"
+msgstr "sutiyañjama lurawina arkupana p'iqipa"
+
+#: TurtleArt/tabasics.py:1098
+msgid "store in box 1"
+msgstr "1 jakhuni kajunaru imaña"
+
+#: TurtleArt/tabasics.py:1103
+msgid "stores numeric value in Variable 1"
+msgstr "1 jakhuni mayjt'ayiriru, aka jakhuna chanipa imma."
+
+#: TurtleArt/tabasics.py:1112
+msgid "store in box 2"
+msgstr "2 jakhuni kajunaru imaña"
+
+#: TurtleArt/tabasics.py:1117
+msgid "stores numeric value in Variable 2"
+msgstr "2 jakhuni mayjt'ayiriru, aka jakhuna chanipa imma."
+
+#: TurtleArt/tabasics.py:1126
+msgid "box 1"
+msgstr "1 jakhuni kajuna"
+
+#: TurtleArt/tabasics.py:1129
+msgid "Variable 1 (numeric value)"
+msgstr "1 jakhuni mayjt'ayiri (jakhu chanipa)"
+
+#: TurtleArt/tabasics.py:1139
+msgid "box 2"
+msgstr "2 jakhuni kajuna"
+
+#: TurtleArt/tabasics.py:1142
+msgid "Variable 2 (numeric value)"
+msgstr "2 jakhuni mayjt'ayiri (jakhu chanipa)"
+
+#: TurtleArt/tabasics.py:1154 TurtleArt/tabasics.py:1170
+msgid "box"
+msgstr "kajuna"
+
+#: TurtleArt/tabasics.py:1182 TurtleArt/tabasics.py:1206
+msgid "action 1"
+msgstr "1 lurawi"
+
+#: TurtleArt/tabasics.py:1185
+msgid "top of Action 1 stack"
+msgstr "1 Luräwina arkupana nayrïripa"
+
+#: TurtleArt/tabasics.py:1194 TurtleArt/tabasics.py:1219
+msgid "action 2"
+msgstr "2 lurawi"
+
+#: TurtleArt/tabasics.py:1197
+msgid "top of Action 2 stack"
+msgstr "2 Lurawina arkupana nayrïripa"
+
+#: TurtleArt/tabasics.py:1209
+msgid "invokes Action 1 stack"
+msgstr "1 jakhuni Lurawi arkuru jawsayaña"
+
+#: TurtleArt/tabasics.py:1222
+msgid "invokes Action 2 stack"
+msgstr "2 jakhuni Lurawi arkuru jawsayaña"
+
+#: TurtleArt/tabasics.py:1241
+msgid "invokes named action stack and returns value"
+msgstr "sutichata lurawi arku jawsi, chanipsa kutuyarakiwa"
+
+#: TurtleArt/tabasics.py:1248
+msgid "return"
+msgstr "kutt'aña"
+
+#: TurtleArt/tabasics.py:1251
+msgid "returns a value"
+msgstr "nhani kutt'ayaña"
+
+#: TurtleArt/tabasics.py:1268
+msgid "permanently deletes items in trash"
+msgstr "jani wakisiri imañatha, yänaka sapa kuti pichsma"
+
+#: TurtleArt/tabasics.py:1272
+msgid "restore all"
+msgstr "taqpacha wasitatha jaktayaña"
+
+#: TurtleArt/tabasics.py:1273
+msgid "restore all blocks from trash"
+msgstr "jani wakisiri imañankiritha, taqpacha t'aqanaka wasitatha jaktayma"
+
+#: TurtleArt/tabasics.py:1277
+msgid "clear all"
+msgstr "taqpacha chhaqtayaña"
+
+#: TurtleArt/tabasics.py:1278
+msgid "move all blocks to trash"
+msgstr "q'alpacha t'aqanaka jani wakisiri imañaru uskuntma"
+
+# El aimara es una lengua en la que los elementos de una frase nominal van al FINAL DE FRASE. Así:   (MODIFICADORES+NUCLEO). Por tanto "A Logo-inspired turtle"o "Una tortuga inspirada" tiene que estar al  final de frase. Vease como se ubican las subordinadas relativas del aymara.
+#
+#~ msgid ""
+#~ "A Logo-inspired turtle that draws colorful pictures with snap-together "
+#~ "visual programming blocks"
+#~ msgstr ""
+#~ "Uñjañataki wakichata chimpunakampi chika, kunaymana yänaka suma samicht'asa "
+#~ "jamuqiri Logo satjama luriri turtuwa"
+
+#~ msgid "Please restart Turtle Art in order to use the plugin."
+#~ msgstr "Plugin wakichata apnaqañataki Turtuwa lurawi mayampi qhantayma."
+
+#~ msgid "Load project"
+#~ msgstr "Luräwi wakichata sartayaña"
+
+#~ msgid "Hide sample projects"
+#~ msgstr "Wakichäwinaka uñachayäwi imantaña"
+
+#~ msgid "palette"
+#~ msgstr "limiña"
+
+#~ msgid "make a uturn"
+#~ msgstr "U uñanaqaru muytaña"
+
+#, fuzzy
+#~ msgid "u turn"
+#~ msgstr "U uñanaqaru muyta"
+
+#~ msgid "set text color"
+#~ msgstr "qillqata samipa wakichaña"
+
+#~ msgid "sets color of text drawn by the turtle"
+#~ msgstr "tortuga wakichatana rixitapana qillqata samipa wakichma"
+
+#~ msgid "set text size"
+#~ msgstr "qillqata tañapa wakichma"
+
+#~ msgid "sets size of text drawn by the turtle"
+#~ msgstr "tortuga wakichatana rixitapana qillqata tañapa wakichma"
+
+# "presentación"
+#~ msgid "presentation 1x1"
+#~ msgstr "1x1 uñachayäwi"
+
+# "presentación"
+#~ msgid "presentation 2x1"
+#~ msgstr "2x1 uñachayäwi"
+
+# "presentación"
+#~ msgid "presentation 1x2"
+#~ msgstr "1x2 uñachayäwi"
+
+# "presentación"
+#~ msgid "presentation 2x2"
+#~ msgstr "2x2 uñachayäwi"
 
 #  "TortugArte"
 #~ msgid "Turtle Art"
@@ -2796,9 +3167,6 @@ msgstr "¿Wakichäwinaka imaña?"
 
 #~ msgid "read"
 #~ msgstr "ullaña"
-
-#~ msgid "sensor"
-#~ msgstr "katjiri"
 
 #~ msgid "Read sensor output."
 #~ msgstr "Katjirina mistuñapa wakichata ullma."
