@@ -83,7 +83,7 @@ def save_logo(tw):
                 logo_command = logo_commands[blk]
             else:
                 logo_command = None
-            if i == 0 and not logo_command in ['to stack1\n', 'to stack2\n',
+            if i == 0 and logo_command not in ['to stack1\n', 'to stack2\n',
                                                'to action', 'to start\n']:
                 this_stack = 'to turtleblocks_%d\n' % (stack_count)
                 stack_count += 1
@@ -93,13 +93,13 @@ def save_logo(tw):
                         psuedocode[i + 1])
                     skip = True
                 else:
-                    print(('missing arg to %s' % (logo_command)))
+                    print('missing arg to %s' % (logo_command))
             elif logo_command in constants_table:
                 this_stack += str(constants_table[logo_command](tw))
             elif logo_command is not None:
                 this_stack += logo_command
             else:  # assume it is an argument
-                if not blk in ['nop', 'nop1', 'nop2', 'nop3']:
+                if blk not in ['nop', 'nop1', 'nop2', 'nop3']:
                     if isinstance(blk, str) and blk[0:2] == '#s':
                         this_stack += str(blk[2:]).replace(' ', '_')
                     else:
@@ -110,7 +110,7 @@ def save_logo(tw):
         logocode += '\nend\n'
 
     # We may need to prepend some additional procedures.
-    for key in list(logo_functions.keys()):
+    for key in logo_functions.keys():
         if key in logocode:
             logocode = logo_functions[key] + logocode
 
@@ -126,10 +126,9 @@ def _add_label(string):
     if isinstance(string, str) and string[0:8] in ['#smedia_', '#saudio_',
                                                    '#svideo_', '#sdescr_']:
         string = string[8:]
-        if HAS_DATASTORE:
-            dsobject = datastore.get(string[8:])
-            if 'title' in dsobject.metadata:
-                string = dsobject.metadata['title']
+        dsobject = datastore.get(string[8:])
+        if 'title' in dsobject.metadata:
+            string = dsobject.metadata['title']
     else:
         string = str(string)
     if string[0:2] == '#s':
@@ -206,8 +205,8 @@ def _leftx(tw):
 
 
 def _topy(tw):
-    return int((tw.canvas.height * (TITLEXY[1] - 0.125))
-               / (tw.coord_scale * 2))
+    return int((tw.canvas.height * (TITLEXY[1] - 0.125)) /
+               (tw.coord_scale * 2))
 
 
 def _rightx(tw):
