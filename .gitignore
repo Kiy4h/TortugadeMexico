@@ -1,2 +1,6 @@
 *.pyc
 *~
+locale
+dist
+po.original
+po.merged

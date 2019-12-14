@@ -1,6 +1,6 @@
 #!/usr/bin/env python
-#Copyright (C) 2010,11 Emiliano Pastorino <epastorino@plan.ceibal.edu.uy>
-#Copyright (c) 2011 Walter Bender
+# Copyright (C) 2010,11 Emiliano Pastorino <epastorino@plan.ceibal.edu.uy>
+# Copyright (c) 2011 Walter Bender
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -24,8 +24,9 @@ from plugins.rfid.rfidutils import strhex2bin, strbin2dec, find_device
 from plugins.plugin import Plugin
 
 from TurtleArt.tapalette import make_palette
-from TurtleArt.talogo import primitive_dictionary
 from TurtleArt.tautils import debug_output
+from TurtleArt.taprimitive import Primitive
+from TurtleArt.tatype import TYPE_STRING
 
 import logging
 _logger = logging.getLogger('turtleart-activity RFID plugin')
@@ -41,6 +42,7 @@ REGEXP_SERUSB = '\/org\/freedesktop\/Hal\/devices\/usb_device['\
 class Rfid(Plugin):
 
     def __init__(self, parent):
+        Plugin.__init__(self)
         self._parent = parent
         self._status = False
 
@@ -71,8 +73,11 @@ class Rfid(Plugin):
 
             loop = DBusGMainLoop()
             bus = dbus.SystemBus(mainloop=loop)
-            hmgr_iface = dbus.Interface(bus.get_object(HAL_SERVICE,
-                HAL_MGR_PATH), HAL_MGR_IFACE)
+            hmgr_iface = dbus.Interface(
+                bus.get_object(
+                    HAL_SERVICE,
+                    HAL_MGR_PATH),
+                HAL_MGR_IFACE)
 
             hmgr_iface.connect_to_signal('DeviceAdded', self._device_added_cb)
 
@@ -80,7 +85,6 @@ class Rfid(Plugin):
 
     def setup(self):
         # set up RFID-specific blocks
-        primitive_dictionary['rfid'] = self.prim_read_rfid
         palette = make_palette('sensor',
                                colors=["#FF6060", "#A06060"],
                                help_string=_('Palette of sensor blocks'),
@@ -103,7 +107,10 @@ class Rfid(Plugin):
                               prim_name='rfid')
 
         self._parent.lc.def_prim(
-            'rfid', 0, lambda self: primitive_dictionary['rfid']())
+            'rfid', 0,
+            Primitive(self.prim_read_rfid,
+                      return_type=TYPE_STRING,
+                      call_afterwards=self.after_rfid))
 
     def _status_report(self):
         debug_output('Reporting RFID status: %s' % (str(self._status)))
@@ -149,3 +156,7 @@ class Rfid(Plugin):
             return self.rfid_idn
         else:
             return '0'
+
+    def after_rfid(self):
+        if self._parent.lc.update_values:
+            self._parent.lc.update_label_value('rfid', self.rfid_idn)

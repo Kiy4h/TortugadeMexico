@@ -1,5 +1,5 @@
-#Copyright (c) 2008, Media Modifications Ltd.
-#Copyright (c) 2011, Walter Bender
+# Copyright (c) 2008, Media Modifications Ltd.
+# Copyright (c) 2011, Walter Bender
 
 # This procedure is invoked when the user-definable block on the
 # "extras" palette is selected.
@@ -10,7 +10,7 @@
 # Sugar Journal.
 
 
-def myblock(tw, arg):
+def myblock(tw, args):
     ''' Record and playback a sound (Sugar only) '''
     import os
     import gst
@@ -25,6 +25,7 @@ def myblock(tw, arg):
     from gettext import gettext as _
 
     class Grecord:
+
         ''' A class for creating a gstreamer session for recording audio. '''
 
         def __init__(self, tw):
@@ -77,7 +78,6 @@ def myblock(tw, arg):
             queue.set_property("leaky", True)  # prefer fresh data
             queue.set_property("max-size-time", 5000000000)  # 5 seconds
             queue.set_property("max-size-buffers", 500)
-            queue.connect("overrun", self._log_queue_overrun)
 
             enc = gst.element_factory_make("wavenc", "abenc")
 
@@ -89,12 +89,6 @@ def myblock(tw, arg):
 
             src.link(rate, srccaps)
             gst.element_link_many(rate, queue, enc, sink)
-
-        def _log_queue_overrun(self, queue):
-            ''' We use a buffer, which may overflow. '''
-            cbuffers = queue.get_property("current-level-buffers")
-            cbytes = queue.get_property("current-level-bytes")
-            ctime = queue.get_property("current-level-time")
 
         def is_recording(self):
             ''' Are we recording? '''
@@ -149,19 +143,19 @@ def myblock(tw, arg):
             position, duration = self._query_position(pipe)
             if position != gst.CLOCK_TIME_NONE:
                 value = position * 100.0 / duration
-                value = value/100.0
+                value = value / 100.0
             return True
 
         def _query_position(self, pipe):
             ''' Where are we in the stream? '''
             try:
                 position, format = pipe.query_position(gst.FORMAT_TIME)
-            except:
+            except BaseException:
                 position = gst.CLOCK_TIME_NONE
 
             try:
                 duration, format = pipe.query_duration(gst.FORMAT_TIME)
-            except:
+            except BaseException:
                 duration = gst.CLOCK_TIME_NONE
 
             return (position, duration)
@@ -204,12 +198,9 @@ def myblock(tw, arg):
 
     # Sometime we need to parse multiple arguments, e.g., save, savename
     save_name = '%s_%s' % (tw.activity.name, _('sound'))
-    if isinstance(arg, list):
-        cmd = arg[0].lower()
-        if len(arg) > 1:
-            save_name = str(arg[1])
-    else:
-        cmd = arg.lower()
+    cmd = args[0].lower()
+    if len(args) > 1:
+        save_name = str(args[1])
 
     if cmd == 'start' or cmd == _('start').lower():
         tw.grecord.start_recording_audio()
