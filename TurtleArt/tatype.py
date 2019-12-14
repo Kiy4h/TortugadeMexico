@@ -24,7 +24,7 @@
 import ast
 
 from .tablock import Media
-from .taconstants import (Color, ColorObj, CONSTANTS, Vector)
+from .taconstants import (Color, ColorObj, Vector)
 
 
 class Type(object):
@@ -49,6 +49,9 @@ class Type(object):
     def __str__(self):
         return str(self.constant_name)
     __repr__ = __str__
+
+    def __hash__(self):
+        return self.value
 
 
 class TypeDisjunction(tuple, Type):
@@ -173,13 +176,15 @@ def get_type(x):
 
 
 def is_instancemethod(method):
-    # TODO how to access the type `instancemethod` directly?
-    return type(method).__name__ == "instancemethod"
+    # FIXME: a way to identify an instance method in python 3
+    # until then, assume everything is an instance method
+    return True
 
 
 def is_bound_method(method):
-    return ((is_instancemethod(method) and method.im_self is not None) or
-            (hasattr(method, '__self__') and method.__self__ is not None))
+    return type(method).__name__ == 'method' and \
+        hasattr(method, '__self__') and \
+        method.__self__ is not None
 
 
 def is_staticmethod(method):
@@ -357,7 +362,7 @@ def convert(x, new_type, old_type=None, converter=None):
                     return y
                 elif is_instancemethod(converter):
                     func = ast.Attribute(value=y,
-                                         attr=converter.im_func.__name__,
+                                         attr=converter.__func__.__name__,
                                          ctx=ast.Load)
                     return get_call_ast(func)
                 else:
@@ -443,7 +448,7 @@ def get_call_ast(func_name, args=None, kwargs=None, return_type=None):
     # convert keyword argument dict to a list of (key, value) pairs
     keywords = []
     if kwargs is not None:
-        for (key, value) in kwargs.iteritems():
+        for (key, value) in kwargs.items():
             keywords.append(ast.keyword(arg=key, value=value))
     # get or generate the AST representing the callable
     if isinstance(func_name, ast.AST):
