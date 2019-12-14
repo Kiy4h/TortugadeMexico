@@ -26,7 +26,7 @@ from os import linesep
 from os import path, pardir
 import re
 import traceback
-from . import util.codegen as codegen
+from .util import codegen
 
 # from ast_pprint import * # only used for debugging, safe to comment out
 
@@ -55,9 +55,9 @@ paths.append('/usr/local/share/sugar/activities/%s.activity')
 paths.append(
     '/home/broot/sugar-build/build/install/share/sugar/activities/%s.activity')
 """ + \
-"paths.append('%s')" % \
+    "paths.append('%s')" % \
     path.abspath(path.join(path.dirname(__file__), pardir)) + \
-"""\
+    """\
 
 flag = False
 for path in paths:
