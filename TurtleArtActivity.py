@@ -262,7 +262,7 @@ class TurtleArtActivity(activity.Activity):
         if pythoncode:
             datapath = get_path(activity, 'instance')
             python_code_path = os.path.join(datapath, 'tmpfile.py')
-            f = file(python_code_path, 'w')
+            f = open(python_code_path, 'w')
             f.write(pythoncode)
             f.close()
 
@@ -388,7 +388,7 @@ class TurtleArtActivity(activity.Activity):
             if hasattr(self.get_window(), 'get_cursor'):
                 self._old_cursor = self.get_window().get_cursor()
                 self.get_window().set_cursor(Gdk.Cursor(Gdk.CursorType.WATCH))
-        Gobject.timeout_add(250, self.__save_blocks_as_image)
+        GObject.timeout_add(250, self.__save_blocks_as_image)
 
     def __save_blocks_as_image(self):
         self.tw.save_blocks_as_image()
@@ -682,7 +682,7 @@ class TurtleArtActivity(activity.Activity):
             _logger.debug('save_logo returned None')
             return None
         try:
-            f = file(tmpfile, 'w')
+            f = open(tmpfile, 'w')
             f.write(code)
             f.close()
         except Exception as e:
@@ -1096,7 +1096,7 @@ class TurtleArtActivity(activity.Activity):
         button_box = Gtk.VBox()
         self.save_as_image = self._add_button_and_label(
             'image-saveoff', _('Save as image'), self.do_save_as_image_cb,
-            None, button_box)
+            None, button_box)[0]
         self.save_as_icon = self._add_button_and_label(
             'image-saveoff', _('Save as icon'), self.do_save_as_icon_cb,
             None, button_box)
