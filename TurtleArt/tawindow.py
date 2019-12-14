@@ -22,25 +22,22 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 
-import gi
-gi.require_version("Gtk", "3.0")
-gi.require_version('PangoCairo', '1.0')
 import os
 import sys
 import subprocess
 import errno
 from gettext import gettext as _
 
+import cairo
+
 from gi.repository import Gtk
 from gi.repository import Gdk
-from gi.repository import GObject
+from gi.repository import GLib
 from gi.repository import GdkPixbuf
 from gi.repository import Pango
 from gi.repository import PangoCairo
 
-from sugar3.activity import activity
 _GST_AVAILABLE = False
-
 
 
 from random import uniform
@@ -51,7 +48,6 @@ import locale
 
 from .taconstants import (
     HORIZONTAL_PALETTE,
-    VERTICAL_PALETTE,
     BLOCK_SCALE,
     MEDIA_SHAPES,
     STATUS_SHAPES,
@@ -98,26 +94,26 @@ from .taconstants import (
     Vector,
     PASTE_OFFSET)
 from .tapalette import (palette_names, palette_blocks, expandable_blocks,
-                       block_names, content_blocks, default_values,
-                       special_names, block_styles, help_strings,
-                       string_or_number_args, make_palette,
-                       palette_name_to_index, palette_init_on_start,
-                       palette_i18n_names)
+                        block_names, content_blocks, default_values,
+                        special_names, block_styles, help_strings,
+                        string_or_number_args, make_palette,
+                        palette_name_to_index, palette_init_on_start,
+                        palette_i18n_names)
 from .talogo import (LogoCode, logoerror)
 from .tacanvas import TurtleGraphics
 from .tablock import (Blocks, Block, Media, media_blocks_dictionary)
 from .taturtle import (Turtles, Turtle)
 from .tautils import (magnitude, get_load_name, get_save_name, data_from_file,
-                     data_to_file, round_int, get_id, get_pixbuf_from_journal,
-                     movie_media_type, audio_media_type, image_media_type,
-                     save_picture, calc_image_size, get_path, hide_button_hit,
-                     show_button_hit, chooser_dialog, arithmetic_check, xy,
-                     find_block_to_run, find_top_block, journal_check,
-                     find_group, find_blk_below, data_to_string,
-                     find_start_stack, get_hardware, debug_output,
-                     error_output, find_hat, find_bot_block,
-                     restore_clamp, collapse_clamp, data_from_string,
-                     increment_name, get_screen_dpi, is_writeable)
+                      data_to_file, round_int, get_id, get_pixbuf_from_journal,
+                      movie_media_type, audio_media_type, image_media_type,
+                      save_picture, calc_image_size, get_path, hide_button_hit,
+                      show_button_hit, chooser_dialog, arithmetic_check, xy,
+                      find_block_to_run, find_top_block, journal_check,
+                      find_group, find_blk_below, data_to_string,
+                      find_start_stack, get_hardware, debug_output,
+                      error_output, find_hat, find_bot_block,
+                      restore_clamp, collapse_clamp, data_from_string,
+                      increment_name, get_screen_dpi, is_writeable)
 from .tasprite_factory import (svg_str_to_pixbuf, svg_from_file)
 from .tapalette import block_primitives
 from .tapaletteview import PaletteView
@@ -126,8 +122,7 @@ from .sprites import (Sprites, Sprite)
 
 from .util.menubuilder import make_checkmenu_item
 
-#if _GST_AVAILABLE:
-#   from .tagplay import stop_media
+from .tagplay import stop_media
 
 _MOTION_THRESHOLD = 6
 _SNAP_THRESHOLD = 200
@@ -343,7 +338,7 @@ class TurtleArtWindow():
 
         self.turtleart_plugins = {}
         self.turtleart_favorites_plugins = []
-        #self.turtleart_plugin_list = {}
+        # self.turtleart_plugin_list = {}
         self.saved_pictures = []
         self.block_operation = ''
 
@@ -358,7 +353,7 @@ class TurtleArtWindow():
         global_objects["turtles"] = self.turtles
 
         if self.interactive_mode:
-            GObject.idle_add(self._lazy_init)
+            GLib.idle_add(self._lazy_init)
         else:
             self._init_plugins()
             self._setup_plugins()
@@ -421,8 +416,12 @@ class TurtleArtWindow():
         ''' Try importing plugin files from the plugin dir. '''
         paths = set()
 
-        homepath = os.path.join(os.path.expanduser('~'), 'Activities',
-                                os.path.basename(self.lib_path), _PLUGIN_SUBPATH)
+        homepath = os.path.join(
+            os.path.expanduser('~'),
+            'Activities',
+            os.path.basename(
+                self.lib_path),
+            _PLUGIN_SUBPATH)
         if os.path.exists(homepath):
             paths.add(homepath)
 
@@ -442,10 +441,14 @@ class TurtleArtWindow():
                 gconf_path = self.activity._PLUGINS_PATH + plugin_dir
                 try:
                     status = (self.activity.client.get_int(gconf_path) == 1)
-                except:
+                except BaseException:
                     pass
-                make_checkmenu_item(self.activity._plugin_menu, \
-                         plugin_dir, self.activity._do_toggle_plugin_cb, status)
+                if hasattr(self.activity, '_plugin_menu'):
+                    make_checkmenu_item(
+                        self.activity._plugin_menu,
+                        plugin_dir,
+                        self.activity._do_toggle_plugin_cb,
+                        status)
             if status:
                 self.init_plugin(plugin_dir, plugin_path)
                 self.turtleart_favorites_plugins.append(plugin_dir)
@@ -462,7 +465,8 @@ class TurtleArtWindow():
         # NOTE: When debugging plugins, it may be useful to not trap errors
         try:
             exec(f, globals(), plugins)
-            self.turtleart_plugins[plugin_dir] = list(plugins.values())[0](self)
+            self.turtleart_plugins[plugin_dir] = list(plugins.values())[
+                0](self)
             debug_output('Successfully importing %s' % (plugin_class),
                          self.running_sugar)
             # Add the icon dir to the icon_theme search path
@@ -478,7 +482,7 @@ class TurtleArtWindow():
         icon_theme = Gtk.IconTheme.get_default()
         icon_path = os.path.join(dirname, 'icons')
         if os.path.exists(icon_path):
-            if not icon_path in self.icon_paths:
+            if icon_path not in self.icon_paths:
                 icon_theme.append_search_path(icon_path)
                 self.icon_paths.append(icon_path)
 
@@ -588,17 +592,19 @@ class TurtleArtWindow():
         # Reset the timer
         if hasattr(self.activity, '_unfullscreen_button_timeout_id'):
             if self.activity._unfullscreen_button_timeout_id is not None:
-                GObject.source_remove(
+                GLib.source_remove(
                     self.activity._unfullscreen_button_timeout_id)
                 self.activity._unfullscreen_button_timeout_id = None
 
             self.activity._unfullscreen_button_timeout_id = \
-                GObject.timeout_add_seconds(
+                GLib.timeout_add_seconds(
                     _UNFULLSCREEN_VISIBILITY_TIMEOUT,
                     self.__unfullscreen_button_timeout_cb)
 
     def __unfullscreen_button_timeout_cb(self):
         self.activity._unfullscreen_button.hide()
+        self.activity._unfullscreen_button_timeout_id = None
+        return False
 
     def _drag_data_received(self, w, context, x, y, data, info, time):
         ''' Handle dragging of block data from clipboard to canvas. '''
@@ -613,7 +619,8 @@ class TurtleArtWindow():
                 self.selected_blk.name == 'string':
             bounds = self._text_buffer.get_bounds()
             self._text_buffer.set_text(
-                self._text_buffer.get_text(bounds[0], bounds[1]) + data.data, True)
+                self._text_buffer.get_text(
+                    bounds[0], bounds[1]) + data.data, True)
             self._text_entry.set_buffer(self._text_buffer)
             context.finish(True, False, time)
         else:
@@ -847,6 +854,8 @@ class TurtleArtWindow():
         if self.running_sugar:
             self.activity.fullscreen()
             self.activity.recenter()
+            self.activity.vbox.set_size_request(Gdk.Screen.width(),
+                                                Gdk.Screen.height())
 
     def set_cartesian(self, flag):
         ''' Turn on/off Cartesian coordinates '''
@@ -893,7 +902,7 @@ class TurtleArtWindow():
         self.height = Gdk.Screen.height()
 
         for name in OVERLAY_SHAPES:
-            if not name in self.overlay_shapes:
+            if name not in self.overlay_shapes:
                 continue
             shape = self.overlay_shapes[name]
             showing = False
@@ -1222,7 +1231,8 @@ class TurtleArtWindow():
         self.mouse_flag = 1
         self.mouse_x = x
         self.mouse_y = y
-        self.button_press(event.get_state() & Gdk.ModifierType.CONTROL_MASK, x, y)
+        self.button_press(event.get_state() &
+                          Gdk.ModifierType.CONTROL_MASK, x, y)
         return True
 
     def get_mouse_flag(self):
@@ -1255,7 +1265,8 @@ class TurtleArtWindow():
                 if blk is not None:
                     # Make sure stop button is visible
                     if self.running_sugar and self.running_turtleart:
-                        self.activity.stop_turtle_button.set_icon_name("stopiton")
+                        self.activity.stop_turtle_button.set_icon_name(
+                            "stopiton")
                         self.activity.stop_turtle_button.set_tooltip(
                             _('Stop turtle'))
                     elif self.interactive_mode:
@@ -1277,7 +1288,7 @@ class TurtleArtWindow():
         self.dragging_canvas[1] = x
         self.dragging_canvas[2] = y
         if spr is None:
-            if not self.running_blocks and not self.hw in [XO1]:
+            if not self.running_blocks and self.hw not in [XO1]:
                 self.dragging_canvas[0] = True
                 self.dragging_counter = 0
                 self.dragging_dx = 0
@@ -1418,14 +1429,10 @@ class TurtleArtWindow():
                         # First look for a hat with _('action') as its label
                         found_the_action_block = False
                         bname = _('action')
-                        if isinstance(bname, str):
-                            bname = bname.encode('utf-8')
                         for sblk in similars:
                             cblk = sblk.connections[1]
                             if cblk is not None:
                                 blabel = cblk.spr.labels[0]
-                                if isinstance(blabel, str):
-                                    blabel = blabel.encode('utf-8')
                                 if bname == blabel:
                                     found_the_action_block = True
                         # If there is an action block in use, change the name
@@ -1645,8 +1652,6 @@ class TurtleArtWindow():
         ''' change the label on action blocks of the same name '''
         if isinstance(name, (float, int)):
             return
-        if isinstance(name, str):
-            name = name.encode('utf-8')
         for blk in self.just_blocks():
             if self._action_name(blk, hat=False):
                 if blk.spr.labels[0] == self._saved_action_name:
@@ -1663,8 +1668,6 @@ class TurtleArtWindow():
         ''' change the label on box blocks of the same name '''
         if isinstance(name, (float, int)):
             return
-        if isinstance(name, str):
-            name = name.encode('utf-8')
         for blk in self.just_blocks():
             if self._box_name(blk, storein=False):
                 if blk.spr.labels[0] == self._saved_box_name:
@@ -1681,8 +1684,6 @@ class TurtleArtWindow():
         ''' change the label on storin blocks of the same name '''
         if isinstance(name, (float, int)):
             return
-        if isinstance(name, str):
-            name = name.encode('utf-8')
         for blk in self.just_blocks():
             if self._box_name(blk, storein=True):
                 if blk.spr.labels[0] == self._saved_box_name:
@@ -1704,12 +1705,6 @@ class TurtleArtWindow():
         # (2) The list of block styles
         # (3) The list of proto blocks on the palette
         # (4) The list of block names
-        if isinstance(name, str):
-            name = name.encode('utf-8')
-        if isinstance(old, str):
-            old = old.encode('utf-8')
-        if isinstance(new, str):
-            new = new.encode('utf-8')
 
         if old == new:
             '''
@@ -1720,7 +1715,7 @@ class TurtleArtWindow():
 
         if old in block_styles[style]:
             block_styles[style].remove(old)
-        if not new in block_styles[style]:
+        if new not in block_styles[style]:
             block_styles[style].append(new)
 
         if old in block_names:
@@ -1739,7 +1734,7 @@ class TurtleArtWindow():
 
         if old in palette_blocks[i]:
             palette_blocks[i].remove(old)
-        if not new in palette_blocks[i]:
+        if new not in palette_blocks[i]:
             palette_blocks[i].append(new)
 
         self.show_toolbar_palette(i, regenerate=True)
@@ -1830,7 +1825,7 @@ class TurtleArtWindow():
             if gblk.name in BLOCKS_WITH_SKIN:
                 self._resize_skin(gblk)
 
-        if not 'trash' in palette_names or \
+        if 'trash' not in palette_names or \
                 self.selected_palette != palette_names.index('trash'):
             for gblk in group:
                 gblk.spr.hide()
@@ -1996,7 +1991,7 @@ class TurtleArtWindow():
                             name = ''
                             try:
                                 name = str(data[data[i][4][1]][1][1])
-                            except:
+                            except BaseException:
                                 pass
                             if name == '':
                                 name = 'stack_%d' % (int(uniform(0, 10000)))
@@ -2024,8 +2019,7 @@ class TurtleArtWindow():
                         clipboard.set_text(text)
                     elif self.sharing():
                         text = data_to_string(data)
-                        payload = {"payload": data_to_string([self.nick, text])}
-                        self.send_event("B", payload)
+                        self.send_event('B', data_to_string([self.nick, text]))
             self.paste_offset = 20
 
             self.parent.get_window().set_cursor(
@@ -2309,7 +2303,8 @@ class TurtleArtWindow():
                     if blk.connections[1] is not None:
                         self._resize_clamp(blk, blk.connections[1], dockn=1)
                 elif blk.name in block_styles['clamp-style'] or \
-                        blk.name in block_styles['clamp-style-collapsible'] or \
+                        blk.name in \
+                        block_styles['clamp-style-collapsible'] or \
                         blk.name in block_styles['clamp-style-hat']:
                     if blk.connections[1] is not None:
                         self._resize_clamp(blk, blk.connections[1])
@@ -2323,8 +2318,8 @@ class TurtleArtWindow():
                     dy = 0
                     drag_group = find_group(blk.connections[2])
                     gblk = drag_group[0]
-                    d = int((gblk.docks[-1][3] - gblk.docks[0][3])
-                            / gblk.scale)
+                    d = int((gblk.docks[-1][3] - gblk.docks[0][3]) /
+                            gblk.scale)
                     if d == 0:
                         dy += 21  # Fixme: don't hardcode size of slot
                     else:
@@ -2398,20 +2393,22 @@ class TurtleArtWindow():
         ''' Share turtle movement and rotation after button up '''
         if self.sharing():
             nick = self.turtle_movement_to_share.get_name()
-            self.send_event("r", {"payload": data_to_string(
+            event = data_to_string(
                 [nick,
-                 round_int(self.turtles.get_active_turtle().get_heading())])})
+                 round_int(self.turtles.get_active_turtle().get_heading())])
+            self.send_event('r', event)
             if self.turtles.get_active_turtle().get_pen_state():
-                self.send_event("p", {"payload": data_to_string([nick, False])})
+                self.send_event('p', data_to_string([nick, False]))
                 put_pen_back_down = True
             else:
                 put_pen_back_down = False
-            self.send_event("x", {"payload": data_to_string(
+            event = data_to_string(
                 [nick,
                  [round_int(self.turtles.get_active_turtle().get_xy()[0]),
-                  round_int(self.turtles.get_active_turtle().get_xy()[1])]])})
+                  round_int(self.turtles.get_active_turtle().get_xy()[1])]])
+            self.send_event('x', event)
             if put_pen_back_down:
-                self.send_event("p", {"payload", data_to_string([nick, True])})
+                self.send_event('p', data_to_string([nick, True]))
         self.turtle_movement_to_share = None
 
     def _mouse_move(self, x, y):
@@ -2553,9 +2550,9 @@ class TurtleArtWindow():
             else:
                 if self._timeout_tag[0] > 0:
                     try:
-                        GObject.source_remove(self._timeout_tag[0])
+                        GLib.source_remove(self._timeout_tag[0])
                         self._timeout_tag[0] = 0
-                    except:
+                    except BaseException:
                         self._timeout_tag[0] = 0
         elif spr and hasattr(spr, 'type') and \
                 (spr.type == 'selector' or
@@ -2567,16 +2564,16 @@ class TurtleArtWindow():
             else:
                 if self._timeout_tag[0] > 0:
                     try:
-                        GObject.source_remove(self._timeout_tag[0])
+                        GLib.source_remove(self._timeout_tag[0])
                         self._timeout_tag[0] = 0
-                    except:
+                    except BaseException:
                         self._timeout_tag[0] = 0
         else:
             if self._timeout_tag[0] > 0:
                 try:
-                    GObject.source_remove(self._timeout_tag[0])
+                    GLib.source_remove(self._timeout_tag[0])
                     self._timeout_tag[0] = 0
-                except:
+                except BaseException:
                     self._timeout_tag[0] = 0
 
     def _do_show_popup(self, block_name):
@@ -2685,7 +2682,7 @@ class TurtleArtWindow():
                 abs(self.dy < _MOTION_THRESHOLD))):
             self._click_block(x, y)
         elif self.block_operation == 'copying':
-            GObject.timeout_add(500, self._unhighlight_drag_group, blk)
+            GLib.timeout_add(500, self._unhighlight_drag_group, blk)
 
     def _unhighlight_drag_group(self, blk):
         self.drag_group = find_group(blk)
@@ -3001,11 +2998,12 @@ class TurtleArtWindow():
             if len(self.block_list.get_similar_blocks('block', 'forever')) > 0:
                 debug_output('WARNING: Projects with forever blocks \
  may not terminate.', False)
+            self.__run_stack(blk)
         else:
             self._hide_text_entry()
             self.parent.get_window().set_cursor(
                 Gdk.Cursor(Gdk.CursorType.WATCH))
-        GObject.idle_add(self.__run_stack, blk)
+            GLib.idle_add(self.__run_stack, blk)
 
     def __run_stack(self, blk):
         if self.status_spr is not None:
@@ -3013,7 +3011,8 @@ class TurtleArtWindow():
         self._autohide_shape = True
         if blk is None:
             return
-        self.lc.find_value_blocks()  # Are there blocks to update?
+        if not self.interactive_mode:
+            self.lc.find_value_blocks()  # Are there blocks to update?
         if self.canvas.cr_svg is None:
             self.canvas.setup_svg_surface()
         self.running_blocks = True
@@ -3025,7 +3024,7 @@ class TurtleArtWindow():
                 Gdk.Cursor(Gdk.CursorType.LEFT_PTR))
         self.lc.run_blocks(code)
         if self.interactive_mode:
-            GObject.idle_add(self.lc.doevalstep)
+            GLib.idle_add(self.lc.doevalstep)
         else:
             while self.lc.doevalstep():
                 pass
@@ -3152,7 +3151,7 @@ class TurtleArtWindow():
                          block_styles['compare-style'] or
                          selected_block.name in
                          block_styles['compare-porch-style']
-                        ):
+                         ):
                     dy = selected_block.ey - best_destination.ey
                     if selected_block.name in block_styles['boolean-style']:
                         # Even without expanding, boolean blocks are
@@ -3194,7 +3193,7 @@ class TurtleArtWindow():
                         self._resize_clamp(
                             best_destination, self.drag_group[0], dockn=3)
             elif best_destination.name in expandable_blocks and \
-                 best_destination_dockn == 1:
+                    best_destination_dockn == 1:
                 dy = 0
                 if (selected_block.name in expandable_blocks or
                     selected_block.name in block_styles[
@@ -3213,7 +3212,8 @@ class TurtleArtWindow():
                     self._expand_expandable(
                         best_destination, selected_block, dy)
                 self._cascade_expandable(best_destination)
-            elif best_destination.name in block_styles['basic-style-3arg'] and \
+            elif best_destination.name in \
+                    block_styles['basic-style-3arg'] and \
                     best_destination_dockn == 2:
                 dy = 0
                 if (selected_block.name in expandable_blocks or
@@ -3490,7 +3490,8 @@ class TurtleArtWindow():
                 pixbuf = get_pixbuf_from_journal(media, w, h)
             else:
                 w, h = calc_image_size(blk.spr)
-                pixbuf = GdkPixbuf.Pixbuf.new_from_file_at_size(media_path, w, h)
+                pixbuf = GdkPixbuf.Pixbuf.new_from_file_at_size(
+                    media_path, w, h)
         else:
             blk.name = 'description'
             self._block_skin('descriptionon', blk)
@@ -3639,6 +3640,10 @@ class TurtleArtWindow():
             # Always exit fullscreen mode if applicable
             if self.running_sugar and self.activity.is_fullscreen:
                 self.activity.unfullscreen()
+                from sugar3.graphics.style import GRID_CELL_SIZE
+                self.activity.vbox.set_size_request(
+                    Gdk.Screen.width(),
+                    Gdk.Screen.height() - 2 * GRID_CELL_SIZE)
         return True
 
     def _jog_turtle(self, dx, dy):
@@ -3711,7 +3716,7 @@ class TurtleArtWindow():
         ''' Make sure a 'number' block contains a number. '''
         if hasattr(self, '_text_entry'):
             bounds = self._text_buffer.get_bounds()
-            text = self._text_buffer.get_text(bounds[0], bounds[1])
+            text = self._text_buffer.get_text(bounds[0], bounds[1], True)
             self._hide_text_entry()
         else:
             text = self.selected_blk.spr.labels[0]
@@ -3770,7 +3775,7 @@ class TurtleArtWindow():
     def _test_string(self):
         if hasattr(self, '_text_entry'):
             bounds = self._text_buffer.get_bounds()
-            text = self._text_buffer.get_text(bounds[0], bounds[1])
+            text = self._text_buffer.get_text(bounds[0], bounds[1], True)
             self._hide_text_entry()
         else:
             text = self.selected_blk.spr.labels[0]
@@ -3906,7 +3911,7 @@ class TurtleArtWindow():
             f = open(self._loaded_project, 'r')
             saved_project_data = f.read()
             f.close()
-        except:
+        except BaseException:
             debug_output('problem loading saved project data from %s' %
                          (self._loaded_project), self.running_sugar)
             saved_project_data = ''
@@ -4111,7 +4116,8 @@ class TurtleArtWindow():
                 if self.running_sugar:
                     # For security reasons, only open files found in
                     # Python samples directory
-                    if os.path.exists(os.path.join(self.share_path, value)) and \
+                    if os.path.exists(
+                            os.path.join(self.share_path, value)) and \
                             value[0:9] == 'pysamples':
                         self.selected_blk = blk
                         self.load_python_code_from_file(
@@ -4121,7 +4127,8 @@ class TurtleArtWindow():
                     else:  # or files from the Journal
                         try:
                             dsobject = datastore.get(value)
-                        except:  # Should be IOError, but dbus error is raised
+                        except BaseException:
+                            # Should be IOError, but dbus error is raised
                             dsobject = None
                             debug_output('Could not get dsobject %s' % (value),
                                          self.running_sugar)
@@ -4138,8 +4145,6 @@ class TurtleArtWindow():
                     self.set_userdefined(blk)
         if btype == 'string' and blk.spr is not None:
             value = blk.values[0]
-            if isinstance(value, str):
-                value = value.encode('utf-8')
             blk.spr.set_label(value.replace('\n', RETURN))
         elif btype in block_styles['box-style-media'] and blk.spr is not None:
             if btype in EXPAND_SKIN:
@@ -4164,14 +4169,14 @@ class TurtleArtWindow():
                         else:
                             self._block_skin('journalon', blk)
                     dsobject.destroy()
-                except:
+                except BaseException:
                     try:
                         w, h, = calc_image_size(blk.spr)
                         pixbuf = GdkPixbuf.Pixbuf.new_from_file_at_size(
                             blk.values[0], w, h)
                         x, y = self.calc_image_offset('', blk.spr)
                         blk.set_image(pixbuf, x, y)
-                    except:
+                    except BaseException:
                         debug_output('Could not open dsobject (%s)' %
                                      (blk.values[0]), self.running_sugar)
                         self._block_skin('journaloff', blk)
@@ -4183,7 +4188,7 @@ class TurtleArtWindow():
                             blk.values[0], w, h)
                         x, y = self.calc_image_offset('', blk.spr)
                         blk.set_image(pixbuf, x, y)
-                    except:
+                    except BaseException:
                         self._block_skin('journaloff', blk)
                 else:
                     self._block_skin('journalon', blk)
@@ -4281,7 +4286,7 @@ class TurtleArtWindow():
                 dlg.set_title(title)
                 dlg.set_property('skip-taskbar-hint', False)
 
-                resp = dlg.run()
+                dlg.run()
                 dlg.destroy()
             return
         if file_name is None:
@@ -4302,7 +4307,7 @@ class TurtleArtWindow():
                 dlg.set_title(title)
                 dlg.set_property('skip-taskbar-hint', False)
 
-                resp = dlg.run()
+                dlg.run()
                 dlg.destroy()
             return
         data_to_file(self.assemble_data_to_save(), file_name)
@@ -4382,6 +4387,8 @@ class TurtleArtWindow():
 
     def display_coordinates(self, clear=False):
         ''' Display the coordinates of the current turtle on the toolbar '''
+        if not self.interactive_mode:
+            return
         if clear:
             self._set_coordinates_label('')
         else:
@@ -4448,7 +4455,7 @@ class TurtleArtWindow():
                         from sugar3.datastore import datastore
                         try:
                             dsobject = datastore.get(n.value)
-                        except:
+                        except BaseException:
                             debug_output("Couldn't open %s" % (n.value),
                                          self.running_sugar)
                         self.showlabel('print', dsobject.metadata['title'])
@@ -4706,8 +4713,8 @@ class TurtleArtWindow():
 
             surface.write_to_png(file_path)
 
-            from sugar.datastore import datastore
-            from sugar import profile
+            from sugar3.datastore import datastore
+            from sugar3 import profile
 
             dsobject = datastore.create()
             dsobject.metadata['title'] = filename
@@ -4893,17 +4900,9 @@ class TurtleArtWindow():
         ''' Look for a protoblock with this name '''
         if not self.interactive_mode:
             return False
-        if isinstance(name, str):
-            name = name.encode('utf-8')
-        if isinstance(label, str):
-            label = label.encode('utf-8')
         i = palette_name_to_index(palette)
         for blk in self.palette_views[i].blocks:
             blk_label = blk.spr.labels[0]
-            if isinstance(blk.name, str):
-                blk.name = blk.name.encode('utf-8')
-            if isinstance(blk_label, str):
-                blk_label = blk_label.encode('utf-8')
             if blk.name == name and blk_label == label:
                 return True
             # Check labels[1] too (e.g., store in block)
@@ -4919,8 +4918,6 @@ class TurtleArtWindow():
             return
         if isinstance(name, (float, int)):
             return
-        if isinstance(name, str):
-            name = name.encode('utf-8')
         if name == _('action'):
             return
         # Choose a palette for the new block.
@@ -4946,8 +4943,6 @@ class TurtleArtWindow():
             return
         if isinstance(name, (float, int)):
             return
-        if isinstance(name, str):
-            name = name.encode('utf-8')
         if name == _('my box'):
             return
         # Choose a palette for the new block.
@@ -4973,8 +4968,6 @@ class TurtleArtWindow():
             return
         if isinstance(name, (float, int)):
             return
-        if isinstance(name, str):
-            name = name.encode('utf-8')
         if name == _('my box'):
             return
         # Choose a palette for the new block.
@@ -5137,8 +5130,6 @@ variable'))
             else:
                 self.show_toolbar_palette(int(arg))
         else:
-            if isinstance(arg, str):
-                arg = arg.encode('utf-8')
             if arg in palette_names or arg in palette_i18n_names:
                 self.show_toolbar_palette(palette_name_to_index(arg))
             else:
