@@ -107,7 +107,7 @@ from .taconstants import (
     CONSTANTS,
     DEFAULT_BACKGROUND_COLOR_SHADE_GRAY)
 from .taprimitive import (ArgSlot, ConstantArg, or_, Primitive)
-from tatype import (TYPE_BOOL, TYPE_BOX, TYPE_CHAR, TYPE_COLOR, TYPE_FLOAT,
+from .tatype import (TYPE_BOOL, TYPE_BOX, TYPE_CHAR, TYPE_COLOR, TYPE_FLOAT,
                      TYPE_INT, TYPE_NUMBER, TYPE_NUMERIC_STRING, TYPE_OBJECT,
                      TYPE_STRING, TYPE_VECTOR)
 from .taturtle import Turtle

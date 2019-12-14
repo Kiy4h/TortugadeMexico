@@ -12,7 +12,7 @@ def myblock(tw, x):  # ignore second argument
     ''' Paste from clipboard to heap '''
 
     from gtk import Clipboard
-    from tautils import data_from_string
+    from .tautils import data_from_string
 
     text = Clipboard().wait_for_text()
     if text is not None:
