@@ -22,29 +22,37 @@
 #OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 #THE SOFTWARE.
 
-import pygtk
-pygtk.require('2.0')
-import gtk
 import cairo
 import gobject
 import dbus
+import gi
+gi.require_version("Gdk", "3.0")
+gi.require_version("Gtk", "3.0")
+gi.require_version('Gst', '1.0')
+gi.require_version('GstVideo', '1.0')
+gi.require_version('PangoCairo', '1.0')
 
+from gi.repository import Gtk
+from gi.repository import Gdk
+from gi.repository import GLib
+from gi.repository import GdkPixbuf
+from gi.repository import Gio
 import logging
 _logger = logging.getLogger('turtleart-activity')
 
-from sugar.activity import activity
+from sugar3.activity import activity
 try:  # 0.86 toolbar widgets
-    from sugar.activity.widgets import (ActivityToolbarButton, StopButton)
-    from sugar.graphics.toolbarbox import (ToolbarBox, ToolbarButton)
+    from sugar3.activity.widgets import (ActivityToolbarButton, StopButton)
+    from sugar3.graphics.toolbarbox import (ToolbarBox, ToolbarButton)
     HAS_TOOLBARBOX = True
 except ImportError:
     HAS_TOOLBARBOX = False
-from sugar.graphics.toolbutton import ToolButton
-from sugar.graphics.radiotoolbutton import RadioToolButton
-from sugar.graphics.alert import (ConfirmationAlert, NotifyAlert)
-from sugar.graphics import style
-from sugar.datastore import datastore
-from sugar import profile
+from sugar3.graphics.toolbutton import ToolButton
+from sugar3.graphics.radiotoolbutton import RadioToolButton
+from sugar3.graphics.alert import (ConfirmationAlert, NotifyAlert)
+from sugar3.graphics import style
+from sugar3.datastore import datastore
+from sugar3 import profile
 
 import os
 import tarfile
@@ -120,7 +128,7 @@ class TurtleArtActivity(activity.Activity):
 
         self._defer_palette_move = False
         self.check_buttons_for_fit()
-        self.client = gconf.client_get_default()
+        self.client = GConf.Client.get_default()
         if self.client.get_int(self._HOVER_HELP) == 1:
             self._do_hover_help_toggle(None)
         self.init_complete = True
@@ -515,7 +523,7 @@ class TurtleArtActivity(activity.Activity):
             _logger.debug('save_logo returned None')
             return None
         try:
-            f = file(tmpfile, 'w')
+            f = open(tmpfile, 'w')
             f.write(code)
             f.close()
         except Exception as e:
@@ -861,7 +869,7 @@ class TurtleArtActivity(activity.Activity):
                     self._palette_toolbar.insert(
                         self._overflow_palette_button, -1)
                 if i >= max_palettes:
-                    self._overflow_box.pack_start(self._overflow_buttons[i])
+                    self._overflow_box.pack_start(self._overflow_buttons[i], True, True, 0)
 
             self._overflow_sw.set_size_request(width, height)
             self._overflow_sw.show()
@@ -1233,7 +1241,7 @@ Plugin section of plugin.info file.')
                                 None,
                                 arg=j - 1))
                         self._overflow_box.pack_start(
-                            self._overflow_buttons[j - 1])
+                            self._overflow_buttons[j - 1], True, True, 0)
                         self.tw.palettes.insert(j - 1, [])
                         self.tw.palette_sprs.insert(j - 1, [None, None])
                     else:
@@ -1538,7 +1546,7 @@ in order to use the plugin.'))
         label.set_line_wrap(True)
         label.show()
         button_and_label.pack_start(label, False, False, padding=5)
-        box.pack_start(button_and_label)
+        box.pack_start(button_and_label, True, True, 0)
         button_and_label.show()
         return button, label
 

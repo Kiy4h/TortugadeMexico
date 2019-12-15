@@ -43,7 +43,7 @@ from telepathy.constants import (CHANNEL_GROUP_FLAG_CHANNEL_SPECIFIC_HANDLES,
 CONN_INTERFACE_ACTIVITY_PROPERTIES = 'org.laptop.Telepathy.ActivityProperties'
 CONN_INTERFACE_BUDDY_INFO = 'org.laptop.Telepathy.BuddyInfo'
 
-_logger = logging.getLogger('sugar.presence.activity')
+_logger = logging.getLogger('sugar3.presence.activity')
 
 
 class Activity(gobject.GObject):

@@ -23,8 +23,8 @@ from gettext import gettext as _
 
 import gtk
 
-from sugar.graphics.toolbutton import ToolButton
-from sugar.graphics.icon import Icon
+from sugar3.graphics.toolbutton import ToolButton
+from sugar3.graphics.icon import Icon
 
 from TurtleArt.tapalette import help_windows
 

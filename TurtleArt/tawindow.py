@@ -22,8 +22,8 @@
 #OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 #THE SOFTWARE.
 
-import pygtk
-pygtk.require('2.0')
+import gi
+gi.require_version('Gtk', '3.0')
 import gtk
 import gobject
 import pango
@@ -120,7 +120,7 @@ class TurtleArtWindow():
                 self.parent.show_all()
                 self.running_sugar = True
 
-                from sugar import profile
+                from sugar3 import profile
 
                 self.nick = profile.get_nick_name()
                 self.macros_path = os.path.join(
@@ -829,9 +829,9 @@ class TurtleArtWindow():
 
         # Resize text_entry widget
         if hasattr(self, '_text_entry') and len(blocks) > 0:
-            font_desc = pango.FontDescription('Sans')
+            font_desc = Pango.FontDescription('Sans')
             font_desc.set_size(
-                int(blocks[0].font_size[0] * pango.SCALE * self.entry_scale))
+                int(blocks[0].font_size[0] * Pango.SCALE * self.entry_scale))
             self._text_entry.modify_font(font_desc)
 
     def _shift_toolbar_palette(self, n):
@@ -1578,8 +1578,8 @@ before making changes to your Turtle Blocks program'))
 
     def _save_stack_alert(self, name, data, macro_path):
         if self.running_sugar:
-            from sugar.graphics.alert import Alert
-            from sugar.graphics.icon import Icon
+            from sugar3.graphics.alert import Alert
+            from sugar3.graphics.icon import Icon
 
             alert = Alert()
             alert.props.title = _('Save stack')
@@ -1617,8 +1617,8 @@ before making changes to your Turtle Blocks program'))
 
     def _delete_stack_alert(self, blk):
         if self.running_sugar:
-            from sugar.graphics.alert import Alert
-            from sugar.graphics.icon import Icon
+            from sugar3.graphics.alert import Alert
+            from sugar3.graphics.icon import Icon
 
             alert = Alert()
             alert.props.title = _('Delete stack')
@@ -2766,9 +2766,9 @@ before making changes to your Turtle Blocks program'))
                 self._text_entry = gtk.TextView()
                 self._text_entry.set_justification(gtk.JUSTIFY_CENTER)
                 self._text_buffer = self._text_entry.get_buffer()
-                font_desc = pango.FontDescription('Sans')
+                font_desc = Pango.FontDescription('Sans')
                 font_desc.set_size(
-                    int(blk.font_size[0] * pango.SCALE * self.entry_scale))
+                    int(blk.font_size[0] * Pango.SCALE * self.entry_scale))
                 self._text_entry.modify_font(font_desc)
                 self.activity.fixed.put(self._text_entry, 0, 0)
             self._text_entry.show()
@@ -3653,8 +3653,8 @@ before making changes to your Turtle Blocks program'))
             if fname in self._py_cache:
                 id = self._py_cache[fname]
             else:
-                from sugar.datastore import datastore
-                from sugar import profile
+                from sugar3.datastore import datastore
+                from sugar3 import profile
 
                 dsobject = datastore.create()
                 dsobject.metadata['title'] = os.path.basename(fname)
@@ -3815,7 +3815,7 @@ before making changes to your Turtle Blocks program'))
     def load_block(self, b, offset=0):
         ''' Restore individual blocks from saved state '''
         if self.running_sugar:
-            from sugar.datastore import datastore
+            from sugar3.datastore import datastore
 
         if b[1] == 0:
             return None
@@ -4296,8 +4296,8 @@ before making changes to your Turtle Blocks program'))
             save_picture(self.canvas, file_path)
 
         if self.running_sugar:
-            from sugar.datastore import datastore
-            from sugar import profile
+            from sugar3.datastore import datastore
+            from sugar3 import profile
 
             dsobject = datastore.create()
             if len(name) == 0:

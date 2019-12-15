@@ -320,7 +320,7 @@ def get_save_name(filefilter, load_save_folder, save_file_name):
 
 def chooser_dialog(parent_window, filter, action):
     ''' Choose an object from the datastore and take some action '''
-    from sugar.graphics.objectchooser import ObjectChooser
+    from sugar3.graphics.objectchooser import ObjectChooser
 
     chooser = None
     dsobject = None
@@ -884,7 +884,7 @@ def power_manager_off(status):
     OHM_SERVICE_IFACE = 'org.freedesktop.ohm.Keystore'
     PATH = '/etc/powerd/flags/inhibit-suspend'
 
-    client = gconf.client_get_default()
+    client = GConf.Client.get_default()
 
     ACTUAL_POWER = True
 
@@ -899,7 +899,7 @@ def power_manager_off(status):
 
     try:
         client.set_bool('/desktop/sugar/power/automatic', VALUE)
-    except gconf.GError:
+    except GConf.GError:
         pass
 
     bus = dbus.SystemBus()

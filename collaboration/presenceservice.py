@@ -30,9 +30,9 @@ from dbus import PROPERTIES_IFACE
 
 """ FIXME ... """
 try:
-    from sugar.presence.buddy import Buddy
-    from sugar.presence.activity import Activity
-    from sugar.presence.connectionmanager import get_connection_manager
+    from sugar3.presence.buddy import Buddy
+    from sugar3.presence.activity import Activity
+    from sugar3.presence.connectionmanager import get_connection_manager
 except ImportError:
     pass
 
@@ -42,7 +42,7 @@ from telepathy.interfaces import (ACCOUNT,
 from telepathy.constants import HANDLE_TYPE_CONTACT
 
 
-_logger = logging.getLogger('sugar.presence.presenceservice')
+_logger = logging.getLogger('sugar3.presence.presenceservice')
 
 ACCOUNT_MANAGER_SERVICE = 'org.freedesktop.Telepathy.AccountManager'
 ACCOUNT_MANAGER_PATH = '/org/freedesktop/Telepathy/AccountManager'

@@ -28,7 +28,7 @@ from operator import isNumberType
 from UserDict import UserDict
 
 try:
-    from sugar.graphics import style
+    from sugar3.graphics import style
     GRID_CELL_SIZE = style.GRID_CELL_SIZE
 except ImportError:
     GRID_CELL_SIZE = 55

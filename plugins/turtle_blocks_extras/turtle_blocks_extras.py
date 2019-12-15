@@ -1211,7 +1211,7 @@ bullets'))
                     n[6:].lower not in media_blocks_dictionary:
                 try:
                     if self.tw.running_sugar:
-                        from sugar.datastore import datastore
+                        from sugar3.datastore import datastore
                         try:
                             dsobject = datastore.get(n[6:])
                         except:
@@ -1266,7 +1266,7 @@ bullets'))
         if os.path.exists(media[6:]):  # is it a path?
             self.tw.lc.filepath = media[6:]
         elif self.tw.running_sugar:  # is it a datastore object?
-            from sugar.datastore import datastore
+            from sugar3.datastore import datastore
             try:
                 dsobject = datastore.get(media[6:])
             except:
@@ -1460,7 +1460,7 @@ bullets'))
                 elif os.path.exists(string[6:]):  # is it a path?
                     self.tw.lc.filepath = string[6:]
                 elif self.tw.running_sugar:  # is it a datastore object?
-                    from sugar.datastore import datastore
+                    from sugar3.datastore import datastore
                     try:
                         self.tw.lc.dsobject = datastore.get(string[6:])
                     except:

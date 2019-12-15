@@ -1,23 +1,23 @@
-#Copyright (c) 2011-12 Walter Bender
-#Copyright (c) 2011 Collabora Ltd. <http://www.collabora.co.uk/>
+# Copyright (c) 2011-12 Walter Bender
+# Copyright (c) 2011 Collabora Ltd. <http://www.collabora.co.uk/>
 
-#Permission is hereby granted, free of charge, to any person obtaining a copy
-#of this software and associated documentation files (the "Software"), to deal
-#in the Software without restriction, including without limitation the rights
-#to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-#copies of the Software, and to permit persons to whom the Software is
-#furnished to do so, subject to the following conditions:
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
 
-#The above copyright notice and this permission notice shall be included in
-#all copies or substantial portions of the Software.
+# The above copyright notice and this permission notice shall be included in
+# all copies or substantial portions of the Software.
 
-#THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-#IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-#FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-#AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-#LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-#OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-#THE SOFTWARE.
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+# THE SOFTWARE.
 
 from dbus.service import signal
 from dbus.gobject_service import ExportedGObject
@@ -32,9 +32,9 @@ from TurtleArt.tautils import (data_to_string, data_from_string, get_path,
 from TurtleArt.taconstants import DEFAULT_TURTLE_COLORS
 
 try:
-    from sugar import profile
-    from sugar.presence import presenceservice
-    from sugar.presence.tubeconn import TubeConnection
+    from sugar3 import profile
+    from sugar3.presence import presenceservice
+    from sugar3.presence.tubeconn import TubeConnection
 except:
     profile = None
     from collaboration import presenceservice
@@ -162,7 +162,7 @@ class Collaboration():
         """ Create a new tube. """
         debug_output('New tube: ID=%d initator=%d type=%d service=%s \
                      params=%r state=%d' % (id, initiator, type, service,
-                     params, state), self._tw.running_sugar)
+                                            params, state), self._tw.running_sugar)
 
         if (type == telepathy.TUBE_TYPE_DBUS and service == SERVICE):
             if state == telepathy.TUBE_STATE_LOCAL_PENDING:

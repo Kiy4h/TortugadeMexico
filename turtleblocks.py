@@ -21,8 +21,8 @@
 #OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 #THE SOFTWARE.
 
-import pygtk
-pygtk.require('2.0')
+import gi
+gi.require_version('Gtk', '3.0')
 import gtk
 import gobject
 import cairo
@@ -114,7 +114,7 @@ class TurtleMain():
             self._start_gtk()
 
     def _get_gconf_settings(self):
-        self.client = gconf.client_get_default()
+        self.client = GConf.Client.get_default()
 
     def get_config_home(self):
         return CONFIG_HOME

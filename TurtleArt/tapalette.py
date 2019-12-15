@@ -80,7 +80,7 @@ block_styles = {'basic-style': [],
 import gtk
 
 try:
-    from sugar.graphics import style
+    from sugar3.graphics import style
     from util.helpbutton import (add_section, add_paragraph)
     GRID_CELL_SIZE = style.GRID_CELL_SIZE
     HELP_PALETTE = True

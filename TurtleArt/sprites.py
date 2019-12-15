@@ -76,8 +76,8 @@ def svg_str_to_pixbuf(svg_string):
 
 '''
 
-import pygtk
-pygtk.require('2.0')
+import gi
+gi.require_version('Gtk', '3.0')
 import gtk
 import pango
 import pangocairo
@@ -296,7 +296,7 @@ class Sprite:
 
     def set_font(self, font):
         ''' Set the font for a label '''
-        self._fd = pango.FontDescription(font)
+        self._fd = Pango.FontDescription(font)
 
     def set_label_color(self, rgb):
         ''' Set the font color for a label '''
@@ -392,20 +392,20 @@ class Sprite:
                 self.pl = cr.create_layout()
                 pl = self.pl
             pl.set_text(str(self.labels[i]))
-            self._fd.set_size(int(self._scale[i] * pango.SCALE))
+            self._fd.set_size(int(self._scale[i] * Pango.SCALE))
             pl.set_font_description(self._fd)
-            w = pl.get_size()[0] / pango.SCALE
+            w = pl.get_size()[0] / Pango.SCALE
             if w > my_width:
                 if self._rescale[i]:
                     self._fd.set_size(
-                        int(self._scale[i] * pango.SCALE * my_width / w))
+                        int(self._scale[i] * Pango.SCALE * my_width / w))
                     pl.set_font_description(self._fd)
-                    w = pl.get_size()[0] / pango.SCALE
+                    w = pl.get_size()[0] / Pango.SCALE
                 else:
-                    pl.set_width(int(my_width * pango.SCALE))
-                    pl.set_ellipsize(pango.ELLIPSIZE_MIDDLE)
+                    pl.set_width(int(my_width * Pango.SCALE))
+                    pl.set_ellipsize(Pango.EllipsizeMode.MIDDLE)
                     pl.set_text(str(self.labels[i]))
-                    w = pl.get_size()[0] / pango.SCALE
+                    w = pl.get_size()[0] / Pango.SCALE
             if self._x_pos[i] is not None:
                 x = int(self.rect.x + self._x_pos[i])
             elif self._horiz_align[i] == "center":
@@ -414,7 +414,7 @@ class Sprite:
                 x = int(self.rect.x + self._margins[0])
             else:  # right
                 x = int(self.rect.x + self.rect.width - w - self._margins[2])
-            h = pl.get_size()[1] / pango.SCALE
+            h = pl.get_size()[1] / Pango.SCALE
             if self._y_pos[i] is not None:
                 y = int(self.rect.y + self._y_pos[i])
             elif self._vert_align[i] == "middle":
@@ -439,9 +439,9 @@ class Sprite:
             for i in range(len(self.labels)):
                 pl = cr.create_layout()
                 pl.set_text(self.labels[i])
-                self._fd.set_size(int(self._scale[i] * pango.SCALE))
+                self._fd.set_size(int(self._scale[i] * Pango.SCALE))
                 pl.set_font_description(self._fd)
-                w = pl.get_size()[0] / pango.SCALE
+                w = pl.get_size()[0] / Pango.SCALE
                 if w > max:
                     max = w
             return max

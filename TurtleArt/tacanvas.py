@@ -618,8 +618,8 @@ class TurtleGraphics:
         def _draw_text(cr, label, x, y, size, w, scale, heading, rgb):
             cc = pangocairo.CairoContext(cr)
             pl = cc.create_layout()
-            fd = pango.FontDescription('Sans')
-            fd.set_size(int(size * scale) * pango.SCALE)
+            fd = Pango.FontDescription('Sans')
+            fd.set_size(int(size * scale) * Pango.SCALE)
             pl.set_font_description(fd)
             if isinstance(label, str):
                 pl.set_text(label.replace('\0', ' '))
@@ -627,7 +627,7 @@ class TurtleGraphics:
                 pl.set_text(str(label))
             else:
                 pl.set_text(str(label))
-            pl.set_width(int(w) * pango.SCALE)
+            pl.set_width(int(w) * Pango.SCALE)
             cc.save()
             cc.translate(x, y)
             cc.rotate(heading * DEGTOR)

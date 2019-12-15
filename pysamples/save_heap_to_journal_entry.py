@@ -1,4 +1,4 @@
-#Copyright (c) 2010-11, Walter Bender, Tony Forster
+# Copyright (c) 2010-11, Walter Bender, Tony Forster
 
 # This procedure is invoked when the user-definable block on the
 # "extras" palette is selected.
@@ -15,9 +15,9 @@ def myblock(tw, title):
     import os.path
     from gettext import gettext as _
 
-    from sugar.activity import activity
-    from sugar.datastore import datastore
-    from sugar import profile
+    from sugar3.activity import activity
+    from sugar3.datastore import datastore
+    from sugar3 import profile
 
     from TurtleArt.tautils import get_path, data_to_file
 

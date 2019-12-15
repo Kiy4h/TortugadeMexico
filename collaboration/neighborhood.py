@@ -721,7 +721,7 @@ class Neighborhood(gobject.GObject):
 
         #print('Still dont have a Salut account, creating one')
 
-        client = gconf.client_get_default()
+        client = GConf.Client.get_default()
         nick = client.get_string('/desktop/sugar/user/nick')
 
         params = {

@@ -19,7 +19,7 @@
 #THE SOFTWARE.
 
 try:
-    from sugar.datastore import datastore
+    from sugar3.datastore import datastore
     HAS_DATASTORE = True
 except:
     HAS_DATASTORE = False
