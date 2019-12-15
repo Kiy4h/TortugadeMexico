@@ -24,11 +24,11 @@ from math import sin, cos, pi, sqrt
 import gtk
 import cairo
 
-from taconstants import (TURTLE_LAYER, DEFAULT_TURTLE_COLORS)
-from tasprite_factory import (SVG, svg_str_to_pixbuf)
-from tacanvas import (wrap100, COLOR_TABLE)
-from sprites import Sprite
-from tautils import debug_output
+from .taconstants import (TURTLE_LAYER, DEFAULT_TURTLE_COLORS)
+from .tasprite_factory import (SVG, svg_str_to_pixbuf)
+from .tacanvas import (wrap100, COLOR_TABLE)
+from .sprites import Sprite
+from .tautils import debug_output
 
 SHAPES = 36
 

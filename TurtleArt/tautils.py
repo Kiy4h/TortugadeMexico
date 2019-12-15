@@ -44,9 +44,9 @@ except (ImportError, AttributeError):
         from simplejson import dump as jdump
     except:
         OLD_SUGAR_SYSTEM = True
-from StringIO import StringIO
+from io import StringIO
 
-from taconstants import (HIT_HIDE, HIT_SHOW, XO1, XO15, XO175, XO4, UNKNOWN,
+from .taconstants import (HIT_HIDE, HIT_SHOW, XO1, XO15, XO175, XO4, UNKNOWN,
                          MAGICNUMBER, SUFFIX)
 
 import logging
@@ -111,7 +111,7 @@ def chr_to_ord(x):
 
 def strtype(x):
     ''' Is x a string type? '''
-    if isinstance(x, (str, unicode)):
+    if isinstance(x, str):
         return True
     return False
 
@@ -181,7 +181,7 @@ def find_hat(data):
 
 def _to_str(text):
     ''' Convert whatever to a str type '''
-    if isinstance(text, unicode):
+    if isinstance(text, str):
         return text.encode('ascii', 'replace')
     elif isinstance(text, str):
         return text
@@ -366,11 +366,11 @@ def data_from_string(text):
     ''' JSON load data from a string. '''
     if isinstance(text, str):
         return json_load(text.replace(']],\n', ']], '))
-    elif isinstance(text, unicode):
+    elif isinstance(text, str):
         text = text.encode('ascii', 'replace')
         return json_load(text.replace(']],\n', ']], '))
     else:
-        print 'type error (%s) in data_from_string' % (type(text))
+        print('type error (%s) in data_from_string' % (type(text)))
         return None
 
 
@@ -410,7 +410,7 @@ def save_picture(canvas, file_name):
     cr = cairo.Context(img_surface)
     cr.set_source_surface(x_surface)
     cr.paint()
-    if isinstance(file_name, unicode):
+    if isinstance(file_name, str):
         img_surface.write_to_png(str(file_name.encode('ascii', 'replace')))
     else:
         img_surface.write_to_png(str(file_name))
@@ -728,7 +728,7 @@ def arithmetic_check(blk1, blk2, dock1, dock2):
 
 def xy(event):
     ''' Where is the mouse event? '''
-    return map(int, event.get_coords())
+    return list(map(int, event.get_coords()))
 
 
 # Utilities related to finding blocks in stacks.
@@ -858,13 +858,13 @@ def check_output(command, warning):
             print(warning)
             return None
     else:
-        import commands
+        import subprocess
 
         cmd = ''
         for c in command:
             cmd += c
             cmd += ' '
-        (status, output) = commands.getstatusoutput(cmd)
+        (status, output) = subprocess.getstatusoutput(cmd)
         if status != 0:
             print(warning)
             return None

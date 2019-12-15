@@ -28,9 +28,9 @@ import pango
 import cairo
 import pangocairo
 
-from tautils import (image_to_base64, get_path, data_to_string, round_int,
+from .tautils import (image_to_base64, get_path, data_to_string, round_int,
                      debug_output)
-from taconstants import COLORDICT
+from .taconstants import COLORDICT
 
 
 def wrap100(n):
@@ -621,7 +621,7 @@ class TurtleGraphics:
             fd = pango.FontDescription('Sans')
             fd.set_size(int(size * scale) * pango.SCALE)
             pl.set_font_description(fd)
-            if isinstance(label, (str, unicode)):
+            if isinstance(label, str):
                 pl.set_text(label.replace('\0', ' '))
             elif isinstance(label, (float, int)):
                 pl.set_text(str(label))

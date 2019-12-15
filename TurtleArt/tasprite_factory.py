@@ -25,7 +25,7 @@ pygtk.require('2.0')
 import gtk
 import os
 
-from taconstants import HIT_RED, HIT_GREEN, HIDE_WHITE, SHOW_WHITE, \
+from .taconstants import HIT_RED, HIT_GREEN, HIDE_WHITE, SHOW_WHITE, \
     PALETTE_COLOR, TOOLBAR_COLOR
 
 

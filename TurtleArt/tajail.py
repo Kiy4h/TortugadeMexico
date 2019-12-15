@@ -30,18 +30,18 @@ def myfunc(f, args):
     if len(args) == 1:
         myf = 'def f(x): return ' + f.replace('import', '')
         userdefined = {}
-        exec myf in globals(), userdefined
-        return userdefined.values()[0](args[0])
+        exec(myf, globals(), userdefined)
+        return list(userdefined.values())[0](args[0])
     elif len(args) == 2:
         myf = 'def f(x, y): return ' + f.replace('import', '')
         userdefined = {}
-        exec myf in globals(), userdefined
-        return userdefined.values()[0](args[0], args[1])
+        exec(myf, globals(), userdefined)
+        return list(userdefined.values())[0](args[0], args[1])
     elif len(args) == 3:
         myf = 'def f(x, y, z): return ' + f.replace('import', '')
         userdefined = {}
-        exec myf in globals(), userdefined
-        return userdefined.values()[0](args[0], args[1], args[2])
+        exec(myf, globals(), userdefined)
+        return list(userdefined.values())[0](args[0], args[1], args[2])
 
 
 def myfunc_import(parent, f, x):
@@ -52,7 +52,7 @@ def myfunc_import(parent, f, x):
         base_class = parent.tw  # as of v107, we pass tw
     userdefined = {}
     try:
-        exec f in globals(), userdefined
+        exec(f, globals(), userdefined)
         return userdefined['myblock'](base_class, x)
     except:
         traceback.print_exc()

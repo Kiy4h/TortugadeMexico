@@ -33,9 +33,9 @@ try:
 except ImportError:
     GRID_CELL_SIZE = 55
 
-from taconstants import (TAB_LAYER, DEFAULT_SCALE, PREFIX_DICTIONARY)
-from tapalette import (block_names, value_blocks)
-from tautils import (get_pixbuf_from_journal, convert, data_from_file,
+from .taconstants import (TAB_LAYER, DEFAULT_SCALE, PREFIX_DICTIONARY)
+from .tapalette import (block_names, value_blocks)
+from .tautils import (get_pixbuf_from_journal, convert, data_from_file,
                      text_media_type, round_int, debug_output, find_group)
 
 try:
@@ -164,7 +164,7 @@ class LogoCode:
         self.iline = None
         self.tw.stop_plugins()
         if self.tw.gst_available:
-            from tagplay import stop_media
+            from .tagplay import stop_media
             stop_media(self)
         self.tw.active_turtle.show()
         self.tw.running_blocks = False
@@ -192,7 +192,7 @@ class LogoCode:
         self._setup_cmd(code)
 
     def generate_code(self, blk, blocks):
-        for k in self.stacks.keys():
+        for k in list(self.stacks.keys()):
             self.stacks[k] = None
         self.stacks['stack1'] = None
         self.stacks['stack2'] = None
@@ -523,7 +523,7 @@ class LogoCode:
                 try:
                     if self.step is not None:
                         try:
-                            self.step.next()
+                            next(self.step)
                         except ValueError:
                             debug_output('generator already executing',
                                          self.tw.running_sugar)
@@ -540,7 +540,7 @@ class LogoCode:
                         self.tw.active_turtle.show()
                     self.tw.running_blocks = False
                     return False
-        except logoerror, e:
+        except logoerror as e:
             self.tw.showblocks()
             self.tw.display_coordinates()
             self.tw.showlabel('syntaxerror', str(e))
@@ -596,7 +596,7 @@ class LogoCode:
         """ Clear screen """
         self.tw.clear_plugins()
         if self.tw.gst_available:
-            from tagplay import stop_media
+            from .tagplay import stop_media
             stop_media(self)
         self.tw.canvas.clearscreen()
         self.scale = DEFAULT_SCALE
@@ -792,7 +792,7 @@ class LogoCode:
     def media_wait(self):
         """ Wait for media to stop playing """
         if self.tw.gst_available:
-            from tagplay import media_playing
+            from .tagplay import media_playing
             while(media_playing(self)):
                 yield True
         self.ireturn()
@@ -801,7 +801,7 @@ class LogoCode:
     def media_stop(self):
         """ Stop playing media"""
         if self.tw.gst_available:
-            from tagplay import stop_media
+            from .tagplay import stop_media
             stop_media(self)
         self.ireturn()
         yield True
@@ -809,7 +809,7 @@ class LogoCode:
     def media_pause(self):
         """ Pause media"""
         if self.tw.gst_available:
-            from tagplay import pause_media
+            from .tagplay import pause_media
             pause_media(self)
         self.ireturn()
         yield True
@@ -817,7 +817,7 @@ class LogoCode:
     def media_play(self):
         """ Play media"""
         if self.tw.gst_available:
-            from tagplay import play_media
+            from .tagplay import play_media
             play_media(self)
         self.ireturn()
         yield True
@@ -825,7 +825,7 @@ class LogoCode:
     def play_sound(self):
         """ Sound file from Journal """
         if self.tw.gst_available:
-            from tagplay import play_audio_from_file
+            from .tagplay import play_audio_from_file
             play_audio_from_file(self, self.filepath)
 
     def play_video(self):
@@ -834,7 +834,7 @@ class LogoCode:
         if w < 1 or h < 1:
             return
         if self.tw.gst_available:
-            from tagplay import play_movie_from_file
+            from .tagplay import play_movie_from_file
             # The video window is an overlay, so we need to know where
             # the canvas is relative to the window, e.g., which
             # toolbars, if any are open.

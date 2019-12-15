@@ -88,8 +88,8 @@ except ImportError:
     GRID_CELL_SIZE = 55
     HELP_PALETTE = False
 
-from taconstants import (EXPANDABLE_STYLE, EXPANDABLE_FLOW)
-from tautils import debug_output
+from .taconstants import (EXPANDABLE_STYLE, EXPANDABLE_FLOW)
+from .tautils import debug_output
 
 from gettext import gettext as _
 

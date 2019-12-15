@@ -64,10 +64,10 @@ from random import uniform
 
 from gettext import gettext as _
 
-from tapalette import (make_palette, define_logo_function)
-from talogo import (primitive_dictionary, logoerror)
-from tautils import (convert, chr_to_ord, round_int, strtype)
-from taconstants import (COLORDICT, CONSTANTS)
+from .tapalette import (make_palette, define_logo_function)
+from .talogo import (primitive_dictionary, logoerror)
+from .tautils import (convert, chr_to_ord, round_int, strtype)
+from .taconstants import (COLORDICT, CONSTANTS)
 
 
 def _color_to_num(c):
