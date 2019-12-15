@@ -20,11 +20,11 @@
 #OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 #THE SOFTWARE.
 
-import gtk
-import gobject
+from gi.repository import Gtk
+from gi.repository import GObject
 from math import sin, cos, pi
 import os
-import pango
+from gi.repository import Pango
 import cairo
 import pangocairo
 

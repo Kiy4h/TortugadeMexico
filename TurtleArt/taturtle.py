@@ -21,7 +21,7 @@
 
 from random import uniform
 from math import sin, cos, pi, sqrt
-import gtk
+from gi.repository import Gtk
 import cairo
 
 from .taconstants import (TURTLE_LAYER, DEFAULT_TURTLE_COLORS)

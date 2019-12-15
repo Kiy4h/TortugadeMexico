@@ -23,7 +23,6 @@
 #THE SOFTWARE.
 
 import cairo
-import gobject
 import dbus
 import gi
 gi.require_version("Gdk", "3.0")
@@ -60,7 +59,7 @@ import subprocess
 import configparser
 import shutil
 import tempfile
-import gconf
+
 
 from gettext import gettext as _
 

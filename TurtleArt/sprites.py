@@ -78,8 +78,8 @@ def svg_str_to_pixbuf(svg_string):
 
 import gi
 gi.require_version('Gtk', '3.0')
-import gtk
-import pango
+from gi.repository import Gtk
+from gi.repository import Pango
 import pangocairo
 import cairo
 

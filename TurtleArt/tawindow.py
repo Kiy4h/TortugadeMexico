@@ -24,15 +24,15 @@
 
 import gi
 gi.require_version('Gtk', '3.0')
-import gtk
-import gobject
-import pango
+from gi.repository import Gtk
+from gi.repository import GObject
+from gi.repository import Pango
 import pangocairo
 
 from gettext import gettext as _
 
 try:
-    import gst
+    from gi.repository import Gst
     _GST_AVAILABLE = True
 except ImportError:
     # Turtle Art should not fail if gst is not available

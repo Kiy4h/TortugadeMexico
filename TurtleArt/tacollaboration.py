@@ -23,7 +23,7 @@ from dbus.service import signal
 from dbus.gobject_service import ExportedGObject
 import telepathy
 import os
-import gtk
+from gi.repository import Gtk
 
 from gettext import gettext as _
 

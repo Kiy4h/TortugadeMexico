@@ -20,9 +20,9 @@
 #OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 #THE SOFTWARE.
 
-import gtk
-import gobject
-import gconf
+from gi.repository import Gtk
+from gi.repository import GObject
+from gi.repository import GConf
 import dbus
 import cairo
 import pickle

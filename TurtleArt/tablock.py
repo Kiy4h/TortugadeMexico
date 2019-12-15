@@ -19,7 +19,7 @@
 #OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 #THE SOFTWARE.
 
-import gtk
+from gi.repository import Gtk
 import cairo
 
 from .taconstants import (EXPANDABLE, EXPANDABLE_ARGS, OLD_NAMES, CONSTANTS,

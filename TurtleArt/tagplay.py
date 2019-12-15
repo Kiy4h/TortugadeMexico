@@ -29,12 +29,12 @@ import os
 import gi
 gi.require_version('Gtk', '3.0')
 
-import gobject
+from gi.repository import GObject
 gobject.threads_init()
 
-import gst
+from gi.repository import Gst
 import gst.interfaces
-import gtk
+from gi.repository import Gtk
 
 
 def play_audio_from_file(lc, file_path):

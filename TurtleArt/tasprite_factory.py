@@ -22,7 +22,7 @@
 
 import gi
 gi.require_version('Gtk', '3.0')
-import gtk
+from gi.repository import Gtk
 import os
 
 from .taconstants import HIT_RED, HIT_GREEN, HIDE_WHITE, SHOW_WHITE, \
