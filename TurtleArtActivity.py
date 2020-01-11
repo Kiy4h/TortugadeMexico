@@ -226,7 +226,7 @@ class TurtleArtActivity(activity.Activity):
     def help_animation(self):
         self._help_index = 0
         self._stop_help = False
-        self.stop_turtle_button.set_icon('stopiton')
+        self.stop_turtle_button.set_icon_name('stopiton')
         self._help_next()
 
     def _help_next(self):
@@ -590,7 +590,7 @@ class TurtleArtActivity(activity.Activity):
         if not self._stop_help:
             self._stop_help = True
             self.tw.showblocks()
-            self.stop_turtle_button.set_icon('hideshowoff')
+            self.stop_turtle_button.set_icon_name('hideshowoff')
             self.stop_turtle_button.set_tooltip(_('Hide blocks'))
             return
 
