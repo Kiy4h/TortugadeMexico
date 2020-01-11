@@ -1796,12 +1796,12 @@ class TurtleArtActivity(activity.Activity):
     def _load_level(self, custom=False):
         self.tw.canvas.clearscreen()
         if custom:
-            self.tw.canvas.setxy(0, 0, pendown=False)
+            self.tw.turtles.get_active_turtle().set_xy(0, 0, pendown=False)
             self.tw.lc.insert_image(center=True,
                                     filepath=self._custom_filepath,
                                     resize=True, offset=False)
         else:
-            self.tw.canvas.setxy(int(-gtk.gdk.screen_width() / 2), 0,
+            self.tw.turtles.get_active_turtle().set_xy(int(-Gdk.Screen.width() / 2), 0,
                                  pendown=False)
             self.tw.lc.insert_image(center=False, resize=False,
                                     filepath=os.path.join(
@@ -1815,7 +1815,7 @@ class TurtleArtActivity(activity.Activity):
                 else:
                     xoffset = 0
                     yoffset = 0
-                self.tw.canvas.setxy(-2.5 + xoffset, -2.5 + yoffset,
+                self.tw.turtles.get_active_turtle().set_xy(-2.5 + xoffset, -2.5 + yoffset,
                                       pendown=False)
                 self.tw.lc.insert_image(center=False,
                                         filepath=os.path.join
@@ -1824,7 +1824,7 @@ class TurtleArtActivity(activity.Activity):
                                          self._levels[self._level] + '.svg'),
                                         resize=False,
                                         offset=True)
-        self.tw.canvas.setxy(0, 0, pendown=False)
+        self.tw.turtles.get_active_turtle().set_xy(0, 0, pendown=False)
 
     def _radio_button_factory(self, button_name, toolbar, cb, arg, tooltip,
                               group, position=-1):
